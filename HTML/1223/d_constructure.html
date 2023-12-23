@@ -1,0 +1,80 @@
+<!-- 
+주석 처리 부분은 브라우저에서 읽히지 X
+
+d_constructure.html
+: HTML 문서 기본 구조
+
+HTML 주석(Comments)
+- 내용을 메모하는 목적(코드 설명, 임시 코드 작성)
+- 브라우저에 표시되지 않지만 HTML 소스 코드 문서화에 도움
+
+1. <!DOCTYPE html>
+- DOCTYPE 선언: 문서 유형을 지정
+- 모든 HTML 문서는 '문서 유형 선언<!DOCTYPE html>'으로 시작
+- 현재 문서가 HTML5 언어로 작성한 웹 문서 임을 나타내는 태그
+
+! HTML에서는 대소문자 구별 X
+  - <!DOCTYPE html>과 <!dectype html>이 동일
+  BUT, 문서 유형을 강조하는 <!DOCTYPE html>은 대문자 사용을 권장
+  - 일반 태그는 소문자로 작성을 권장
+
+2. <html> ~ </html>
+- 웹 문서의 시작과 끝을 나타내는 태그
+- 웹 브라우저가 <html> 태그를 만나면 </html> 태그까지 읽어서 화면에 표시
+
+3. <head> ~ </head>
+- 문서의 메타데이터(metadata)를 포함
+- 웹 브라우저가 웹 문서를 해석하는 데 필요한 정보를 입력하는 태그
+- 화면에 표시되지 X
+
+4. <body> ~ </body>
+- 실제 웹 브라우저 화면에 나타나는 내용 
+
+Visual Studio Code의 Emmet(에밋)기능
+: 웹 문서의 태그를 자동으로 입력해 주는 확장 기능 (자동 완성)
+
+웹 문서의 기본 구조를 에밋 기능으로 구현
+: ! + tab(enter)
+-->
+
+<!DOCTYPE html>
+<!-- 
+  HTML 요소
+  - lang="ko"
+    : 검색 사이트에서 특정 언어로 제한하여 검색
+    : 화면 낭독기 사용 시 해당 언어로 지정
+-->
+<html lang="ko">
+<!-- 
+  Head 요소: 문서의 메타데이터를 포함
+-->
+<head>
+  <!-- 웹 페이지의 문자 인코딩을 UTF-8 -->
+  <meta charset="UTF-8">
+  <!-- 
+    모바일 기기에서 웹페이지의 뷰포트(보이는 영역)를 어떻게 처리할 것인지 지정 
+    : 뷰포트의 너비를 기기의 화면 너비에 맞춤
+  -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 웹 브라우저의 제목 -->
+  <title>HTML 문서구조</title>
+</head>
+<body>
+  - 들여쓰기(탭) 간격 설정
+    tab 또는 space 키를 통해 들여쓰기
+    'tab size' 2로 설정하는 경우 
+    : tab 1번과 space 2번이 같은 크기의 들여쓰기
+    
+  - 자동 줄 바꿈
+    : 창이 줄어들어도 모든 텍스트를 보여줌
+    : 드래그 하지 않아도 됨
+    설정 > word wrap > on 설정
+
+  - live server 단축키
+    alt + l + o (엘 + 오)
+
+  안녕하세요
+  주말 프론트엔드
+
+</body>
+</html>
