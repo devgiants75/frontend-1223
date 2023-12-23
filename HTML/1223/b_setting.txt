@@ -1,0 +1,5 @@
+b_setting.txt
+: 프론트엔드 개발 환경 설정 (VSCode 설치 및 설정)
+
+! Development Environment Setting
+https://roan-hill-431.notion.site/Development-Environment-Setting-e91f11b444b84fa2af695cc2736133a8

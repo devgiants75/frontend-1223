@@ -1,0 +1,8 @@
+a_introduce.txt (강사 소개, 강의 소개)
+: .txt 확장자의 경우 텍스트 파일을 생성
+
+! Frontend? (개요)
+https://roan-hill-431.notion.site/Frontend-7fe79c88b128406babb652956b01f908
+
+! 웹 표준
+https://roan-hill-431.notion.site/3838a3cbd6ae4b29a37129bc17e7c3e6
