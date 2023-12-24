@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Table</title>
+  <style>
+    table, td, th {
+      border: 1px solid #ccc;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 5px 10px;
+    }
+  </style>
+</head>
+<body>
+  <!--  
+    행(row): 가로
+    열(column): 세로
+    셀(cell): 행과 열이 교차되는 지점
+  -->
+  <table>
+    <caption>표1 제목</caption>
+    <!-- 3행 4열 표 -->
+    <tr>
+      <th>1행 제목</th>
+      <td>내용</td>
+      <td>내용</td>
+      <td>내용</td>
+    </tr>
+    <tr>
+      <th>2행 제목</th>
+      <td>내용</td>
+      <td>내용</td>
+      <td>내용</td>
+    </tr>
+    <tr>
+      <th>3행 제목</th>
+      <td>내용</td>
+      <td>내용</td>
+      <td>내용</td>
+    </tr>
+  </table>
+  <table>
+    <caption>표2 제목</caption>
+    <thead>
+      <tr>
+        <th>1열 제목</th>
+        <th>2열 제목</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>내용</td>
+        <td>내용</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td>설명</td>
+        <td>설명</td>
+      </tr>
+    </tfoot>
+  </table>
+</body>
+</html>
