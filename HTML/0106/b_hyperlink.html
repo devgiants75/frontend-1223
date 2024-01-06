@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML 하이퍼링크</title>
+</head>
+<body>
+  <h1>hyperlink</h1>
+  <!-- 
+    하이퍼링크
+    : 문서를 다른 문서나 리소스에 연결하거나, 문서의 특정 부분에 연결하는 기능
+
+    a 요소를 사용하여 링크 생성
+    : a요소를 자동완성 기능으로 생성 시 href 속성이 자동 생성
+
+    href 속성: 연결할 문서의 경로와 파일명 등을 입력(링크의 수신처)
+
+    : a요소에 마우스를 이동시키면 마우스 화살표가 작은 손으로 바뀜
+  -->
+  <!-- 텍스트 링크 & 인라인 요소 -->
+  <a href="" id="link">인라인 레벨 텍스트 링크</a>
+
+  <!-- 
+    텍스트 링크 & 블록 요소 
+    : 블록 레벨 요소를 만들기 위해서는 a요소 내에 블록레벨 요소를 위치
+  -->
+  <a href="">
+    <h2>블록 레벨 텍스트 링크</h2>
+  </a>
+
+  <!-- 이미지(img / image) 링크 -->
+  <a href="https://www.naver.com">
+    <img src="https://cdn.pixabay.com/photo/2017/09/25/13/12/puppy-2785074_1280.jpg" alt="이미지 대체 메시지" />
+  </a>
+
+  <!-- 
+    a요소의 target 속성
+    : 링크를 새 탭에서 열어주는 속성
+    : 연결된 문서를 열 위치를 지정
+
+    속성값
+    _self: 기본값(생략O), 요소를 누른 창과 동일한 창/탭에서 문서를 연다.
+    _blank: 새 창 또는 탭에서 문서를 연다.
+    _parent: 상위 프레임에서 문서를 연다.
+    _top: 창 전체의 본문에서 문서를 연다.
+  -->
+  <a href="https://www.naver.com" target="_self">self</a>
+  <a href="https://www.naver.com" target="_blank">blank</a>
+
+  <!--  
+    _parent, _top
+    : 웹 브라우저의 프레임의 일부가 아니면 _self와 동일하게 작동
+  -->
+  <a href="https://www.naver.com" target="_parent">parent</a>
+  <a href="https://www.naver.com" target="_top">top</a>
+
+  <!-- 
+    title 속성
+    : 수신처의 설명을 첨부하는 속성
+  -->
+  <a href="" title="해당 하이퍼링크는 이동하지 않습니다.">
+    <p>title 속성</p>
+  </a>
+
+  <!--  
+    절대 경로 VS 상대 경로
+
+    1. 절대 경로
+    : 특정 파일, 웹 페이지의 완전한 경로
+    : https://www.naver.com
+    : 프로토콜, 도메인, 폴더 구조, 파일 이름을 포함
+    : 어떤 HTML 문서에서든 동일한 URL을 사용하면 동일한 파일이나 페이지를 가리킴
+
+    2. 상대 경로
+    : 현재 문서 위치를 기준으로 한 파일이나 페이지의 경로를 나타냄
+    : 웹 브라우저 보다 이미지, 파일 등을 저장하고 사용할 때 작성
+    : 같은 웹 사이트 내의 페이지에 대한 링크 작성
+    - 저장한 데이터가 현재 문서를 기준으로 위치하는 장소 파악 중요
+
+    a. 같은 디렉토리(폴더) 내 파일 링크
+    same-directory
+    : 파일 이름만 href 속성에 지정
+
+    b. 하위 디렉토리로의 링크
+    down-directory
+    : 현재 파일이 있는 디렉토리 보다 한 단계 하위 디렉토리에 있는 파일로 링크
+    : 디렉토리 이름을 포함하여 경로를 지정
+
+    c. 상위 디렉토리로의 링크
+    : ..를 사용하여 상위 디렉토리로 이동한 다음, 파일 경로를 지정
+  -->
+
+  <a href="same-directory.jpg">같은 디렉토리</a>
+  <br />
+  <!-- 폴더나 파일 간의 구분은 /로 표시 -->
+  <a href="images/down-directory.jpg">하위 디렉토리</a>
+  <br />
+  <a href="../images/top-directory.jpg">상위 디렉토리</a>
+
+  <!-- 
+    a 요소 기본 스타일
+    : 텍스트에 밑줄
+    : 한 번도 접속하지 않은 경우 텍스트 색상 - 파란색
+    : 한 번 이상 접속한 경우 - 보라색
+  -->
+</body>
+</html>

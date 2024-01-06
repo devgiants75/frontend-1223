@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML 테이블 심화</title>
+  <!-- 
+    테이블(표) 스타일 지정
+    table 태그 내에 border 속성을 사용하여 지정 가능
+    : 일반적으로는 style로 따로 지정하는 것을 권장
+
+    style 요소
+    : 웹 문서의 스타일을 HTML 웹 문서 내부에서 지정할 수 있도록 하는 요소
+  -->
+  <style>
+    /* 전체 테이블 스타일 지정 */
+    table {
+      /* 테이블 생성 시 기본으로 셀 간의 경계가 생성 */
+      border-collapse: collapse;
+    }
+
+    /* 테이블의 모든 헤더(th)와 데이터(td) 셀 스타일 설정 */
+    th, td {
+      border: 1px solid black;
+    }
+  </style>
+</head>
+<body>
+  <!-- 테이블 예시 -->
+  <table>
+    <caption>사용자 정보</caption>
+    <!-- 
+      표의 구조를 지정하는 태그
+      : thead, tbody, tfoot
+    -->
+    <thead>
+      <!-- 사용자 정보의 구성 (번호, 이름, 나이) -->
+      <!-- tr: 행 생성 / th: 셀 생성(제목) -->
+      <tr>
+        <th>번호</th>
+        <th>이름</th>
+        <th>나이</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- 사용자 정보 데이터 -->
+      <!-- td: 셀 생성(내용) -->
+      <tr>
+        <td>1</td>
+        <td>이승아</td>
+        <td>28</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>이도경</td>
+        <td>30</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <!-- 사용자의 총 인원 -->
+      <tr>
+        <!-- 
+          셀 병합
+          rowspan, colspan 속성
+          
+          rowspan(Row Span)
+          : 행을 합치는 속성
+          : 하나의 셀이 여러 행에 걸쳐 확장
+          : 세로로 합쳐지는 속성
+
+          colsapn(Column Span)
+          : 열을 합치는 속성
+          : 하나의 셀이 여러 열에 걸쳐 확장
+          : 가로로 합쳐지는 속성
+        -->
+        <td colspan="2">총 인원</td>
+        <td>2</td>
+      </tr>
+    </tfoot>
+  </table>
+
+  <!-- 셀 병합 예제 -->
+  <table>
+    <caption>학생 정보 테이블</caption>
+    <tr>
+      <th colspan="2">학생정보</th>
+    </tr>
+    <tr>
+      <td>이름</td>
+      <td>이준국</td>
+    </tr>
+    <tr>
+      <td rowspan="2">취미</td>
+      <td>독서</td>
+    </tr>
+    <tr>
+      <td>여행</td>
+    </tr>
+  </table>
+</body>
+</html>

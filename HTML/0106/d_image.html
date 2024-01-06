@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML 이미지</title>
+</head>
+<body>
+  <!--  
+    img 요소
+    : 웹 문서에 이미지를 삽입 요소
+    : 삽입 X / 웹 페이지에 '링크'
+
+    img 요소의 속성
+    src 속성 (source - 소스 파일)
+      : 이미지 파일의 경로를 지정
+      : 상대 경로 - 해당 웹 문서와 이미지의 위치 파악
+      : 절대 경로 - 전체 url 그대로를 삽입
+
+    alt 속성 (alter - 대체 텍스트)
+      : 화면 낭독기 등에서 이미지를 대신하여 읽어 줄 텍스트 입력
+      : 이미지의 경로가 잘못되었을 경우 화면에 보여짐
+
+    이미지의 크기 지정 속성
+    너비(가로축) width
+    높이(세로축) height
+    : 단위 없이 작성의 경우 px(픽셀)단위로 설정
+    : width 또는 height 중 1개만 지정해도 나머지 속성의 경우 비율을 자동 계산
+    : 이미지 크기 조절의 경우 태그 내의 속성보다는 CSS 규정을 사용하여 따로 지정하는 것을 권장
+
+    title 속성: 이미지 제목을 작성
+  -->
+  <img 
+    src="same-directory.jpg" 
+    alt="강아지 이미지" 
+    width="200"
+    height="200"
+    title="포메라니안"
+  />
+</body>
+</html>

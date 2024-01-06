@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>복습 예제01</title>
+  <style>
+    table, td, th {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+    /* 각 셀의 디자인 지정 */
+    td, th {
+      /* 셀 내부의 공간 지정 */
+      padding: 10px 20px;
+    }
+
+    td {
+      width: 200px;
+    }
+  </style>
+</head>
+<body>
+  <!-- 테이블 복습 예제 -->
+  <h1>지원 양식</h1>
+  <table>
+    <tr>
+      <th rowspan="3">개인정보</th>
+      <th>이름</th>
+      <td></td>
+    </tr>
+    <tr>
+      <th>학과/학번</th>
+      <td></td>
+    </tr>
+    <tr>
+      <th>연락처</th>
+      <td></td>
+    </tr>
+    <tr>
+      <th>지원분야</th>
+      <td colspan="2"></td>
+    </tr>
+  </table>
+</body>
+</html>

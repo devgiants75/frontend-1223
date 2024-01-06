@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML 미디어</title>
+</head>
+<body>
+  <!--  
+    HTML의 멀티미디어
+
+    object 요소
+    : 오디오, 비디오, PDF 파일 등
+    data - 파일의 경로
+    type - 자원의 MIME 타입을 지정
+
+      MIME: 인터넷에서 파일 형식을 식별하는 표준 형식
+      pdf파일 - application/pdf
+      video파일 - video/mp4
+
+    embed 요소
+    : 멀티미디어 파일 지정
+    : object 요소와의 차이(단일태그, src 속성으로 파일 지정)
+
+    audio 요소
+    : 웹 페이지에 오디오 파일 작성
+  -->
+  <object 
+    data="정보처리기사20220424(학생용).pdf" 
+    type="application/pdf"></object>
+
+  <embed src="정보처리기사20220424(학생용).pdf" type="application/pdf" />
+
+  <!-- 
+    audio / video 요소
+
+    src 속성: 파일 경로 지정
+    controls 속성 
+      : 브라우저에서 기본 제공하는 재생, 일시정지, 볼륨 조절의 컨트롤
+      - bool속성(true, false의 값만 가지는 속성)
+    autoplay 속성
+      : 페이지 로딩 시 자동 재생
+    loop 속성
+      : 오디오가 끝까지 재생했을 때 자동으로 다시 시작
+    muted 속성
+      : 미디어가 음소거 상태로 시작
+  -->
+  <audio src="electronic-rock-king-around-here-15045.mp3" controls></audio>
+
+  <video src="170617 (720p).mp4" controls></video>
+</body>
+</html>
