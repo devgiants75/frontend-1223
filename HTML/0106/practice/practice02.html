@@ -4,36 +4,161 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>복습 예제02</title>
+  <style>
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+  </style>
 </head>
 <body>
-  <!--  
+  <!--    
     시맨틱 태그 사용
-    : header, nav, section, footer
+    : header, nav, section, footer 
+  -->
 
+  <!-- 
     1. header
       : 메인 제목(h1)
       : 설명(p)
-
-    2. nav
-      : 순서가 없는 리스트 생성
-      : 각 섹션과 id로 연결되는 링크
-
-    3. section
-      : 교육, 경력, 취미, 연락처, 기술 스킬, 일정 표
-      : 각 섹션 제목(h2)
-      : 기본 텍스트(p)
-      : 강조 요소(strong)
-
-    4. footer
-      : 특수 기호 문자 (저작권)
-      : | vertical bar
-          (shift + \)
   -->
+  <header>
+    <h1>🌟 홍길동의 포트폴리오 🌟</h1>
+    <p>웹 개발자 & 디자이너</p>
+  </header>
+
+  <!-- 
+    2. nav
+    : 순서가 없는 리스트 생성
+    : 각 섹션과 id로 연결되는 링크 
+  -->
+  <nav>
+    <ul>
+      <li><a href="#education">교육</a></li>
+      <li><a href="#career">경력</a></li>
+      <li><a href="#hobbies">취미</a></li>
+      <li><a href="#contact">연락처</a></li>
+      <li><a href="#skills">기술 스킬</a></li>
+      <li><a href="#schedule">일정표</a></li>
+    </ul>
+  </nav>
+
+  <!-- 
+    3. section
+    : 교육, 경력, 취미, 연락처, 기술 스킬, 일정 표
+    : 각 섹션 제목(h2)
+    : 기본 텍스트(p)
+    : 강조 요소(strong) 
+  -->
+  <section id="education">
+    <h2>🎓 교육</h2>
+    <p><strong>서울대학교 컴퓨터공학과 졸업</strong></p>
+    <p>컴퓨터 과학의 기본 원리에 대한 깊은 이해를 바탕으로 다양항ㄴ 프로젝트와 연구에 참여하였습니다.</p>
+  </section>
+
+  <section id="career">
+    <h2>💼 경력</h2>
+    <p>XYZ 회사에서 소프트웨어 엔지니어로 근무</p>
+    <table>
+      <tr>
+        <th>연도</th>
+        <th>회사</th>
+        <th>직위</th>
+      </tr>
+      <tr>
+        <td>2022</td>
+        <td>XYZ 회사</td>
+        <td>주니어 개발자</td>
+      </tr>
+      <tr>
+        <td>2023</td>
+        <td>XYZ 회사</td>
+        <td>시니어 개발자</td>
+      </tr>
+    </table>
+    <p>주니어 개발자로 시작하여, 다양한 프로젝트를 성공적으로 이끌며 시니어 개발자로 승진하였습니다.</p>
+  </section>
+
+  <section id="hobbies">
+    <h2>🎨 취미</h2>
+    <p>사진 촬영, 여행, 음악 감상</p>
+    <p>여행을 통해 새로운 문화를 경험하고, 이를 사진으로 기록하는 것을 좋아합니다.</p>
+  </section>
+
+  <section id="contact">
+    <h2>📞 연락처</h2>
+    <p>이메일: <a href="mailto:gildong@example.com">gildong@example.com</a> 📧</p>
+    <p>전화번호: 010-1234-5678 📱</p>
+    <p>프로젝트 문의나 채용 제안은 언제든지 환영합니다.</p>
+  </section>
+
+  <section id="skills">
+    <h2>🛠 기술 스킬</h2>
+    <ol type="A">
+      <li>HTML & CSS</li>
+      <li>JavaScript</li>
+      <li>React</li>
+      <li>Node.js</li>
+    </ol>
+    <p>
+      최신 웹 기술에 대한 지속적인 학습과 적용에 힘쓰고 있으며, 다양한 프레임워크와 라이브러리에 익숙합니다.
+    </p>
+  </section>
+
+  <section id="schedule">
+    <h2>📅 일정표</h2>
+    <table border="1">
+      <tr>
+        <th>시간</th>
+        <th>월요일</th>
+        <th>화요일</th>
+        <th>수요일</th>
+        <th>목요일</th>
+        <th>금요일</th>
+      </tr>
+      <tr>
+        <td>09:00 - 10:00</td>
+        <td rowspan="2">프로젝트 회의</td>
+        <td>이메일 확인</td>
+        <td rowspan="3">코드 리뷰</td>
+        <td>문서 작업</td>
+        <td>이메일 확인</td>
+      </tr>
+      <tr>
+        <td>10:00 - 11:00</td>
+        <td>문서 작업</td>
+        <td>팀 미팅</td>
+        <td>개발 작업</td>
+      </tr>
+      <tr>
+        <td>11:00 - 12:00</td>
+        <td colspan="2">워크숍</td>
+        <td>개발 작업</td>
+        <td>이메일 확인</td>
+      </tr>
+    </table>
+  </section>
+
+  <!-- 
+    4. footer
+    : 특수 기호 문자 (저작권)
+    : | vertical bar
+        (shift + \) 
+      -->
+  <footer>
+    <p>&copy; 2024 홍길동. 모든 권리 보유.</p>
+    <p>저를 찾아보세요: 
+      <!-- 
+        a요소 href 속성에 해당 파일 그 자체로 이동할 경우 #을 입력 
+      -->
+      <a href="#">GitHub</a>
+      <a href="#">LinkedIn</a>
+    </p>
+  </footer>
   <!-- 
     href 수신처에 mailto:을 작성하면 이메일을 작성하는 링크가 생성 
     : 이메일을 ,로 구분하여 여러개 작성 가능
+    <a href="mailto:devgiants75@naver.com">send email</a>
   -->
-  <a href="mailto:devgiants75@naver.com">send email</a>
-
 </body>
 </html>
