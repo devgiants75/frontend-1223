@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML 폼 태그</title>
+</head>
+<body>
+  <!--  
+    1. textarea 
+    : 여러 줄을 입력하는 텍스트 영역 태그
+
+    cols: 가로 너비를 지정
+      한글 1글자는 영문자 2글자
+      - 대략의 수를 지정
+        cols 40으로 지정하는 경우 약 한글 20자에 해당
+    rows: 세로 길이를 지정 (지정한 숫자보다 줄 개수가 더 많을 경우 스크롤 막대 지정)
+  -->
+  <textarea cols="5" rows="10">
+    내용
+  </textarea>
+  <!-- 
+    select, option 태그
+    : 드롭다운 목록을 만들어주는 태그
+    : 사용자가 직접 입력 X, 선택
+
+    select
+    : 드롭다운 생성
+    - size 속성: 화면에 표시할 드롭다운 항목의 개수 지정
+    - multiple 속성: 둘 이상의 항목을 선택
+
+    option
+    : 데이터 목록
+    - value 속성: 서버로 값 전달
+    - selected 속성: 기본적으로 선택할 값 지정
+  -->
+  <select name="" id="" size="2" multiple>
+    <option value="">내용1</option>
+    <option value="">내용2</option>
+    <option value="" selected>내용3</option>
+    <option value="">내용4</option>
+  </select>
+
+  <!-- 
+    button 태그 
+    : submit, reset, button의 값을 type 속성으로 지정
+
+    input을 사용한 버튼과의 차이점
+    : 화면 낭독기 사용 시 버튼의 위치를 명확하게 전달
+    : form 요소 내부에서 데이터를 전송하는 차이
+  -->
+  <button type="submit">제출</button>
+  <button type="reset">취소</button>
+  <button type="button">버튼</button>
+</body>
+</html>

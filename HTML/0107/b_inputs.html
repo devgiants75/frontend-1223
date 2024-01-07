@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML 폼 구성</title>
+</head>
+<body>
+  <!--  
+    1. form 요소
+    : HTML 폼 생성 시 반드시 해당 요소로 시작
+      , 모든 내용을 내부에 중첩
+    : form 내부에 또 다른 form 중첩 X
+
+    속성
+      - method, action 속성
+      - autocomplete 속성
+        : 자동 완성 기능을 나타내는 속성
+        : 기본값 on (자동완성이 기본으로 켜져있음)
+          on, off의 속성값으로 지정
+  -->
+  <form action="">
+    <!-- 
+      2. fieldset 요소
+      : 같은 목적을 가진 위젯들을 그룹화
+      : ex) 주문자 정보 / 배송 정보
+
+      3. legend 요소
+      : fieldset 요소의 목적을 형식적으로 설명
+      : fieldset 태그 바로 아래에 작성
+    -->
+    <fieldset>
+      <legend>Fruit Juice Size</legend>
+      <p>
+        <label for="size_1">
+          <input type="text" name="size" id="size_1" value="small" />
+          Small
+        </label>
+      </p>
+      <p>
+        <label for="size_2">
+          <input type="text" name="size" id="size_2" value="medium" />
+          Medium
+        </label>
+      </p>
+      <p>
+        <label for="size_3">
+          <input type="text" name="size" id="size_3" value="large" />
+          Large
+        </label>
+      </p>
+    </fieldset>
+
+    <!-- input tag -->
+    <h3>다양한 input 요소의 type</h3>
+    <fieldset>
+      <!--  
+        input 입력 필드의 기본 너비는 20자
+        
+        input 요소는 type 속성값에 따라 사용자와 상호작용하는 방법이 달라짐
+      -->
+
+      <!-- 
+        text
+        : 주로 아이디, 이름, 주소 등 한 줄 짜리 텍스트 입력란
+
+        password
+        : 비밀번호 또는 개인정보 등 화면에 보여 주지 않아야 하는 정보를 받는 입력란
+        : 별표 또는 불릿으로 표시
+
+        >> 주요 속성
+        size: 화면에 보여지는 필드의 길이를 지정
+        maxlength: 입력할 수 있는 최대 문자 수 지정
+        value: 화면에 표시될 텍스트 (비밀번호 필드 X)
+      -->
+      <div>
+        <label for="id">아이디: </label>
+        <input type="text" id="id" size="5" value="abc123" />
+      </div>
+      <div>
+        <label for="password">비밀번호</label>
+        <input type="password" id="password" maxlength="5"/>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <!-- 
+        search* & url & email* & tel
+
+        placeholder 속성
+        : input 요소의 텍스트 필드에 설명 첨부
+          (입력될 값에 대한 정보를 알려줌)
+
+        search: 검색
+              : 모바일 기기의 웹 브라우저에서 X표시의 지우기 기능을 첨부
+        url: 웹 주소
+        email: 이메일
+            입력값이 지정한 형식과 맞지 않을 경우 전송 X, 오류 메시지 확인
+        tel: 전화번호
+      -->
+      <input type="search" placeholder="검색어"/>
+      <input type="url" placeholder="웹주소"/>
+      <input type="email" placeholder="이메일"/>
+      <input type="tel" placeholder="전화번호"/>
+    </fieldset>
+
+    <fieldset>
+      <!--  
+        checkbox, radio 속성
+        : 항목 선택에 대한 상호작용을 가능하게 하는 input 속성
+
+        주요 속성
+        value
+          : 서버에게 넘겨 줄 값을 지정
+          : 필수값, 영문 또는 숫자 사용을 권장
+
+        checked
+          : 기본으로 선택해 놓고 싶은 항목 지정
+
+        name
+          : 라디오 버튼 또는 체크 박스가 여러 개 있는 경우, 서버에 명확히 구분하여 전달하기 위한 속성
+          : radio 버튼은 관련 그룹끼리 반드시 지정
+
+        1. checkbox
+          : 여러 개의 항목 선택
+
+        2. radio
+          : 1개만 선택 가능
+          : 관련 그룹(1개만 선택될 선택지들)에 같은 name 지정을 하지 않을 경우 선택 지정에 오류
+      -->
+      <legend>2024 프로야구</legend>
+      <p><b>
+        2024 프로야구 포스트시즌 진출팀을 예측해주세요.
+      </b></p>
+      <ul>
+        <li>
+          <label>
+            <input type="checkbox" value="lotte" checked/>
+            롯데 자이언츠
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="checkbox" value="dosan"/>
+            두산 베어스
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="checkbox" value="kiwoom"/>
+            키움 히어로즈
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="checkbox" value="hanhwa" checked/>
+            한화 이글스
+          </label>
+        </li>
+      </ul>
+
+      <p><b>
+        2024 프로야구 포스트 시즌 진출팀 예측 이벤트 결과 문자 수신동의
+      </b></p>
+      <ul>
+        <li>
+          <label>
+            <input type="radio" name="event" value="yes" />
+            동의함
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="radio" name="event" value="no" />
+            동의 안 함
+          </label>
+        </li>
+
+        <input type="radio" name="a"/>
+        <input type="radio" name="a"/>
+        <input type="radio" name="b"/>
+        <input type="radio" name="b"/>
+        <input type="radio" name="b"/>
+
+      </ul>
+    </fieldset>
+
+    <!--  
+      number & range
+      : 숫자 입력 필드
+
+      1. number
+        : 스핀 박스를 사용하여 숫자를 선택
+
+      2. range
+        : 슬라이드 막대를 움직여 숫자를 선택
+
+      주요 속성
+      min / max 속성: 최솟값, 최댓값 (0 ~ 100)
+      step 속성: 숫자 간격을 지정
+      value 속성: 필드에 표시할 초기값
+    -->
+    <fieldset>
+      <legend>상품 선택</legend>
+      <p>주문할 상품을 선택하세요.</p>
+
+      <label>
+        홈 프로페셔널 유니폼
+        <input type="number" min="0" max="10" step="2" />개
+      </label>
+
+      <br />
+
+      <label>
+        원정 프로페셔널 유니폼
+        <input type="range" value="10" />개
+      </label>
+    </fieldset>
+
+    <fieldset>
+      <!-- 
+        submit & reset & button
+        :버튼 속성
+
+        기본값: 제출, 초기화
+          버튼 이름 재지정 시 value 속성 사용
+      -->
+      <input type="submit" value="전송" />
+
+      <!--  
+        해당 reset 버튼이 존재하는 form 내부의 요소를 모두 초기화
+        : 권장 X
+      -->
+      <input type="reset" value="취소"/>
+
+      <!-- 
+        기능 X, 자바스크립트로 실행할 때 사용 
+      -->
+      <input type="button" value="버튼"/>
+
+      <!--  
+        file
+        : 파일(사진, 문서) 첨부
+        : [파일 선택, 찾아보기] 버튼이 표시
+        : 자바스크립트로 첨부한 파일 전송 가능
+      -->
+      <input type="file" />
+
+      <!--  
+        hidden
+        : 화면에 폼이 보이지 X
+        : 사용자가 입력을 마치면 폼과 함께 서버로 전송되는 요소
+        : 관리자가 알아야하는 정보, 관리하고 싶은 데이터를 입력
+      -->
+      <input type="hidden" value="서버로 넘길 값"/>
+
+      <input type="date" />
+    </fieldset>
+  </form>
+</body>
+</html>

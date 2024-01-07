@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>폼 요소 속성</title>
+</head>
+<body>
+  <!--  
+    input 요소의 주요 속성
+
+    1. placeholder 속성
+    : 힌트를 표시해 주는 속성
+
+    2. autofocus 속성
+    : 자동으로 입력 커서를 활성화 시키는 속성
+
+    3. readonly 속성
+    : 읽기 전용 필드를 만들어주는 속성
+
+    4. required 속성
+    : 필수 입력 필드 지정하는 속성
+
+    5. name 속성
+    : 각 입력 필드를 송신하는 속성
+    : 생략할 경우 입력 필드 값이 전송 X
+  -->
+  <form action="">
+    <input 
+      type="text" 
+      placeholder="아이디를 입력하세요."
+      autofocus
+      required
+    />
+    <input 
+      type="password" 
+      placeholder="비밀번호를 입력하세요."
+      required
+    />
+    <input 
+      type="email" 
+      placeholder="이메일을 입력하세요."
+      value="qwe@123.com"
+      readonly
+    />
+    <input type="submit" />
+  </form>
+</body>
+</html>

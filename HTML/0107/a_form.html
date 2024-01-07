@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML 폼 요소</title>
+</head>
+<body>
+  <!--  
+    Form(폼)
+    : 사용자와 웹 사이트 또는 어플리케이션이 서로 상호 작용 하는 기술 중 하나
+    : 사용자가 웹 사이트로 정보를 보낼 수 있는 요소
+  -->
+
+  <!--
+    form 요소
+    : 모든 HTML 폼은 form 요소로 시작
+    : 폼 요소 자체는 표시되지 X
+      텍스트 필드, 체크 박스 외의 다양한 입력 요소를 위한 컨테이너
+
+    action 속성
+    : 데이터를 보낼 URL을 지정
+
+    method 속성
+    : 어떤 HTTP 방식을 사용할 것인지 지정
+      (get / post)
+  -->
+  <form 
+    action="/a_form.html"
+    method="post"
+  >
+    <!--  
+      사용자로부터 문의 사항을 입력 받는 폼 요소
+      한줄 텍스트 필드: 이름, 이메일
+      다중 라인 텍스트 필드: 문의 내용
+
+      label & input
+      label 요소
+        : 이름표
+        : 폼 위젯과 연결되어 위젯의 ID를 생성
+        : 라벨 클릭 시 해당 위젯이 활성화
+        for 속성
+          : 폼 위젯의 id 속성과 연결
+      
+      input 요소
+        : 사용자로부터 단일 입력 텍스트 필드 생성
+        : 입력창을 클릭하여 활성화
+
+        type 속성
+          : input 요소가 어떻게 입력 받을 것인지를 정의
+    -->
+    <div>
+      <label for="name">이름: </label>
+      <input type="text" id="name" />
+    </div>
+    <div>
+      <label for="email">이메일: </label>
+      <input type="email" id="email" value="default element"/>
+    </div>
+    <!-- 
+      textarea 요소
+        : 텍스트 다중 입력 요소
+
+      input 요소와의 차이점
+      : input태그 - 자동 닫힘 태그 
+        / 요소의 기본값 정의는 value 속성
+      : textarea태그 - 열린 태그, 닫힘 태그가 모두 있는 태그
+        / 요소의 기본값 정의는 내용란에 입력
+    -->
+    <div>
+      <label for="message">문의 내용: </label>
+      <textarea name="" id="message" cols="10" rows="5">default element</textarea>
+    </div>
+
+    <!-- 
+      button 요소
+      : 폼을 전송하기 위한 버튼
+      
+        type속성
+        : submit(전송), reset(취소), button(일반 버튼)
+    -->
+    <button type="submit">전송</button>
+    <button type="reset">취소</button>
+  </form>
+</body>
+</html>
