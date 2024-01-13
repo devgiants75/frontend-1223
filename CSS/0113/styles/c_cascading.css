@@ -1,0 +1,46 @@
+/*
+id 스타일
+: #아이디명
+*/
+#important {
+  color: red;
+}
+
+/* 
+class 스타일
+: .클래스명 
+*/
+.hightlight {
+  color: blue;
+}
+
+/* 태그 스타일 */
+/* !important 
+: 속성값 옆에 작성 
+*/
+p {
+  color: green !important;
+}
+
+/* 
+같은 적용 범위 내에서 소스 코드의 순서에 따라 결정 
+*/
+div {
+  color: yellow;
+}
+
+div {
+  color: brown;
+}
+
+/* 스타일 상속 */
+body {
+  /* 글자 크기 */
+  font-size: 30px;
+  background-color: purple;
+}
+
+p {
+  font-size: 10px;
+  background-color: white;
+}

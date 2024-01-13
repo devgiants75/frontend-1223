@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+}
+
+p {
+  font-style: italic;
+}
+
+/* 마침표와 클래스명을 붙여서 사용 */
+.oddNumber {
+  color: tomato;
+}
+
+/* 
+특정 요소에 있는 특정 클래스에만 스타일 적용 가능
+요소명.클래스명을 붙여서 사용
+ */
+p.first {
+  /* 글자 두께: 두껍게 */
+  font-weight: bold;
+  color: yellowgreen;
+}
+
+#title {
+  /* 텍스트 정렬: 가운데 */
+  text-align: center;
+}
+
+#container {
+  border: 1px solid black;
+}
+
+/* 
+특정 요소에 해당 아이디 적용
+특정요소#아이디명
+*/
+h1#title {
+  background-color: yellow;
+}
+
+/* 그룹 선택자 */
+h1, p {
+  font-size: small;
+}
+
+.oddNumber, #title {
+  font-size: large;
+}

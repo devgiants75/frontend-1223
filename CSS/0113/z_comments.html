@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Better Comments</title>
+</head>
+<body>
+  <!--  
+    VSCode 확장 기능(Extensions, PlugIn)
+
+    Better Comments
+    : 코드의 주석을 좀 더 직관적으로 볼 수 있도록 디자인
+
+    설정 방법
+    : Better Comments 설치 화면의 기본 설정 틀 복사
+    : 설정(ctrl + ,) >> 확장 >> Better Comments configuration
+      >> Tags >> settings.json에서 편집
+    -----
+    "better-comments.tags": [
+  {
+    "tag": "!",
+    "color": "#FF2D00",
+    "strikethrough": false,
+    "underline": false,
+    "backgroundColor": "transparent",
+    "bold": false,
+    "italic": false
+  },
+  {
+    "tag": "?",
+    "color": "#3498DB",
+    "strikethrough": false,
+    "underline": false,
+    "backgroundColor": "transparent",
+    "bold": false,
+    "italic": false
+  },
+  {
+    "tag": "//",
+    "color": "#474747",
+    "strikethrough": true,
+    "underline": false,
+    "backgroundColor": "transparent",
+    "bold": false,
+    "italic": false
+  },
+  {
+    "tag": "todo",
+    "color": "#FF8C00",
+    "strikethrough": false,
+    "underline": false,
+    "backgroundColor": "transparent",
+    "bold": false,
+    "italic": false
+  },
+  {
+    "tag": "*",
+    "color": "#98C379",
+    "strikethrough": false,
+    "underline": false,
+    "backgroundColor": "transparent",
+    "bold": false,
+    "italic": false
+  }
+]
+    -----
+  ! 주석: 주의
+  ? 주석: 해석X - 질문, 건의
+  * 주석: 설명
+  // 주석: 취소
+  todo 주석: 할 일 표시
+  -->
+</body>
+</html>
