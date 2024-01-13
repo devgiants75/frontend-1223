@@ -52,5 +52,35 @@
   <button type="submit">제출</button>
   <button type="reset">취소</button>
   <button type="button">버튼</button>
+
+  <!--  
+    datalist 태그
+    : 데이터 목록을 만들어주는 태그
+    : 텍스트 필드에 값을 직접 입력 X 
+      -> 미리 만들어 놓은 값 중에 선택
+    : 데이터 목록의 시작과 끝을 표시
+      -> datalist 내에 option 태그를 사용하여 목록 작성
+    : 데이터 목록을 사용할 텍스트 필드(input)에서 어떤 데이터 목록을 연결할 지 id값을 지정
+    
+    option 태그
+    : 각 데이터의 옵션을 표시
+    : value 속성 -> 서버로 넘겨주는 값을 지정
+
+    select와 datalist의 차이점
+    select: 정해진 옵션 목록 중에서만 선택
+      -> 제공된 데이터 내에서만 선택 가능
+    datalist: 입력 필드에 대한 미리 정의된 옵션 목록을 제공
+      -> 제공된 목록은 선택 사항
+      -> 제안된 목록을 선택하거나 자신의 입력을 제공
+  -->
+  <input 
+    type="text"
+    list="select" 
+  >
+  <datalist id="select">
+    <option value="option1">선택 옵션1</option>
+    <option value="option2">선택 옵션2</option>
+  </datalist>
+
 </body>
 </html>
