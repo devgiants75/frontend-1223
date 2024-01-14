@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="styles/selector04.css">
+</head>
+<body>
+  <!-- 
+    :target
+      - url에 특정 id가 포함되어 있을 때, 그 id를 가진 요소에 스타일을 적용 
+      - 앵커(a요소)로 연결된 부분에 스타일 적용
+
+    :enabled, :disalbed
+      - 입력 필드의 활성화 상태에 따라 다른 스타일 적용
+
+    :checked
+      - 라디오버튼이나 체크박스에 체크했을 때 스타일 적용
+  -->
+  <h2>:target 예제</h2>
+  <p>아래 링크를 클릭하면 해당 섹션의 배경색이 변경됩니다.</p>
+  <a href="#section1">섹션1로 이동</a>
+  <a href="#section2">섹션2로 이동</a>
+
+  <h2>:enabled, :disabled, :checked 예제</h2>
+  <form>
+    <label for="input1">활성화된 입력 필드:</label>
+    <input type="text" id="input1" enabled />
+    <br />
+
+    <label for="input2">비활성화된 입력 필드:</label>
+    <input type="text" id="input2" disabled />
+    <br />
+
+    <label for="checkbox">체크박스: </label>
+    <input type="checkbox" id="checkbox" />
+  </form>
+
+  <section id="section1">
+    섹션1
+    <img src="../images/top-directory.jpg" alt="섹션1-강아지">
+  </section>
+
+  <section id="section2">
+    섹션2
+    <img src="../images/top-directory.jpg" alt="섹션2-강아지">
+  </section>
+</body>
+</html>

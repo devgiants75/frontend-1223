@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS 가상 클래스</title>
+  <link rel="stylesheet" href="styles/selector05.css">
+</head>
+<body>
+  <!--  
+    :first-child - 부모 요소의 첫 번째 자식 요소
+    :last-child - 부모 요소의 마지막 자식 요소
+    :nth-child('n') - 부모 요소의 'n'번째 자식 요소
+
+    :nth-of-type('n') - 특정 유형의 n번째 요소
+
+    :not(selector) - 지정된 선택자에 해당하지 않는 모든 요소를 선택
+    ex) :not(.class) - class 속성이 없는 모든 요소
+  -->
+
+  <div class="container">
+    <!-- <span>인라인 텍스트</span> -->
+    <p>첫 번째 단락(first-child)</p>
+    <p>두 번째 단락(nth-child)</p>
+    <p class="special">세 번째 단락(not)</p>
+    <p>네 번째 단락(last-child)</p>
+  </div>
+
+  <div class="example">
+    <div>
+      <p class="paragraph">예시입니다.</p>
+      <div class="inner-example">
+        <p>예시입니다.</p>
+      </div>
+    </div>
+  </div>
+  
+</body>
+</html>

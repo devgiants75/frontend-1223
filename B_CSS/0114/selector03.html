@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS 가상 클래스와 가상 요소</title>
+  <link rel="stylesheet" href="styles/selector03.css" />
+</head>
+<body>
+  <!--  
+    CSS 가상 클래스
+    : 특정 상태의 HTML 요소에 스타일을 적용하기 위해 사용
+    : 요소의 상태, 사용자의 동작, 문서 구조에 따라 구분
+
+    ! 사용자의 동작에 반응하는 가상 클래스 선택자
+    :link 
+      - 방문하지 않은 링크에 스타일 적용
+    :visited
+      - 방문한 링크에 스타일 적용
+    :active
+      - 웹 요소를 활성화했을 때의 스타일 적용
+      - 사용자가 요소를 클릭하고 있는 동안 적용
+    :hover
+      - 웹 요소에 마우스 커서를 올려놓을 때 스타일 적용
+      - 요소 위로 마우스를 올렸을 때
+    :foucs
+      - 요소가 포커스를 받을 때(초점이 맞추어졌을 때) 스타일 적용
+
+    사용자 동작에 반응하는 가상 클래스의 순서
+    : link > visited > hover > active
+
+    ! 요소의 상태에 따른 가상 클래스 선택자
+    :checked
+      - 체크박스 또는 라디오 버튼 같은 입력 요소가 선택되었을 때 적용
+    :enabled, :disabled
+      - 요소의 사용 여부에 따라 스타일 적용
+  -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="#">연결 선택자</a></li>
+      <li><a href="#">속성 선택자</a></li>
+      <li><a href="#">가상 클래스 선택자</a></li>
+      <li><a href="#">가상 요소 선택자</a></li>
+    </ul>
+  </nav>
+
+  <!--  
+    가상 클래스 선택자의 순서 설명
+    - 방문한 링크와 방문하지 않은 링크(:link, :visited) 링크의 기본 상태를 정의
+    - 다른 가상 클래스 선택자보다 우선 시 작성
+
+    - :focus, :active
+      hover가 존재한다면 hover 정의 뒤에 적용
+  -->
+</body>
+</html>

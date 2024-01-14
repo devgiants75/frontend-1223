@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS 텍스트 스타일</title>
+  <link rel="stylesheet" href="styles/text01.css">
+</head>
+<body>
+  <!--  
+    ! CSS Text Style
+    1. 글꼴 스타일
+      : 텍스트에 적용되는 글꼴 자체에 영향을 주고, 글자의 모양새를 지정하는 스타일
+      : 'font-'로 시작하는 속성
+
+    2. 텍스트 레이아웃 스타일
+      : 텍스트 간의 간격, 글자와 단어 또는 글자로 이루어진 문단 간의 간격을 지정하는 스타일
+  -->
+  <!-- 
+    ! 글꼴 스타일
+    1. font-size 속성
+      : 글자 크기를 지정
+      : 단위 - px(절대크기), em rem % vw(상대크기) 등으로 지정
+      : 키워드 - xx-samll < x-small < small < medium < large < x-large < xx-large
+  -->
+  <p style="font-size: medium;">font-size 속성(키워드)</p>
+  <p style="font-size: xx-small;">font-size 속성(키워드)</p>
+  <p style="font-size: xx-large;">font-size 속성(키워드)</p>
+
+  <!--  
+    2. font-style 속성
+    
+    기본형태(|: 프로그램에서 또는 or을 의미)
+    font-style: normal | italic | oblique
+
+    ? 속성값
+      normal: 기본값(일반적인 형태)
+      italic / oblique: 이탤릭체 표시
+  -->
+  <p style="font-style: normal;">font-style: normal</p>
+  <p style="font-style: italic;">font-style: italic</p>
+  <p style="font-style: oblique;">font-style: oblique</p>
+  <!--  
+    3. font-weight 속성
+      : 글자 굵기를 지정
+      : 예약어 또는 숫자를 사용하여 굵기를 지정
+
+      예약어 - lighter < normal < bold < bolder
+      숫자 - 100 부터 900 까지의 수를 사용
+            (400 - normal, 700 - bold)
+      > 예약어 대신 숫자값을 사용하면 더 세밀한 조절
+  -->
+  <p style="font-weight: normal;">font-weight(예약어)</p>
+  <p style="font-weight: lighter;">font-weight(예약어)</p>
+  <p style="font-weight: bolder;">font-weight(예약어)</p>
+
+  <p style="font-weight: 400;">font-weight(숫자)</p>
+  <p style="font-weight: 100;">font-weight(숫자)</p>
+  <p style="font-weight: 900;">font-weight(숫자)</p>
+
+  <!-- 
+    4. font-family 속성
+      : 글꼴을 지정
+      : 웹 문서에서 사용할 글꼴을 지정
+
+      : 사용자의 시스템 상의 글꼴을 이용하여 웹 브라우저에 표시
+        > 웹 문서에서 지정한 글꼴이 사용자 시스템에 설치 X : 의도한 글꼴이 아닌 임의의 글꼴로 표시
+
+      : 2개 이상 지정 가능
+
+      기본 형태
+      { font-family: "맑은 고딕", 돋움, 굴림 }
+      - 두 단어 이상으로 된 글꼴 이름은 반드시 큰 따옴표로 표시
+      - 첫 번째 글꼴이 사용자의 시스템에 설치되어 있지 않은 경우 이어서 두, 세번 째의 글꼴로 표시
+  -->
+  <p style="font-family: 'Courier New', Courier, monospace;">font-family: 글꼴 지정</p>
+</body>
+</html>

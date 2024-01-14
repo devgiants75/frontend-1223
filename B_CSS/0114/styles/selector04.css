@@ -1,0 +1,19 @@
+:target {
+  background-color: yellow;
+}
+
+/* 
+  각 요소에 활성화(enabled속성 - 기본값), 비활성화disabled속성) 
+*/
+input:enabled {
+  background-color: lightgreen;
+}
+
+input:disabled {
+  background-color: lightgray;
+}
+
+/* :checked */
+input:checked {
+  outline: 5px solid green;
+}
