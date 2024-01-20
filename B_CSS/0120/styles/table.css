@@ -1,0 +1,13 @@
+caption {
+  caption-side: bottom;
+}
+
+table {
+  border: 1px dotted red;
+  /* border-spacing: 10px 20px; */
+  border-collapse: collapse;
+}
+
+td, th {
+  border: 1px solid black;
+}

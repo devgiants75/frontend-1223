@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="styles/table.css">
+</head>
+<body>
+  <!--  
+    ! caption-side 속성
+      : 표 제목의 위치를 정해 주는 속성
+      ? 속성값
+        top(표 윗부분 - 기본값), bottom(표 아랫부분)
+
+    ! border 속성
+      : 표 테두리를 그려주는 속성
+      (표 바깥 테두리, 셀 테두리)
+      ? 표의 테두리 - table 태그에 적용
+      ? 셀의 테두리는 td, th 각 셀 태그에 적용
+      속성 형태
+      : 두께 모양 색상
+      두께 - 길이 단위
+      모양 - 키워드
+      색상 - 색상 단위
+
+    ! border-spacing 속성
+      : 셀 사이의 여백을 지정
+      : 표와 셀에 테두리 지정 시 자동으로 셀과 셀 사이의 여백 생성
+      ? 속성값
+      수평거리 수직거리
+      (공백으로 나열)
+      : 두 값이 같다면 1개만 지정 가능
+
+    ! border-collapse 속성
+      : 표와 셀 테두리를 함쳐주는 속성
+      ? 속성값
+      collpase: 합쳐주는 기능
+      separate: 기본값
+  -->
+  <table>
+    <caption>20240120 테이블 속성</caption>
+    <thead>
+      <tr>
+        <th>야구팀</th>
+        <th>연고지</th>
+        <th>감독</th>
+      </tr>
+      <tr>
+        <td>롯데</td>
+        <td>부산</td>
+        <td>김태형</td>
+      </tr>
+      <tr>
+        <td>엘지</td>
+        <td>서울</td>
+        <td>염경엽</td>
+      </tr>
+      
+    </thead>
+  </table>
+
+</body>
+</html>

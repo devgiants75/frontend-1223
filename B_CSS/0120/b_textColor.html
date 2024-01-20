@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>텍스트 스타일</title>
+  <link rel="stylesheet" href="styles/textColor.css">
+</head>
+<body>
+  <!-- 글꼴 관련 스타일: font-으로 시작 -->
+  <p style="font-size: 20px;">font-size 속성</p>
+  <p style="font-style: italic;">font-style 속성</p>
+  <p style="font-weight: bolder;">font-weight 속성</p>
+  <!-- 
+    텍스트 관련 스타일
+    ! color 속성
+      : 웹 문서에서 문단이나 제목 등의 텍스트에 글자색을 변경
+      ? 속성값: 16진수, rgb(rgba), hsl, 색상 이름
+
+    ! text-align 속성
+      : 문단의 텍스트 정렬 방법 지정
+      ? 속성값
+      start: 현재 텍스트 줄의 시작 위치에 맞추어 정렬
+      end: 줄의 끝 위치에 맞추어 정렬
+      left, right: 각각 왼쪽, 오른쪽에 정렬
+      center: 가운데 정렬
+      justify: 양쪽에 맞추어 문단을 정렬
+        - 모든 텍스트 줄이 동일한 너비가 되도록 단어 사이의 간격을 조정하여 텍스트를 펼침
+      match-parent: 부모 요소에 따라 문단 정렬
+
+    ! line-height 속성
+      : 각 텍스트 줄의 높이를 설정 (줄 간격 조절)
+      ? 속성값
+        : 단위값을 사용하여 지정(px 고정, % 상대값, 숫자 지정)
+        : 숫자 지정 - 글자 크기가 12px인 문단의 줄 간격을 2.0으로 지정하는 경우
+          >> 줄 간격은 24px(2.0배 지정)
+  -->
+  <p style="color: #2dea31;">color 속성</p>
+
+  <div>
+    <p style="text-align: end;">2024년 프로야구 우승 롯데 자이언츠</p>
+    <p style="text-align: center;">2024년 프로야구 우승 롯데 자이언츠</p>
+    <!--  
+      justify(양쪽 정렬)에서는 오른쪽 여백 X
+      : 여러 줄 정렬의 경우 단어의 이어짐이 끊기는 경우 해당 마지막 단어의 정렬을 끝 위치로 설정
+    -->
+    <p style="text-align: justify;">2024년 프로야구 우승 롯데 자이언츠 프로야구 우승 롯데 자이언츠 프로야구 우승 롯데 자이언츠 프로야구 우승 롯데 자이언츠 프로야구 우승 롯데 자이언츠</p>
+  </div>
+
+  <div>
+    <!-- 줄 간격의 기본값: 기본 글자 크기 -->
+    <p style="line-height: 10px;">프로야구 우승 롯데 자이언츠 프로야구 우승 롯데 자이언츠 프로야구 우승 롯데 자이언츠 프로야구 우승 롯데 자이언츠 프로야구 우승 롯데 자이언츠</p>
+
+    <p style="line-height: 2.0;">프로야구 우승 롯데 자이언츠 프로야구 우승 롯데 자이언츠 프로야구 우승 롯데 자이언츠 프로야구 우승 롯데 자이언츠 프로야구 우승 롯데 자이언츠</p>
+
+    <p style="line-height: 150%;">프로야구 우승 롯데 자이언츠 프로야구 우승 롯데 자이언츠 프로야구 우승 롯데 자이언츠 프로야구 우승 롯데 자이언츠 프로야구 우승 롯데 자이언츠</p>
+  </div>
+
+  <!-- 줄 간격을 사용하여 텍스트 세로 정렬 예시 -->
+  <h1>HTML</h1>
+  
+  <!--  
+    ! text-decoration 속성
+      : 텍스트의 줄을 표시하거나 제거
+      : 하이퍼링크 적용 시 자동 설정되는 밑줄 제거
+      ? 속성값
+      : none(없앰), underline(밑줄), overline(윗줄), line-through(가운데줄)
+  -->
+  <a href="/" style="text-decoration: none;">text 꾸미기 - none</a>
+  <p style="text-decoration: underline;">text 꾸미기 - underline</p>
+  <p style="text-decoration: overline;">text 꾸미기 - overline</p>
+  <p style="text-decoration: line-through;">text 꾸미기 - line-through</p>
+
+  <!-- 
+    ! text-shadow
+      : 텍스트에 그림자 효과를 추가
+      : 사이트 제목처럼 강조해야 할 글자에 사용
+      ? 속성값
+        가로거리, 세로거리, 번짐 정도, 색상
+        거리: 양숫값(오른쪽, 아래쪽)
+              음숫값(왼쪽, 위쪽)
+        번짐 정도: 양숫값(모든 방향으로 크게)
+                  음숫값(모든 방향으로 축소)
+                  기본값 - 0
+        색상: 한가지 또는 공백을 두고 여러 색상 지정 가능
+  -->
+  <!-- 오른쪽, 아래쪽 모든 방향 aaa컬러 지정 -->
+  <p style="text-shadow: 2px 2px 2px rgb(39, 39, 39)">text shadow</p>
+  <p style="text-shadow: -2px -2px 2px rgb(39, 39, 39);">text shadow</p>
+
+  <!--  
+    ! text-transform 속성
+      : 영문자 표기 시 텍스트의 대소 문자 변경
+      : 한글 X
+      ? 속성값
+      capitalize: 첫 번째 글자를 대문자로 변환
+      uppercase: 모든 글자를 대문자로 변환
+      lowercase: 모든 글자를 소문자로 변환
+      full-width: 가능한 한 모든 문자를 전각 문자로 변환
+        - 전각문자: 가로와 세로의 길이 비율이 같은 글자
+  -->
+  <p style="text-transform: capitalize;">text 변환 속성</p>
+  <p style="text-transform: uppercase;">text 변환 속성</p>
+  <p style="text-transform: lowercase;">TEXT 변환 속성</p>
+  <p style="text-transform: full-width;">text 변환 속성</p>
+
+  <!--  
+    ! letter-spacing, word-spacing
+      : 텍스트에서 문자와 단어 사이의 간격 설정
+      letter: 글자와 글자 사이의 간격
+      word: 단어와 단어 사이의 간격
+  -->
+  <p style="letter-spacing: 4px;">letter spacing</p>
+  <p style="word-spacing: 8px;">word spacing</p>
+
+  <!--  
+    ! text-indent
+      : 텍스트 들여쓰기
+      ? 속성값: 픽셀, 백분율
+  -->
+  <p style="text-indent: 30px;">text indent 속성</p>
+</body>
+</html>

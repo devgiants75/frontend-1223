@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS 값과 단위</title>
+  <link rel="stylesheet" href="styles/unit.css">
+</head>
+<body>
+  <!--  
+    ! 값과 단위
+    : CSS에서 특정 속성에 유효한 데이터를 지정하는 것
+
+    1. 길이 단위
+      a. 절대 단위: 변하지 않는 고정적인 값
+        px(픽셀)
+        - 화면상의 한 점을 나타내는 가장 기본적인 단위
+        - 고정된 크기가 필요한 요소에 사용
+        - 해상도에 따라 크기가 달라짐
+
+        cm(센티미터), mm(밀리미터), 
+        1 in(인치): 2.54cm
+
+      b. 상대 단위: 특정한 다른 요소의 변화에 따라 달라지는 값
+        ? %(퍼센트)
+        - 부모 요소의 크기에 상대적인 크기를 설정하는 단위
+        - 유연한 레이아웃 디자인에 사용
+
+        ? rem, em
+        - rem: 최상위 요소(html)의 글꼴 크기를 기준으로 하는 상대적 단위
+          : 전체 페이지에 일관된 크기 조정에 사용
+          : 루트 글꼴 크기에 비례하여 상대적으로 바뀌는 단위
+          1rem = 16px
+          
+        - em: 현재 요소의 글꼴 크기를 기준으로 하는 상대적 단위
+          : 요소의 글꼴 크기에 대한 상대적 크기 조정에 사용
+
+        ? vw, vh (뷰포트 너비, 뷰포트 높이)
+        - 뷰포트의 너비, 높이의 백분율 나타내는 단위
+        - 뷰포트 크기에 따라 조정되는 레이아웃에 사용
+        - 뷰포트
+          : 현재 화면에 보여지고 있는 영역
+
+    2. 색상 단위
+      a. 색상 이름
+        : 가장 직관적이고 기억하기 쉬운 방식으로 지정
+        예) red, blue, green, orange 등
+
+      b. hex(hexadecimal)
+        : 16진수 코드로 색상을 표현
+        : 각 색상(빨강, 초록, 파랑)이 00부터 FF까지의 사잇값으로 표현
+        : #000000 ~ #ffffff (빨강, 초록, 파랑)
+        : #RRGGBB 형식으로 사용
+
+      c. rgb(red green blue)
+        : 빨강, 초록, 파랑의 색상 값을 0에서 255 사이의 값으로 조합하여 색상을 표현
+        : rgb(red, green, blue) 형식으로 사용
+        : 0에서 255사이의 값으로 채움을 표현
+        : rgb(0, 0, 0) ~ rgb(255, 255, 255)
+
+      d. rgba(r, g, b, alpha)
+        : 알파(투명도)값을 추가한 rgb
+        : 알파값은 0(투명) ~ 1(불투명) 사잇값 지정
+
+  -->
+  <div class="box px">16px / 200px</div>
+  <div class="box percent">100% / 50%</div>
+  <div class="box rem">1rem / 10rem</div>
+  <div class="box em">1em / 10em</div>
+  <div class="box vw">2vw / 50vw</div>
+  <div class="box vh">2vh / 50vh</div>
+
+  <div class="wrapper">
+    <div class="boxes" id="px">200px wide</div>
+    <div class="boxes" id="vw">10vw wide</div>
+    <div class="boxes" id="em">10em wide</div>
+  </div>
+</body>
+</html>

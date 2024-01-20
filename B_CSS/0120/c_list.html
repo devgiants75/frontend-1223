@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>목록 스타일</title>
+  <link rel="stylesheet" href="styles/list.css">
+</head>
+<body>
+  <!--  
+    ! list-style-type 속성
+    : 불릿 모양과 번호 스타일 지정
+      - ul의 경우 불릿 모양 지정
+      - ol의 경우 번호 스타일 지정
+    ? 속성값
+      목록의 스타일 제거: none
+      순서가 없는 목록: disc(●), circle(○), square(■)
+      순서가 있는 목록
+      : decimal (10진수 - 1부터 시작)
+      : decimal-leading-zero (앞에 0이 붙는 10진수)
+      : lower-roman (로마 숫자 소문자)
+      : upper-roman (로마 숫자 대문자)
+      : lower-alpha (알파벳 소문자)
+      : upper-alpha (알파벳 대문자)
+
+    ! list-style-position 속성
+    : 목록을 들여쓰는 속성
+      - 불릿이나 번호의 위치를 들여쓰기
+      - 텍스트 문단 사이에 있는 목록을 더 쉽게 구분
+      ? 속성값
+      inside: 들여쓰기 효과 적용
+      outside: 기본값
+
+    ! list-style-image 속성
+      : 불릿 대신 이미지를 사용
+      : ul 태그에서 사용
+      ? 기본 형태
+      url(이미지 파일 경로)
+      none: 기본값
+
+    ! list-style 속성
+      : 목록 속성을 한꺼번에 표시
+      : type, image, position 속성을 한번에 표시
+  -->
+  <ul style="list-style-type: square;">
+    <li>Item 01</li>
+    <li>Item 02</li>
+    <li>Item 03</li>
+    <li>Item 04</li>
+  </ul>
+
+  <ol style="list-style-type: lower-latin;">
+    <li>Item 01</li>
+    <li>Item 02</li>
+    <li>Item 03</li>
+    <li>Item 04</li>
+  </ol>
+
+  <ul style="list-style-type: none;">
+    <li>1</li>
+    <li>2</li>
+  </ul>
+
+  <p>
+    2024 프로야구 우승팀 롯데! 2024 프로야구 우승팀 롯데!2024 프로야구 우승팀 롯데!2024 프로야구 우승팀 롯데!
+    <ul class="ul-position">
+      <li>2023 프로야구 우승팀: LG</li>
+      <li>2022 프로야구 우승팀: SSG</li>
+    </ul>
+    2024 프로야구 우승팀 롯데!2024 프로야구 우승팀 롯데!2024 프로야구 우승팀 롯데!2024 프로야구 우승팀 롯데!
+  </p>
+
+  <ul>
+    <li style="list-style-image: url(./puppy-1207816_640.jpg);">
+      불릿 이미지를 사용한 아이템
+    </li>
+  </ul>
+
+  <ol style="list-style-type: lower-alpha; list-style-position: inside;">
+    <li>list-style 속성</li>
+  </ol>
+
+  <ol style="list-style: lower-alpha inside;">
+    <li>list-style 속성</li>
+  </ol>
+
+
+</body>
+</html>
