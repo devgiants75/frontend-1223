@@ -11,6 +11,9 @@
 body {
   color: #333;
   line-height: 1.6;
+  padding: 0;
+  margin: 0;
+  background-color: #fff;
 }
 
 /* !링크 태그 설정 */
@@ -28,6 +31,19 @@ header {
   background-color: #333;
   color: #fff;
   text-align: center;
+  /* 
+    최상위 부모인 root의 폰트 크기를 기준으로 설정 
+  */
+  padding: 1rem 0;
+  /* padding: 16px 0;과 동일 */
+}
+
+header h1 {
+  margin: 0.5rem 0;
+}
+
+header p  {
+  margin: 0;
 }
 
 /* nav 태그 내의 ul 지정 */
@@ -35,14 +51,28 @@ nav ul {
   background-color: #444;
   list-style-type: none;
   text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
 }
 
 nav ul li a {
   color: #fff;
+  display: inline-block;
+  padding: 0.75rem;
 }
 
 nav ul li a:hover {
   background-color: #555;
+}
+
+section {
+  padding: 1rem 2rem;
+  margin: 1rem 0;
+  border-bottom: 1px solid #ddd;
 }
 
 section h2 {
@@ -52,8 +82,15 @@ section h2 {
 table {
   border: 1px solid #ddd;
   border-collapse: collapse;
+  margin: 1rem 0;
 }
 
 th, td {
   border: 1px solid #ddd;
+  padding: 0.75rem;
+  text-align: left;
+}
+
+th {
+  background-color: #e7f1ff;
 }
