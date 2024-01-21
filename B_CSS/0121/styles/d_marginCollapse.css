@@ -1,0 +1,26 @@
+img {
+  width: 200px;
+  height: 200px;
+}
+
+div {
+  width: 200px;
+  height: 200px;
+  margin: 30px;
+}
+
+.box1 {
+  background-color: lightblue;
+  display: flex;
+  flex-direction: column;
+}
+
+.child {
+  margin-bottom: 30px;
+  background-color: lightcoral;
+}
+
+.box2 {
+  margin-top: 20px;
+  background-color: lightgreen;
+}

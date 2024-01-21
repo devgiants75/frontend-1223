@@ -1,0 +1,94 @@
+div {
+  width: 100px;
+  height: 100px;
+
+  display: inline-block;
+  margin: 15px;
+  
+  font-size: 10px;
+  text-align: center;
+  line-height: 100px;
+  border-width: 5px;
+}
+
+#box1 { border-style: solid;}
+#box2 { border-style: dotted;}
+#box3 { border-style: dashed;}
+#box4 { border-style: double;}
+#box5 { border-style: groove;}
+#box6 { border-style: inset;}
+#box7 { border-style: outset;}
+#box8 { border-style: ridge;}
+
+div[id*="border"] {
+  border-style: solid;
+}
+
+/* 4가지 방향 모두 같은 크기 지정 */
+#border1 {
+  border-width: 10px;
+}
+
+/* 상하, 좌우에 각각 다른 크기 지정 */
+#border2 {
+  border-width: 5px 20px;
+}
+
+/* 상, 좌우, 하에 각각 다른 크기 지정 */
+#border3 {
+  border-width: 1px 30px 10px;
+}
+
+/* 모두 다른 방향 지정 */
+#border4 {
+  border-width: 1px 10px 30px 50px;
+}
+
+div[id*="color"] {
+  width: 200px;
+  height: 200px;
+  border-style: dashed;
+  border-width: 2px;
+}
+
+#color1 {
+  border-color: red;
+}
+
+#color2 {
+  border-top-color: blue;
+  border-left-color: yellow;
+  border-right-color: pink;
+  border-bottom-color: green;
+}
+
+div[id*="bor"] {
+  width: 200px;
+  height: 200px;
+}
+
+#bor1 {
+  border: 3px dotted blue;
+}
+
+#bor2 {
+  border-top: 2px solid yellow;
+  border-left: 5px double pink;
+}
+
+img {
+  width: 200px;
+  height: 200px;
+}
+
+#puppy1 {
+  border-radius: 25px;
+}
+
+#puppy2 {
+  border-radius: 5px;
+}
+
+#puppy3 {
+  border-radius: 50%;
+}

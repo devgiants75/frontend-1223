@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Margin</title>
+  <link rel="stylesheet" href="styles/c_margin.css">
+</head>
+<body>
+  <!--  
+    마진(margin)
+      : 두 박스 모델 사이의 여백
+      : 요소와 주변 요소 간의 간격을 만들 때 사용
+
+    - 상, 우, 하, 좌의 여백을 각각 지정
+      한번에 똑같이 지정
+    ? 속성값
+      길이 단위(px, %)
+      auto: 브라우저가 마진을 자동으로 계산
+            중앙 정렬 등에 활용 
+          : display 속성에서 지정한 값에 맞게 설정
+
+    - margin 속성을 사용한 웹 문서 가운데 정렬
+      1. 배치할 요소의 너비값을 지정
+      2. 요소의 왼쪽과 오른쪽 마진의 속성값을 auto로 설정
+        : 웹 브라우저 화면의 너비에서 요소의 너비값을 뺀 나머지 영역을 자동으로 해당 요소의 좌우 마진값으로 계산
+        margin: 0 auto;
+        >> margin 설정의 경우 블럭 레벨 요소에서만 적용이 가능
+        : inline 속성은 자신만큼 영역값만을 가짐
+  -->
+  <div id="margin1"></div>
+  <div id="margin2"></div>
+  <div id="margin3"></div>
+  <div id="margin4"></div>
+  <div id="margin5"></div>
+
+  <hr />
+  <div class="div">
+    <div class="center">가운데 정렬된 요소</div>
+  </div>
+</body>
+</html>

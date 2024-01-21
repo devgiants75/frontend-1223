@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Layout</title>
+  <link rel="stylesheet" href="styles/f_layout.css">
+</head>
+<body>
+  <!--  
+    CSS의 기본 Layout 속성
+    ! display 속성
+      : HTML 요소의 배치 방법 결정
+      : 블럭 레벨 요소와 인라인 레벨 요소를 서로 전환할 경우 사용
+      ? 블럭 레벨 요소
+        : 자기 부모 요소의 너비 100%와 자체 콘텐츠의 최대 높이
+      ? 인라인 레벨 요소
+        : 자체 콘텐츠의 최대 너비와 최대 높이
+        : 너비, 높이 지정 X
+
+      ? 속성값
+        1. inline
+          : 블럭 레벨 요소를 인라인 레벨 요소로 전환
+          >> 텍스트나 이미지 등의 연속된 흐름을 유지해야 할 경우 사용
+          >> widht, height 지정 X
+          >> 마진과 패딩이 좌우에만 적용
+
+        2. block
+          : 인라인 레벨 요소를 블럭 레벨 요소로 전환
+          >> 새로운 줄에서 시작, 부모 요소의 전체 너비를 차지
+          >> 너비, 높이, 마진, 패딩 모두 제어 가능
+          >> 구조적인 레이아웃 지정 시 사용
+
+        3. inline-block
+          : 인라인 레벨 요소와 블럭 레벨 요소의 속성을 모두 가지는 속성
+          >> 인라인 처럼 다른 요소와 같은 줄에 지정
+          >> 블럭 처럼 너비와 높이 지정 가능
+
+        4. none
+          : 해당 요소를 화면에 표시하지 않는 속성
+
+      >> 가로로 배치되는 수평 네비게이션 설정 시 사용
+
+    ! float 속성
+      : 왼쪽 또는 오른쪽에 배치
+      : 웹 요소를 문서 위에 떠 있게 만들어주는 속성
+      ? 속성값
+      left: 해당 요소를 문서의 왼쪽에 배치
+      right: 해당 요소를 문서의 오른쪽에 배치
+      none: 기본값, 좌우 어느쪽에도 배치하지 않는 속성
+      - p태그처럼 블록레벨 요소와 나란히 배치할 때 사용
+
+    ! clear 속성
+      : float 속성을 해제
+      : float 속성을 사용한 배치 시 그 다음에 넣는 다른 요소에도 똑같이 속성이 전달
+      ? 속성값
+      left: float의 left를 해제
+      right: float의 right를 해제
+      both: float의 왼쪽, 오른쪽의 모든 기능을 해제
+  -->
+  <div class="block">Block Element</div>
+  <span class="inline">Inline Element 1</span>
+  <span class="inline">Inline Element 2</span>
+  <div class="inline-block">Inline-Block Element</div>
+
+  <hr />
+  <nav>
+    <ul>
+      <li>menu 1</li>
+      <li>menu 2</li>
+      <li>menu 3</li>
+      <li>menu 4</li>
+    </ul>
+  </nav>
+
+  <hr />
+  <img src="../images/top-directory.jpg" alt="강아지">
+  <p>‘쇼트트랙 차세대 에이스’ 주재희(17·한광고)가 2024 강원동계청소년올림픽에서 한국에 첫 금메달을 안겼다. 비록 두 번째로 출전한 1000m 결승에선 중국 선수의 반칙에 의해 넘어져 4위에 그쳤지만, 남은
+    경기에서의 활약을 예고하며 가능성을 밝혔다.
+  
+    주재희는 21일 강원도 강릉 아이스 아레나에서 열린 쇼트트랙 남자 1000m 결승에서 2분31초327로 4위를 차지했다. 전날 남자 1500m에서 2분21초906의 기록으로 한국에 첫 금메달을 안긴 데 이어
+    이날도 예선부터 조 1위를 달리며 결승에 가뿐히 안착했다.</p>
+
+  <hr />
+  <div class="float-left">Floating Left</div>
+  <div class="float-left">Floating Left</div>
+  <div class="clear-both">Float 해제</div>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>블록 & 인라인</title>
+  <link rel="stylesheet" href="styles/a_BoxModel01.css">
+</head>
+<body>
+  <!--  
+    !CSS Box Model
+      : 웹 문서에서 내용 배치 시
+        각 요소를 박스 형태로 구성
+      : 각각의 박스 모델은 콘텐츠 영역, 테두리, 여백으로 구성
+
+    ! 블록 레벨 요소 & 인라인 레벨 요소
+    1. 블록 레벨 요소
+      : 태그를 사용한 요소 삽입 시 혼자 한 줄을 차지 (해당 요소의 너비가 100%)
+      예) h태그, div, p, 리스트, 테이블 등
+
+    2. 인라인 레벨 요소
+      : 태그를 사용한 요소 삽입 시 해당 콘텐츠만큼 만 영역을 차지 (나머지 공간에 다른 요소 삽입 가능)
+      > 너비, 높이 지정이 불가 
+        / line-height 속성은 지정 가능
+      예) span, img, strong, b, i, a, input, br 등
+    
+    >> 블럭 레벨 요소는 다른 블럭 레벨 요소 또는 인라인 레벨 요소를 포함할 수 있다.
+    >> 인라인 레벨 요소는 다른 블록 레벨 요소를 포함할 수 없다.
+
+    ! 박스 모델의 기본 구성
+    : 콘텐츠 영역, 패딩, 테두리, 마진
+
+    1. 콘텐츠(content) 영역
+      : 박스 모델의 중심 부분
+      (텍스트, 이미지, 다른 미디어 등의 실제 컨텐츠를 포함)
+      : width, height 속성으로 해당 영역의 크기를 정의
+
+    2. 패딩(padding) 영역
+      : 콘텐츠와 테두리(border) 사이의 공간
+      : 내부 여백을 생성
+      : padding-top, padding-right 등의 padding 속성을 사용하여 각각의 방향에 대한 크기 설정
+
+    3. 테두리(border) 영역
+      : 콘텐츠와 패딩을 둘러싼 외부 요소와의 경계를 정의
+      : 테두리의 두께, 스타일, 색상, 모서리 둥근 정도를 조절
+    
+    4. 마진(margin) 영역
+      : 박스 외부의 공간, 다른 요소들과의 간격을 생성
+      : margin-top, margin-right 등의 margin 속성을 사용하여 각각의 방향에 대한 마진 크기 설정 가능
+
+    ! 개발자 도구 확인 방법
+      : f12, ctrl + shift + i
+      : 박스모델을 확인하고자 하는 요소에 우클릭 > [검사] 선택 
+
+    ! width, height 속성
+      : 콘텐츠 영역의 크기 지정
+      : 콘텐츠 주변의 여백이나 테두리를 뺀 콘텐츠 그 자체의 크기
+      ? 속성값
+        길이 단위
+        auto: 기본값 - 박스 모델의 너빗값, 높잇값이 콘텐츠 양에 따라 자동으로 결정
+
+    ! box-sizing 속성
+      : 박스 모델의 크기 계산
+      : 웹 문서에서 여러 가지 요소 배치 시 실제 박스 모델이 차지하는 크기
+      ? 속성값
+      content-box(기본값)
+        : 요소의 width, height 속성이 콘텐츠 영역에만 적용
+        : 패딩과 테두리는 이 값이 추가
+
+      border-box
+        : width, height 값이 테두리(border)까지 포함하여 계산되는 박스 모델
+        : 권장 - 콘텐츠 사이의 레이아웃 배치를 용이하게 하기 위함
+
+    >> border-box 지정 시
+      너비(width) 속성 지정 후 해당 콘텐츠의 패딩과 테두리를 추가할 때
+      , 차지하는 공간이 늘어나는 것이 아니라 콘텐츠 영역이 축소
+  -->
+
+  <h1>롯데 자이언츠</h1>
+  <div>2024 프로야구 
+    <p style="color: red;">정규 시즌</p> 
+    우승팀은
+  </div>
+  <p>롯데 <br> 자이언츠</p>
+
+  <h1>롯데 자이언츠</h1>
+  <div>2024 프로야구 
+    <span style="color: red;">정규 시즌</span> 
+    우승팀은
+  </div>
+  <p>롯데 <br> 자이언츠</p>
+
+  <div id="container">
+    <div class="box1">
+      Content Box
+    </div>
+    <div class="box2">
+      Border Box
+    </div>
+  </div>
+
+  <div id="content-box">
+    콘텐츠 박스
+    : 너비와 높이 속성이 콘텐츠 영역만 차지
+  </div>
+
+  <div id="border-box">
+    보더 박스
+    : 너비와 높이 속성이 콘텐츠 영역 + 패딩 영역 + 테두리 영역까지 차지
+  </div>
+</body>
+</html>

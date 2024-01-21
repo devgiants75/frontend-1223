@@ -1,0 +1,44 @@
+body * {
+  border: 1px solid blue;
+}
+
+#container * {
+  border: 1px solid pink;
+}
+
+#container div {
+  width: 200px;
+  height: 200px;
+
+  padding: 20px;
+  margin: 20px;
+
+  border: 10px solid #ddd;
+}
+
+.box1 {
+  box-sizing: content-box;
+  background-color: lightblue;
+}
+
+.box2 {
+  box-sizing: border-box;
+  background-color: lightcoral;
+}
+
+/* 콘텐츠 박스 */
+#content-box {
+  box-sizing: content-box;
+  /* 내용 그 자체의 너비 */
+  width: 300px;
+  padding: 20px;
+  border: 5px solid black;
+}
+
+#border-box {
+  box-sizing: border-box;
+  /* 전체 너비 포함 (내용, 패딩, 테두리) */
+  width: 300px;
+  padding: 20px;
+  border: 5px solid black;
+}

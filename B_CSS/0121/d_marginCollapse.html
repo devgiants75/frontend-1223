@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Margin Collapse</title>
+  <link rel="stylesheet" href="styles/d_marginCollapse.css">
+</head>
+<body>
+  <!--  
+    마진 중첩 현상
+    : 두 개 이상의 블록 레벨 요소가 수직으로 인접할 때 발생하는 현상
+      상단 마진 또는 하단 마진이 서로 하쳐져서 하나의 마진처럼 작동
+    >> 웹 페이지의 레이아웃을 일관성있게 작성하기 위해 마진이 겹쳐지는 값이 같거나 그보다 큰 값으로 중첩
+
+    마진 중첩 현상 해결 방법
+    : 블럭레벨 요소를 인라인레벨 요소로 전환
+    : 해당 요소를 플렉스(flex) 박스로 전환
+  -->
+
+  <div>
+    <img src="../images/top-directory.jpg" alt="강아지">
+  </div>
+  <div>
+    <img src="../images/top-directory.jpg" alt="강아지">
+  </div>
+  <div>
+    <img src="../images/top-directory.jpg" alt="강아지">
+  </div>
+  <hr />
+  <div class="box1">
+    <div class="child">Child</div>
+  </div>
+  <div class="box2"></div>
+</body>
+</html>

@@ -1,0 +1,63 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.block {
+  /* 블록 레벨 요소 */
+  display: block;
+  background-color: lightblue;
+  width: 100%;
+  margin: 10px 0;
+  padding: 15px;
+  text-align: center;
+}
+
+.inline {
+  display: inline;
+  background-color: lightgreen;
+  /* 마진, 패딩이 좌우에만 적용 */
+  margin: 10px;
+  padding: 5px;
+}
+
+.inline-block {
+  display: inline-block;
+  background-color: lightcoral;
+  width: 200px;
+  height: 20px;
+  /* 마진과 패딩이 상하좌우 모두 적용 */
+  margin: 10px;
+  padding: 15px;
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav ul li {
+  display: inline-block;
+  padding: 20px;
+  margin: 0 20px;
+  border: 1px solid #222;
+  background-color: lightgreen;
+}
+
+img {
+  width: 150px;
+  height: 150px;
+  float: left;
+}
+
+.float-left {
+  float: left;
+  width: 100px;
+  height: 100px;
+  background-color: lightpink;
+}
+
+.clear-both {
+  clear: both;
+  border: 5px solid lightblue;
+}

@@ -1,19 +1,4 @@
 /* 
-! body(페이지 전체 디자인) 
-글자색: #333 / 줄간격: 1.6
-
-! a요소
-글자색: #007bff / 밑줄없앰 / 호버 시 밑줄 생성
-
-! header
-글자색: #fff / 텍스트 정렬: 가운데 
-
-! 네비게이션 바 nav ul
-목록 스타일 제거, 텍스트정렬(가운데)
-
-! nav ul li a - 글자색 (#fff)
->> 호버 시 글자색 (#555)
-
 ! 섹션 태그 내의 h2 태그 
 글자색 (#333)
 
@@ -22,4 +7,53 @@
 
 */
 
+/* !전체 페이지 설정 */
+body {
+  color: #333;
+  line-height: 1.6;
+}
 
+/* !링크 태그 설정 */
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+/* !링크에 호버 시 설정 */
+a:hover {
+  text-decoration: underline;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+}
+
+/* nav 태그 내의 ul 지정 */
+nav ul {
+  background-color: #444;
+  list-style-type: none;
+  text-align: center;
+}
+
+nav ul li a {
+  color: #fff;
+}
+
+nav ul li a:hover {
+  background-color: #555;
+}
+
+section h2 {
+  color: #333;
+}
+
+table {
+  border: 1px solid #ddd;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #ddd;
+}
