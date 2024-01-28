@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Flexbox</title>
+  <link rel="stylesheet" href="styles/c_flex03.css">
+</head>
+<body>
+  <!--  
+    Flex 아이템의 수평 및 수직 정렬
+
+    ! align-items
+      : flex item이 교차축 어디에 놓일 지 제어
+      ? 속성값
+      - stretch(기본값)
+        : 교차축 방향으로 부모 요소를 채우기 위해 모든 flex item을 연장
+      - center
+        : 아이템들을 교차 축 중앙 정렬
+      - flex-start
+        : 교차축 시작 부분으로 정렬
+      - flex-end
+        : 교차축 끝 부분으로 정렬
+      - baseline  
+        : 텍스트의 베이스라인에 맞춰 정렬
+
+    ! align-self
+      : 개별 Flex 아이템에 대한 교차축 정렬을 설정
+      ? 속성값
+        : align-itmes와 동일한 값들로 지정
+
+    ! justify-content
+      : Flex 컨테이너의 주 축을 따라 아이템들을 정렬
+      ? 속성값
+        - flex-start: 컨테이너의 시작 부분 정렬
+        - flex-end: 컨테이너의 끝 부분
+        - center: 중앙 정렬
+        - space-between: 첫 번재 아이템은 시작 부분, 마지막 아이템은 끝 부분에 위치, 그 사이 나머지 아이템들은 균등한 간격으로 배치 
+        - space-around: 모든 아이템들 주위에 균등한 간격으로 배치
+
+    ! flex item 순서 지정
+      order 속성을 사용하여 지정
+      - 기본값: 0
+      - 순위값이 높은 item들은 낮은 항목들보다 나중에 나타남
+      - 순위값이 동일한 항목들은 소스 코드 순서대로 나타남
+      - 0 지정 항목보다 더 빠른 순서값을 가지고 싶은 경우 음수 순서를 지정
+  -->
+  <div>
+    <button id="One">One</button>
+    <button id="Two">Two</button>
+    <button id="Three">Three</button>
+    <button id="Four">Four</button>
+    <button id="Five">Five</button>
+  </div>
+</body>
+</html>

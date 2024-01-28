@@ -1,0 +1,32 @@
+body {
+  width: 70%;
+  max-width: 960px;
+  margin: 20px auto;
+}
+
+button {
+  font-size: 18px;
+  line-height: 1.5;
+  width: 15%;
+}
+
+div {
+  height: 100px;
+  border: 1px solid skyblue;
+  display: flex;
+  /* flex container */
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+button:first-child {
+  /* flex item */
+  align-self: flex-end;
+  order: 1;
+}
+
+#One {order: -1;}
+#Two {order: 2;}
+#Three {order: 1;}
+#Four {order: 1;}
+#Five {order: 0;}

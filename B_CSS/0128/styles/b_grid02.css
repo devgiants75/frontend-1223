@@ -1,0 +1,83 @@
+body {
+  width: 90%;
+  max-width: 900px;
+  margin: 20px auto;
+}
+
+.container > div { 
+  border-radius: 5px;
+  padding: 10px;
+  background-color: lightcoral;
+  border: 2px solid lightblue;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-auto-rows: minmax(100px, auto);
+  gap: 20px;
+}
+
+/*! 라인 기반 배치 */
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 20px;
+  margin: 20px;
+}
+
+header, footer {
+  border-radius: 5px;
+  padding: 10px;
+  background-color: lightgoldenrodyellow;
+  border: 2px solid lightgreen;
+}
+
+aside {
+  border-right: 1px solid #999;
+}
+
+/* 그리드 라인을 사용한 요소 정렬 */
+header {
+  /* 
+  첫 번째 열에서 시작, 세 번째 열의 시작 점까지 확장 
+  : 실제로는 두 열을 차지
+  */
+  grid-column: 1 / 3;
+  /* 첫 번재 행에 위치 */
+  grid-row: 1;
+}
+
+article {
+  /* 두 번째 열에 위치 */
+  grid-column: 2;
+  /* 두 번째 행에 위치 */
+  grid-row: 2;
+}
+
+aside {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+footer {
+  grid-column: 1 / 3;
+  grid-row: 3;
+}
+
+/* grid-template-area로 위치잡기 */
+.grid-container {
+  display: grid;
+  grid-template-areas: 
+    "header header"
+    "sidebar content"
+    "footer footer"
+  ;
+  grid-template-columns: 1fr 3fr;
+  gap: 20px;
+}
+
+header { grid-area: header; }
+article { grid-area: content; }
+aside { grid-area: sidebar; }
+footer { grid-area: footer; }

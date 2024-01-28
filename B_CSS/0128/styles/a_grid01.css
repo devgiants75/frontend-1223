@@ -1,0 +1,33 @@
+body {
+  width: 90%;
+  max-width: 900px;
+  margin: 20px auto;
+}
+
+.container {
+  /* 부모 요소를 grid container로 지정 */
+  display: grid;
+  /* 200px인 열을 3개 지정 */
+  /* grid-template-columns: 200px 200px 200px; */
+  /* 
+  column-gap: 10px;
+  row-gap: 20px; 
+  */
+  /* gap의 속성값 2개일 경우 (행 열)의 순서 */
+  /* grid-gap: 20px 10px; */
+  gap: 20px 10px;
+
+  /* 열 트랙 목록의 반복 */
+  /* grid-template-columns: repeat(3, 1fr); */
+  grid-template-columns: repeat(3, 100px);
+
+  /* 암시적(행) 그리드의 크기 지정 */
+  grid-auto-rows: minmax(100px, auto);
+}
+
+.container > div {
+  border-radius: 5px;
+  padding: 10px;
+  background-color: skyblue;
+  border: 2px solid lightcoral;
+}

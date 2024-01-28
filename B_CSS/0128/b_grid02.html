@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Grid</title>
+  <link rel="stylesheet" href="styles/b_grid02.css">
+</head>
+<body>
+  <!-- 
+    그리드 컨테이너에 들어갈 수 있는 만큼의 열을 생성
+
+    auto-fit
+    : 가능한 한 많은 트랙(열/행)을 생성하고, 필요에 따라 그리드 컨테이너 내에서 동적으로 트랙을 맞춤
+    >> 빈 트랙을 없애고, 남은 트랙을 확장
+    >> 트랙의 수가 동적으로 변화
+
+    auto-fill
+    : 가능한 한 많은 트랙을 생성, 각 트랙은 지정된 크기를 유지
+
+    ! 그리드의 라인 기반 배치
+      그리드의 라인에 따라 사물 배치
+      : 라인의 시작 1
+      : CSS의 문서 흐름에 따라 배치(왼>오, 위>아래)
+
+      ? 시작 라인과 끝 라인 지정
+        >> 약칭 사용 시 시작 줄과 끝 줄을 슬래시(/)로 구분하여 한 번에 지정
+        : 각 영역의 라인으로 구분
+        : 라인의 시작 1
+        : 라인의 끝부터 시작 -1값 사용
+
+        grid-column-start
+        grid-column-end
+        >> grid-column
+
+        grid-row-start
+        grid-row-end
+        >> grid-row
+
+      ? grid-template-areas 위치잡기
+        : 그리드로 이뤄진 전체 셀을 채움
+        : 두 개의 셀을 합치려면 해당 이름 반복
+        : 셀을 비우려면 .(마침표)
+        : 반드시 직사각형 형태
+
+  -->
+  <div class="container">
+    <div>One</div>
+    <div>Two</div>
+    <div>Three</div>
+    <div>Four</div>
+    <div>Five</div>
+    <div>Six</div>
+    <div>Seven</div>
+  </div>
+
+  <div class="grid-container">
+    <header>This is a header</header>
+    <article>
+      <h1>My article</h1>
+      <p>해당 내용은 그리드 레이아웃01 입니다.</p>
+      <p>해당 내용은 그리드 레이아웃02 입니다.</p>
+    </article>
+    <aside>
+      <h2>Other things</h2>
+      <p>부가적인 내용입니다.</p>
+    </aside>
+    <footer>Contact me@mysite.com</footer>
+  </div>
+</body>
+</html>

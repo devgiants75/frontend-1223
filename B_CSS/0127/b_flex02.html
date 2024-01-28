@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Flexbox</title>
+  <link rel="stylesheet" href="styles/b_flex02.css">
+</head>
+<body>
+  <!--  
+    ! flex 속성(약칭)
+      : 아이템이 Flex 컨테이너 내에서 차지하는 공간의 비율을 결정
+
+      flex: 1;
+      : 각각의 article 요소에 1의 값을 부여
+      : 패딩과 여백이 지정된 후 남은 여분의 공간을 모두 동등한 크기로 점유
+
+      flex: 2;
+      flex 아이템이 3개 인 경우(a, b, c)
+      a, b에는 1의 비율을
+      c에는 2의 비율을 차지
+
+      ? flex 값 내에서 최소 크기 값 지정
+      지정 방식
+      flex: 비율 최소고정크기;
+      >> 각 flex item은 사용 가능한 공간에서 200px 부여 받고 나머지 공간을 1:1:2의 비율로써 분배
+
+    ! flex-grow
+      : Flex 아이템이 Flex 컨테이너 내에서 여분의 공간을 어떻게 채울지 결정
+      (단위가 없는 비례값)
+
+    ! flex-shrink
+      : Flex 컨테이너가 축소될 때 Flex 아이템의 크기를 어떻게 줄일지 결정
+
+    ! flex-basis
+      : Flex 아이템의 기본 크기를 설정
+        정식 명칭 단위를 사용하여 지정
+
+  -->
+  <header>
+    <h1>Sample Flexbox Example</h1>
+  </header>
+
+  <section>
+    <article>
+      <h2>First article</h2>
+      <p>첫 번째 기사입니다.</p>
+    </article>
+
+    <article>
+      <h2>Second article</h2>
+      <p>두 번째 기사입니다.</p>
+    </article>
+
+    <article>
+      <h2>Third article</h2>
+      <p>세 번째 기사입니다.</p>
+    </article>
+  </section>
+</body>
+</html>

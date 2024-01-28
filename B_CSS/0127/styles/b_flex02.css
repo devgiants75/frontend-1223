@@ -1,0 +1,39 @@
+body {
+  margin: 0;
+}
+
+header {
+  background-color: purple;
+  height: 100px;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+  line-height: 100px;
+  margin: 0;
+}
+
+/* 
+! section 태그를 flex 설정하여 article 배치 방법을 지정  
+*/
+section {
+  /* section 태그를 flex container로 지정 */
+  display: flex;
+}
+
+article {
+  padding: 10px;
+  margin: 10px;
+  background-color: aqua;
+
+  flex: 1 200px;
+}
+
+/* 
+article 태그 중 3번째로 나타나는 요소를 선택 
+*/
+article:nth-of-type(3) {
+  /* a, b에는 1의 비율 c에는 2의 비율을 차지 */
+  flex: 2 200px;
+}
