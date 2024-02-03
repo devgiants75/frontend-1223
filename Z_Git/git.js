@@ -105,10 +105,28 @@ git push -u origin main
 
 ! 연동된 저장소에 새로운 파일 추가
 
+1. 변경된 사항 확인
+git status 
 
+2. workspace에서 remote repository까지 파일 업로드
+
+git add .
+git commit -m "20240128 lsa"
+git push origin main
 
 ? 리모트 저장소 추가
-: 작업하는 환경(workspace)과 원격 리포지토리를 연결
+새롭게 작업할 로컬환경에서 새폴더에
+git bash 열기
+
+1. 깃 초기화
+: git init
+
+2. 브랜치 이름 변경
+: git branch -M main
+
+3. 작업하는 환경(workspace)과 원격 리포지토리를 연결
 : git remote add origin 리모트저장소URL
 
+4. 원격 리포지토리의 내용을 받아오기
+: git pull origin main
 */ 
