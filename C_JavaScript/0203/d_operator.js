@@ -70,3 +70,36 @@ console.log(a); // 26
 // 나누기 후 할당
 a /= 2; // a = a / 2;
 console.log(a); // 13
+
+//! 비교 연산자
+// : 두 값을 비교하고, 그 결과를 boolean의 값으로 반환
+
+// 동등(==), 부등(!=)
+// > 값이 동일한지 테스트 (데이터 유형을 고려하지 X)
+
+// 일치(===), 불일치(!==)
+// > 엄격한 값과 값의 데이터 유형의 완전한 동일성을 모두 테스트
+
+// 크다(>), 작다(<), 크거나 같다(>=), 작거나 같다(<=)
+
+let num1 = 10;
+let num2 = '10';
+
+// clg >> 코드 스니펫
+console.log(num1 == num2); // 동등 - true
+console.log(num1 != num2); // 부등 - false
+
+console.log(num1 === num2); // 일치 - false
+console.log(num1 !== num2); // 불일치 - true
+
+// '=='와 '==='의 차이
+// : 동등 연산자는 두 값이 같은지 비교할 때 자동으로 타입 변환을 수행(내용만 비교)
+// : 일치 연산자는 두 값이 같은지 비교할 때 타입 변환 수행X
+//   >> 값과 타입이 모두 같을 때만 true를 반환
+
+console.log(num1 > num2); // 초과 - false
+console.log(num1 < num2); // 미만 - false
+console.log(num1 >= num2); // 이상 - true
+console.log(num1 <= num2); // 이하 - true
+
+//!
