@@ -175,7 +175,7 @@ if (조건) {
 */
 
 let num = 11;
-let message = num > 10 ? '10보다 크다.' : '10보다 작거나 같다.';
+let message = num > 10 ? "10보다 크다." : "10보다 작거나 같다.";
 console.log(message);
 
 // 중첩 else if문과 삼항 연산자
@@ -185,10 +185,42 @@ if (조건1) {
   조건1이 참일 때 실행될 코드
   if (조건 2) {
     조건 1과 조건 2가 모두 참일 때 실행될 코드
+  } else {
+    조건 1은 참이지만, 조건 2는 거짓일 때 실행될 코드
   }
-
 } else {
   조건1이 거짓일 때 실행될 코드
 }
-
 */
+
+// 50점 이상일 경우에는 시험 합격
+// >> 90점 이상 A
+// >> 80점 이상 B
+// >> 그 외의 경우 C
+// 50점 미만일 경우 불합격
+
+let score = 41;
+
+if (score >= 50) {
+  console.log('합격');
+  if (score >= 90) {
+    console.log('A');
+  } else if (score >= 80) {
+    console.log('B');
+  } else {
+    console.log('C');
+  }
+} else {
+  console.log('불합격');
+}
+
+// 위의 중첩 if문을 삼항 연산자로 변환
+let grade 
+= score > 100 || score < 0 ? '존재하지 않는 점수'
+// 0 ~ 100 사이의 값 중에서 등급을 지정
+: score >= 90 ? 'A'
+: score >= 80 ? 'B'
+: score >= 70 ? 'C' : '탈락';
+
+
+

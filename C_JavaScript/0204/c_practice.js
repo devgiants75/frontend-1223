@@ -41,21 +41,52 @@ if (score < 0 || score > 100) {
 }
 
 // >> 위의 else if문을 switch문으로 변경
-score = 101;
+score = 71;
 
-// switch (score) {
-//   case score < 0 || score > 100:
-//     console.log("잘못된 점수");
-//     break;
-//   case 90 <= score && 100 >= score:
-//     console.log("A");
-//     break;
-//   case 80 <= score && 89 >= score:
-//     console.log("B");
-//     break;
-//   case 70 <= score && 79 >= score:
-//     console.log("C");
-//     break;
-//   default:
-//     console.log('D');
-// }
+// switch의 조건으로 true를 입력
+// : switch문을 강제로 실행
+switch (true) {
+  // 점수의 범위를 축약(유효성 검사)
+  case score < 0 || score > 100:
+    console.log("잘못된 점수");
+    break;
+  case score >= 90:
+    console.log("A");
+    break;
+  case score >= 80:
+    console.log("B");
+    break;
+  case score >= 70:
+    console.log("C");
+    break;
+  default:
+    console.log('D');
+}
+
+//! 논리연산자와 삼항연산자
+true ? console.log('A') : console.log('B');
+false ? console.log('B') : console.log('A');
+
+// 논리합
+// a || b는 a와 b중 하나라도 true면 true를 반환
+
+// : a || b에서 a가 true인 경우 b는 평가되지 X
+// : 특정조건이 true일 때 추가적인(필요없는) 연산을 방지
+true || console.log('A');
+
+// 논리곱
+// a && b는 a와 b 모두 true일 때만 true를 반환
+
+// : a && b에서 a가 true인 경우에만 b를 계산
+// : a && b에서 a가 false인 경우 b는 평가하지 X
+true && console.log('A');
+false && console.log('A');
+
+// - 회원 정보의 유무에 따른 페이지 접근 제한
+
+let token = ''; // 회원정보 X
+token && console.log('회원만 접근 가능한 페이지');
+
+console.log('--------------');
+token = '회원';
+token && console.log('회원만 접근 가능한 페이지');
