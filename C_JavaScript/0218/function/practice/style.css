@@ -1,0 +1,48 @@
+/* 사용자 목록을 보여주는 웹 페이지 */
+.user {
+  background-color: #f4f4f4;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.user h2 {
+  color: #333;
+}
+
+.user p {
+  color: #666;
+}
+
+/* 최신 검색 목록을 보여주는 검색창 */
+.search-container {
+  margin: 20px;
+  text-align: center;
+}
+
+#search-box {
+  width: 300px;
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+
+#search-button {
+  padding: 5px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+
+.recent-searches {
+  margin: 20px;
+  text-align: center;
+}
+
+.recent-searches ul {
+  list-style: none;
+  padding: 0;
+}
