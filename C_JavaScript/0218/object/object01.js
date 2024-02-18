@@ -72,9 +72,16 @@ let objectName = {
 // : 객체명.속성명, 객체명.메서드명 - 점 표기법
 
 let dog = {
-  name: '초코',
+  name: {
+    last: 'choco', // name 객체의 프로퍼티(속성)
+    first: 'strawberry'
+  },
   age: 3,
-  color: 'white'
+  color: 'white',
+  favoriteToy: ['곰인형', '탱탱볼'],
+  greet: function() {
+    console.log(`Hello, ${this.name.last}`);
+  }
 }
 
 // 프로퍼티(속성) 추가
@@ -83,3 +90,45 @@ console.log(dog);
 // { name: '초코', age: 3, color: 'white', speed: 10 }
 
 // 점 표기법을 사용한 프로퍼티 접근
+console.log(dog.age);
+console.log(dog.name.first); // strawberry
+console.log(dog.favoriteToy[1]); // 탱탱볼
+
+// 대괄호 표기법
+// 객체명['키'] (키값을 문자열로 전달)
+console.log(dog['age']); // 3
+
+// 객체 내의 함수 호출
+// 객체명.함수명()
+dog.greet(); // Hello, choco
+
+//? this 키워드
+// : 지금 동작하고 있는 코드를 가지고 있는 객체를 가리킴
+// greet: function() {
+  // console.log(`Hello, ${this.name.last}`);
+  //? this.name.last는
+  // : this는 해당 코드를 가지고 있는 dog 객체 그 자체
+  // == dog.name.last와 동일 
+  //    (점 표기법을 사용한 속성에 접근)
+// }
+
+let human1 = {
+  name: '이승아',
+  greeting: function() {
+    console.log(this.name);
+  }
+}
+
+let human2 = {
+  name: '이도경',
+  greeting: function() {
+    console.log(this.name);
+  }
+}
+
+// human1과 human2는 서로 다른 객체이기 때문에
+// : 각각의 이름으로 생성됨
+// : this가 가리키는 객체가 다름 (실행중인 코드가 속한 객체)
+
+human1.greeting(); // 이승아
+human2.greeting(); // 이도경+
