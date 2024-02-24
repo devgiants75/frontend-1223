@@ -1,0 +1,31 @@
+body {
+  font-family: Arial, sans-serif;
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+#options-container {
+  margin: 20px 0;
+}
+
+#submit-btn {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#feedback {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 18px;
+}

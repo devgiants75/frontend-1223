@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>자바스크립트 이벤트 예제 (3)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!--  
+    ! 요구사항
+    - 선택지 동적 생성
+      : 주어진 선택지 배열을 사용하여 각 선택지를 'radio'버튼 형태로 동적 생성
+
+    - 피드백 객체
+      : 선택지에 따른 피드백 메시지를 저장하는 객체를 생성
+      : 사용자가 선택지를 선택하고 제출 버튼을 클릭하면 해당 선택지에 맞는 피드백 메시지를 화면에 표시
+
+    - 제출 버튼 이벤트 처리
+      : 사용자가 제출 버튼을 클릭하면, 현재 선택된 radio 버튼의 값을 확인하고, 해당하는 피드백 메시지를 웹 페이지에 동적으로 생성하여 표시
+  -->
+  <h1>설문조사</h1>
+  <form id="survey-form">
+    <div id="options-container"></div>
+    <button type="button" id="submit-btn">제출</button>
+  </form>
+  <div id="feedback"></div>
+
+  <script src="main.js"></script>
+</body>
+</html>
