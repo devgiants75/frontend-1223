@@ -10,6 +10,10 @@ addButton.addEventListener('click', function() {
   // : document.createElement('요소명');
   let newItem = document.createElement('li');
 
+  // 입력된 텍스트 내용을 현재 값으로 설정
+  // newItem의 텍스트 내용을 입력 필드(todo-input)의 현재 값으로 설정
+  newItem.textContent = todoInput.value;
+
   // newItem에 'todo-item'이라는 클래스 속성을 추가
   // 웹 문서의 요소에 class 속성 추가
   // 참조된요소.classList.add('class명');
@@ -31,7 +35,9 @@ addButton.addEventListener('click', function() {
 // : todoList 내의 어떤 항목이든 클릭 할 때마다 정의된 함수가 실행
 todoList.addEventListener('click', function(e){
   // 클릭된 요소가 'li' 태그(목록 항목)인지 확인
-  if(e.target.tagName === 'li') {
+  // 전달받은 이벤트에서 이벤트가 발생한 요소의 태그명을 전달받아 LI와 일치하는지 확인
+  // : tagName은 대문자로 작성되어있음
+  if(e.target.tagName === 'LI') {
     // 해당 목록 항목의 클래스 목록에서 'completed'클래스 속성을 추가
     // : completed 클래스가 있으면 제거, 없으면 추가
     e.target.classList.toggle('completed');
