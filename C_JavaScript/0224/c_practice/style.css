@@ -1,0 +1,30 @@
+#todo-app {
+  width: 300px;
+  margin: auto;
+}
+
+#todo-input {
+  padding: 10px;
+  font-size: 16px;
+}
+
+#add-btn {
+  padding: 10px;
+  margin-top: 10px;
+}
+
+#todo-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* JS 기능을 사용하여 추가 될 할 일 영역(todo-item) */
+.todo-item {
+  margin-top: 10px;
+}
+
+/* completed: 완료된 항목을 시각적으로 표현 */
+.completed {
+  text-decoration: line-through;
+  color: gray;
+}

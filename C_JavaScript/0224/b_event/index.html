@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>자바스크립트 이벤트(2)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h2>이벤트 객체</h2>
+  <button>Change Color</button>
+  <div id="change-color">Change Color</div>
+
+  <hr />
+  <div id="grid-container">
+    <div class="tile">1</div>
+    <div class="tile">2</div>
+    <div class="tile">3</div>
+    <div class="tile">4</div>
+    <div class="tile">5</div>
+    <div class="tile">6</div>
+    <div class="tile">7</div>
+    <div class="tile">8</div>
+    <div class="tile">9</div>
+    <div class="tile">10</div>
+    <div class="tile">11</div>
+    <div class="tile">12</div>
+    <div class="tile">13</div>
+    <div class="tile">14</div>
+    <div class="tile">15</div>
+    <div class="tile">16</div>
+  </div>
+
+  <hr />
+  <h2>기본 행동 방지하기</h2>
+  <form>
+    <div>
+      <label for="fname">Name: </label>
+      <input type="text" id="fname" />
+    </div>
+    <div>
+      <label for="email">Email: </label>
+      <input type="email" id="email" />
+    </div>
+    <div>
+      <input type="submit" id="submit" />
+    </div>
+  </form>
+  <p></p>
+
+  <hr />
+  <h2>이벤트 버블링과 캡쳐</h2>
+  <div id="parentDiv">
+    parentDiv
+    <button id="childButton">Click Me</button>
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+</html>

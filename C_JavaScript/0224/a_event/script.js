@@ -87,3 +87,30 @@ const buttons = document.querySelectorAll('button');
 
 // forEach를 사용하여 위의 반복문을 재작성
 // : 콜백함수(함수의 인자로 함수가 전달)
+buttons.forEach((button) => {
+  button.onclick = bgChange;
+})
+
+//? 3. addEventListner 메서드
+// : 표준 이벤트 모델
+// : HTML요소의 addEventListener 메서드를 사용하여 이벤트 핸들러를 등록하는 방법
+// : 한 요소에 여러 개의 이벤트 핸들러 등록 가능
+btn.addEventListener('click', () => {
+  const rndColor =
+    'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
+
+    document.body.style.backgroundColor = rndColor;
+});
+
+// addEventListener 메서드는 요소에 이벤트 리스너를 '추가'
+// : 두 가지 매개변수
+// 첫 번째 매개변수
+// - 이벤트 유형(등록하고자 하는 이벤트의 이름)
+//   : click, load, input 등
+// 두 번째 매개변수
+// - 이벤트 핸들러 함수
+
+// 이벤트 제거하는 방법
+// : removeEventListener 메서드 사용
+// : 이벤트 핸들러를 제거하는 메서드
+btn.removeEventListener('click', bgChange);
