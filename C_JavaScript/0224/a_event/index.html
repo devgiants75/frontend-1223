@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>자바스크립트 이벤트(1)</title>
+</head>
+<body>
+  <!-- HTML 이벤트 핸들러 프로퍼티 -->
+  <button>Change Color</button>
+
+  <!-- 수평선을 지정하는 요소: horizon -->
+  <hr />
+
+  <!-- 
+    인라인 이벤트 핸들러
+    : on속성을 버튼 태그에서 지정하고
+    : 해당 속성에서 사용할 기능(함수)을 js파일에서 작성
+    >> 유지보수가 어렵고, 코드가 복잡해지기 때문에 권장하지 X
+  -->
+  <button onclick="bgChange()">Click Me</button>
+  <!-- 버튼 클릭 시 alert 창에 Hello 메시지가 출력 (따로 JS 코드가 필요 X) -->
+  <button onclick="alert('Hello')">Press Me</button>
+
+  <hr />
+  <button>1</button>
+  <button>2</button>
+  <button>3</button>
+  
+  <script src="script.js"></script>
+</body>
+</html>
