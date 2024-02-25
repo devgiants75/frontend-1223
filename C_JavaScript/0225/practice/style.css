@@ -1,0 +1,20 @@
+#app {
+  width: 300px;
+  background-color: #777;
+  text-align: center;
+  padding: 20px;
+}
+
+#input-field {
+  padding: 10px;
+}
+
+#add-btn {
+  padding: 10px;
+}
+
+/* 동적으로 추가될 li */
+#item-list li {
+  margin: 5px 0;
+  cursor: pointer;
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1></h1>
+
+  <ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+
+  <!-- 
+    body 태그가 생성되기 이전의 script 태그 사용(권장X)
+  -->
+  <script>
+    const h2 = (text) => `<h2>${text}</h2>`;
+    document.body.innerHTML += h2('script 태그를 사용한 JS');
+  </script>
+  
+  <script src="f_DOM.js"></script>
+</body>
+</html>
