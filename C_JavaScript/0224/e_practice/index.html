@@ -21,9 +21,19 @@
   -->
   <h1>설문조사</h1>
   <form id="survey-form">
+    <!-- 
+      아래의 div 안에
+      동적으로 radio 버튼을 생성(JS)
+    -->
     <div id="options-container"></div>
-    <button type="button" id="submit-btn">제출</button>
+    <button type="button" id="submit-btn">
+      제출
+    </button>
   </form>
+  <!-- 
+    아래의 div 안에
+    선택된 radio 버튼에 따라 다른 피드백이 출력
+  -->
   <div id="feedback"></div>
 
   <script src="main.js"></script>
