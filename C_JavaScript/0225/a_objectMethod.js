@@ -90,3 +90,21 @@ manyData = manyData.split('\n');
 
 // split()메서드로 반환되는 데이터는 배열로 생성되어 반환
 console.log(manyData);
+
+// 배열 내부의 문자열들을 쉼표로 자르기
+// : 배열의 각 요소를 반복하여 split()메서드로 나누어
+// : '새로운 배열'로 반환
+manyData = manyData.map(line => line.split(','));
+
+console.log(manyData); // 2차원 배열
+
+//? 3) length
+// : 문자열 길이를 반환
+// : 공백(띄어쓰기, 줄바꿈도 한 개의 문자열로 인식)
+let stringC = ' hello, JS ';
+console.log(stringC.length); // 11
+
+//? 4) toUpperCase(), toLowerCase()
+// : 모든 문자를 대문자 | 소문자로 변환
+console.log(stringC.toUpperCase());
+console.log(stringC.toLowerCase());
