@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS 이벤트 활용</title>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const input = document.querySelector('input');
+      const p = document.querySelector('p');
+
+      // 이메일 형식
+      // 아이디@웹페이지명.com
+      // : 골뱅이를 가지고 있고 골뱅이 뒤에 점이 있음
+      const isEmail = (value) => {
+        // @가 문자열의 첫 번째 위치(0번째 인덱스 보다 뒤에 있어야 한다. / 이메일의 아이디 부분이 최소 1자 이상 있어야 함을 의미)
+        return (value.indexOf('@') > 1) 
+          // @문자를 기준으로 문자열을 나누고
+          // : @ 뒤 영역의 인덱스 번호가 1
+          // : 그 안에 .이 존재하는지 확인
+          && (value.split('@')[1].indexOf('.') > 1);
+      }
+
+      input.addEventListener('keyup', (event) => {
+        const value = event.currentTarget.value;
+        if (isEmail(value)) {
+          p.sytle.color = 'green';
+          p.textContent = `이메일 형식입니다: ${value}`;
+        } else {
+          p.sytle.color = 'red';
+          p.textContent = `이메일 형식이 아닙니다: ${value}`;
+        }
+      })
+    })
+  </script>
+</head>
+<body>
+  <!--  
+    ! 이메일 객체 활용
+    : 이메일 형식 확인하기
+  -->
+  <input type="text" />
+  <p></p>
+</body>
+</html>

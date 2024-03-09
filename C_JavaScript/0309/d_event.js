@@ -67,13 +67,15 @@ document.addEventListener("DOMContentLoaded", () => {
 // 2. this 키워드를 사용
 // : 일반 function 키워드로 함수를 선언한 경우에만 사용 가능 (화살표 함수 사용 X)
 
-
 const listener = (event) => {
   // 현재 블록에서는 textarea 변수를 사용할 수 X
   // const length = textarea.value.length;
 
   // event.currentTarget이 textarea로 지정
-  const length = event.currentTarget.value.length;
+  // const length = event.currentTarget.value.length;
+
+  // this가 textarea로 지정
+  const length = this.value.length;
   h4.textContent = `글자 수: ${length}`;
 }
 
