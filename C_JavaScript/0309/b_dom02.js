@@ -14,17 +14,17 @@ document.addEventListener("DOMContentLoaded", () => {
   //! 문서 객체 이동하기
   const divA = document.querySelector("#first");
   const divB = document.querySelector("#second");
-  const h1 = document.createElement("h1");
-  h1.textContent = "이동하는 h1 태그";
+  const header1 = document.createElement("h1");
+  header1.textContent = "이동하는 h1 태그";
 
   // 서로 번갈아가면서 실행하는 함수를 구현
   const toFirst = () => {
-    divA.appendChild(h1);
+    divA.appendChild(header1);
     setTimeout(toSecond, 1000);
   };
 
   const toSecond = () => {
-    divB.appendChild(h1);
+    divB.appendChild(header1);
     setTimeout(toFirst, 1000);
   };
 
