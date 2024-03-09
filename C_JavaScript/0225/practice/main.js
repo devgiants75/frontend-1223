@@ -72,5 +72,8 @@ function renderItems() {
   });
 }
 
+let addBtn = document.getElementById('add-btn');
+addBtn.addEventListener('click', createItem);
+
 // 문서가 로드되었을 때 아이템 목록을 처음으로 렌더링
-document.addEventListener("DOMContentLoaded", renderItems());
+document.addEventListener("DOMContentLoaded", renderItems);

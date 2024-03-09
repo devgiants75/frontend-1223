@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS DOM 조작</title>
+</head>
+<body>
+  <!--  
+    ! DOMContentLoaded 이벤트
+    : HTML의 모든 문서 구조(내용)가 모두 로드된 이후에 해당 이벤트가 발생
+
+    ! 문서 '객체' 가져오기
+    >> 문서의 큰 틀 요소 가져오기(HTML 문서에 있는 요소를 직접 가져오기)
+    document.head
+    document.body
+    document.title
+
+    >> 요소 내부에 사용자 정의 요소를 가져오기
+    document.querySelector(선택자)
+      : 요소를 하나만 추출(여러 개일 경우 제일 상단의 요소만 가져오기)
+    document.querySelectorAll(선택자)
+      : 문서 객체를 여러 개 추출하여 배열로 저장
+
+    ? 선택자 영역에는 CSS에서 학습한 선택자를 입력
+      : 태그, #아이디, .클래스, [속성=값], 선택자A 후손B
+
+    ! 글자 조작하기
+    : DOM 요소에 대한 글자 조작 방법 2가지
+      (textContent / innerHTML)
+
+    1. 문서객체.textContent
+      : 입력한 문자열을 그대로 넣음
+    2. 문서객체.innerHTML
+      : 입력된 문자열을 HTML 형식으로 넣음
+
+    ! 속성 조작하기
+    : 문서 객체의 속성을 조작
+      (setAttribute(속성명, 값) / getAttribute(속성명))
+
+    1. 문서객체.setAttribute(속성명, 값): 특정 속성에 값을 지정
+    2. 문서객체.getAttribute(속성명): 특정 속성을 추출
+
+    ? http://placekitten.com/너비/높이
+      : 위 URL 입력 시 해당 너비와 높이 크기의 고양이 이미지를 얻을 수 있음
+
+    ! 스타일 조작하기
+    : CSS 스타일 속석명을 camelCase로 사용
+      (CSS에서는 -기호를 사용하여 속성명의 단어 구분)
+    : 문서객체.style.속성명
+  -->
+  <h1></h1>
+
+  <h2 class="header2"></h2>
+  <h2 class="header2"></h2>
+  <h2 class="header2"></h2>
+  <h2 class="header2"></h2>
+
+  <hr />
+  <div id="a"></div>
+  <div id="b"></div>
+
+  <hr />
+  <img class="cat" />
+  <img class="cat" />
+  <img class="cat" />
+  <img class="cat" />
+
+  <hr />
+  <div id="divs">
+    <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+  </div>
+
+  <script src="a_dom01.js"></script>
+</body>
+</html>
