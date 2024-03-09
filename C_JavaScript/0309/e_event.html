@@ -22,12 +22,13 @@
       }
 
       input.addEventListener('keyup', (event) => {
+        // event.currentTarget이 input 요소를 가리킴
         const value = event.currentTarget.value;
         if (isEmail(value)) {
-          p.sytle.color = 'green';
+          p.style.color = 'green';
           p.textContent = `이메일 형식입니다: ${value}`;
         } else {
-          p.sytle.color = 'red';
+          p.style.color = 'red';
           p.textContent = `이메일 형식이 아닙니다: ${value}`;
         }
       })
