@@ -6,7 +6,35 @@
   <title>JS DOM 조작</title>
 </head>
 <body>
-  
+  <!--  
+    ! 문서 객체 생성
+    : document.createElement() 메서드 사용
+    : 위 메서드로 만든 객체를 직접 문서의 어떠한 부분 아래 추가할지를 지정 - 트리 개념을 사용
+    : 부모 트리 아래에 자식 트리(생성한 객체)를 추가
+
+    ? 부모 객체에 자식 객체를 추가
+    : 부모객체.appendChild(자식객체)
+
+    ! 문서 객체 이동하기
+    : appendChild()메서드는 문서 객체를 이동할 때도 사용
+
+    ! 문서 객체 제거하기
+    : 부모객체.removeChild(자식객체)
+    + appendChild() 메서드 등으로 부모 객체와 이미 연결이 완료된 문서 객체의 경우
+      : 부모객체.parentNode.removeChild(자식객체)
+  -->
+  <div id="first" style="border: 1px solid black;">
+    <h1>첫 번째 div 태그 내부</h1>
+  </div>
+
+  <div id="second" style="border: 1px solid black;">
+    <h1>두 번째 div 태그 내부</h1>
+  </div>
+
+  <hr />
+  <h3>제거 대상 문서 객체</h3>
+  <hr />
+
   <script src="b_dom02.js"></script>
 </body>
 </html>

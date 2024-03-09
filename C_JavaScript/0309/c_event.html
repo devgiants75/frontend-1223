@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS 이벤트 설정</title>
+  <script>
+    /*
+      ! 이벤트 추가
+      문서객체.addEventListener(이벤트이름, 콜백함수)
+      : 콜백함수 - 이벤트 리스너 | 이벤트 핸들러
+
+      ! 이벤트 제거
+      문서객체.removeEventLister(이벤트이름, 이벤트 리스너)
+    */
+    document.addEventListener('DOMContentLoaded', () => {
+      let counter = 0;
+      let isConnect = false;
+
+      // 문서 객체 가져오기
+      const h1 = document.querySelector('h1');
+      const p = document.querySelector('p');
+      const connectButton = document.querySelector('#connect');
+      const disconnectButton = document.querySelector('#disconnect');
+
+      //! 이벤트 구현
+      // 이벤트를 제거하려면 이벤트리스너를 변수 또는 상수에 저장하여 가지고 있어야 함.
+      const listener = (event) => {
+        counter++;
+        h1.textContent = `클릭 횟수: ${counter}`;
+      }
+
+      // 이벤트 연결 시 h1 태그에 이벤트 추가
+      connectButton.addEventListener('click', () => {
+        if (isConnect === false) {
+          h1.addEventListener('click', listener);
+          p.textContent = '이벤트 연결 상태: 연결';
+          isConnect = true;
+        }
+      })
+
+      // 이벤트 해제 시 h1 태그에 이벤트 제거
+      disconnectButton.addEventListener('click', () => {
+        if (isConnect === true) {
+          // 해제할 때 이벤트 리스너를 사용
+          h1.removeEventListener('click', listener);
+          p.textContent = '이벤트 연결 상태: 해제';
+          isConnect = false;
+        }
+      })
+
+    })
+  </script>
+  <style>
+    h1 {
+      /* 
+        클릭을 여러 번 했을 때
+        글자가 선택되는 것을 막기 위한 스타일
+      */
+      user-select: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>클릭 횟수: 0</h1>
+  <button id="connect">이벤트 연결</button>
+  <button id="disconnect">이벤트 제거</button>
+  <p>이벤트 연결 상태: 해제</p>
+</body>
+</html>
