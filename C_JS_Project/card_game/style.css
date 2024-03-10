@@ -20,3 +20,94 @@
   padding: 20px;
   background-color: rgb(242, 251, 237);
 }
+
+/* 게임 컨테이너 */
+#game-container {
+  height: 90%;
+  margin-bottom: 20px;
+}
+
+/* 카드 컨테이너 */
+#card-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 10px;
+}
+
+/* JS로 구현된 카드 디자인 설정 */
+.card {
+  width: 100%;
+  height: 150px;
+  /* 원근감을 지정하는 속성 */
+  perspective: 1000px;
+  display: inline-block;
+}
+
+/* 카드 내부 디자인 설정 */
+.card-inner {
+  width: 100%;
+  height: 100%;
+  /* 3D 변환 스타일 지정 */
+  transform-style: preserve-3d;
+
+  /* 3D 변환 시간 설정 */
+  transition: transform 0.5s;
+}
+
+/* card 요소에 flipped 클래스명이 지정된 경우 */
+.card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+/* 카드 앞면과 뒷면에 대한 디자인 설정 */
+.card-front, .card-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  /* 뒷면 숨김 설정 */
+  backface-visibility: hidden;
+}
+
+.card-front {
+  background-color: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.card-back {
+  /* Y축으로 180도 회전 */
+  transform: rotateY(180deg);
+  border-radius: 10px;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+/* ====================================== */
+/* 버튼 스타일 설정 */
+#button-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/* 버튼 요소 스타일 설정 */
+button {
+  background-color: rgb(15, 180, 40);
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 900;
+  color: white;
+}
+
+
+
