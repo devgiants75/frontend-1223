@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>카드 메모리 게임</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- 
+    페이지 전체 컨테이너
+    : 게임의 모든 요소를 감싸는 래퍼 역할
+  -->
+  <div id="total-container">
+    <!--  
+      게임 정렬 컨테이너
+      : 게임 보드 & 상태 알림 포함
+    -->
+    <div id="game-container">
+      <!-- 카드 12장가 담길 컨테이너 -->
+      <div id="card-container">
+        <!-- JS를 통해 카드가 생성 -->
+      </div>
+      
+      <!-- 
+        게임 완료 시 기록
+        / 미완료 시 진행 알림 
+        (JS에서 구현하여 자식 요소로 전달)
+      -->
+      <div id="stauts-alert"></div>
+    </div>
+
+    <!-- 
+      버튼 컨테이너
+    -->
+    <div id="button-container">
+      <button id="start-button">시작</button>
+      <button id="reset-button">재시작</button>
+      <button id="start-button">완료</button>
+    </div>
+  </div>
+  
+  <script src="main.js"></script>
+</body>
+</html>

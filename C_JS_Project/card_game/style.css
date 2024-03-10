@@ -1,0 +1,22 @@
+/* 
+  모든 요소에 대한 기본 여백과 패딩을 제거
+  : 일관된 레이아웃 시작점을 제공
+*/
+* {
+  padding: 0;
+  margin: 0;
+}
+
+/* 
+  전체 컨테이너에 대한 스타일 설정
+*/
+
+#total-container {
+  width: 80%;
+  height: 80%;
+  /* 좌우를 자동으로 margin 설정하여 중앙 정렬 */
+  margin: 0 auto; 
+  margin-top: 20px;
+  padding: 20px;
+  background-color: rgb(242, 251, 237);
+}
