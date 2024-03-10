@@ -109,8 +109,19 @@ function loginUser(email, password, callback) {
     callback(new Error('Invalid email or password'));
     // : 에러 메시지와 함께 콜백 함수 호출
   }
+}
 
+// 사용자의 역할(roles)을 기반으로 사용자에게 특정 접근 권한이 있는지 확인하는 함수
+function checkAccess(roles, callback) {
+  // 접근 권한을 확인하는 로직
+  // : ex) 'admin' 역할이 있으면 접근 허용
+  const accessGranted = roles.inclueds('admin');
 
+  if (accessGranted) {
+    callback(null, true); // 접근 권한 있음
+  } else {
+    callback(null, false); // 접근 권한 없음
+  }
 }
 
 // 함수 호출
