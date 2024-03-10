@@ -42,4 +42,9 @@ findUserById(1, (error, user) => {
     }
     console.log('Posts found: ', posts);
   })
-})
+});
+
+// setTimeout()을 사용하여
+// : 사용자 ID를 인자로 전달받아
+// : 사용자 정보와 사용자의 게시물을 비동기적으로 조회
+// >> 코드의 실행 시점을 개발자가 지정
