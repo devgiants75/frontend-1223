@@ -103,12 +103,15 @@ document.addEventListener("DOMContentLoaded", () => {
   let hasFlippedCard = false; // 첫번째 카드가 선택되지 않은 것이 기본값
   let firstCard, secondCard;
   let lockBoard = false; // 게임판이 잠겨있지 않는 것이 기본값
+  // 게임 시작 상태 추적을 위한 변수
+  // : 시작 버튼과 재시작 버튼에 대한 이벤트 리스너 내에서 활용
+  let isGameStarted = false;
 
   //! 카드를 뒤집는 함수 정의
   // : 카드 클릭 시 호출
   function flipCard() {
-    // 게임판이 잠겨있는 경우 - 더 이상 카드를 뒤집지 않음
-    if (lockBoard) return;
+    // 게임이 시작되지 않았거나 게임판이 잠겨있는 경우 - 더 이상 카드를 뒤집지 않음
+    if (!isGameStarted || lockBoard) return;
     // 클릭된 카드에 'flipped' class 속성을 추가: 해당 카드 뒤집기
     // this: flipCard 함수가 호출된 카드 객체 그 자체
     this.classList.add("flipped");
@@ -179,6 +182,7 @@ document.addEventListener("DOMContentLoaded", () => {
     toggleButtonVisibility(true);
     // 카드를 잠시동안 공개
     revealCardsTemporarily();
+    isGameStarted = true; // 게임이 시작됨
   });
 
   // 'reset-button'버튼에 클릭 이벤트 리스너를 추가
@@ -192,6 +196,7 @@ document.addEventListener("DOMContentLoaded", () => {
     toggleButtonVisibility(true);
     // 카드를 잠시동안 공개
     revealCardsTemporarily();
+    isGameStarted = true; // 게임이 시작됨
   });
 
   // 'completed-button' 버튼 클릭 시 이벤트 리스너 추가
@@ -204,20 +209,37 @@ document.addEventListener("DOMContentLoaded", () => {
     // - Array.from()은 DOM NodeList를 배열로 변환
     // - every 함수는 배열의 모든 요소가 주어진 함수를 만족할 때 true를 반환(boolean 타입을 반환)
 
-    const cardList = Array.from(document.querySelectorAll('.card'));
-    const allFlipped = cardList.every(card => {
-      card.classList.contains('flipped');
-    });
+    const allFlipped = Array.from(document.querySelectorAll('.card')).every(card => 
+      card.classList.contains('flipped'));
 
     if (allFlipped) {
       // 모든 카드가 뒤집힌 경우
       // : 게임 완료 시간을 계산
       const gameTime = new Date() - gameStartTime;
       alert(`게임 완료~! 소요 시간: ${Math.floor(gameTime / 1000)}초`);
+      isGameStarted = false; // 게임 완료 시 시작 상태를 false로 설정
     } else {
       alert('완료되지 않았습니다.');
     }
-  })
+  });
+
+  //! 버튼의 가시성을 토글하는 함수 정의
+  function toggleButtonVisibility(isGameStarted) {
+    // 게임 시작 여부가 true이면
+    // : 보여지지 않음
+    startButton.style.display = isGameStarted ? 'none' : 'block';
+
+    // 게임 시작 여부가 true이면
+    // : 보여짐
+    resetButton.style.display = isGameStarted ? 'block' : 'none';
+    completedButton.style.display = isGameStarted ? 'block' : 'none';
+  }
+
+  // 초기에는 시작 버튼만 표시
+  toggleButtonVisibility(false);
+
+  // 게임을 초기화(화면에 렌더링)
+  initializeGame();
 });
 
 // 배열의 요소를 무작위로 섞는 커스텀 함수
@@ -230,7 +252,7 @@ function shuffle(array) {
     // : 0부터 i까지 무작위 인덱스를 생성
     // 현재 요소(i)와 무작위로 선택된 요소(j)의 위치를 교환
 
-    let j = Maht.floor(Math.random() * (i + 1));
+    let j = Math.floor(Math.random() * (i + 1));
     // : 0부터 i까지의 범위 내에서 무작위 j를 생성
 
     [array[i], array[j]] = [array[j], array[i]];
