@@ -44,6 +44,23 @@ const nameAndUnknownHeight: {
   // height: 157
 }
 
+//! 읽기 전용 속성
+// : 속성명 앞에 readonly 키워드를 사용하여 해당 속성의 재할당을 금지
+// : 해당 키워드가 붙은 속성은 const 키워드를 이용한 변수 정의와 유사
 
+// 객체의 속성값에 접근하는 방법 - 점 연산자를 사용하여 접근
+const readonlyName: {
+  readonly name: string;
+  age: number;
+} = {
+  name: '이도경',
+  age: 30
+}
+
+readonlyName.age = 29;
+console.log(readonlyName.age); // 29
+
+// readonlyName.name = '이승아'; - Error: 읽기 전용 속성이므로 'name'에 할당할 수 없습니다.
+console.log(readonlyName.name); // 이도경
 
 }
