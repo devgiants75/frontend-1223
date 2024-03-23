@@ -99,6 +99,13 @@ interface CustomerInfo {
   email: string;
   status: CustomerStatus;
 }
+// Partial<CustomerInfo>
+// : 해당 타입의 모든 속성을 선택적 속성(옵셔널)로 변환하는 기능
+// interface CustomerInfo {
+//   name?: string;
+//   email?: string;
+//   status?: CustomerStatus;
+// } 와 동일
 
 // 연락처 정보를 나타내는 인터페이스 정의
 interface ContactInfo {
@@ -109,8 +116,31 @@ interface ContactInfo {
 // 2. 고객 정보 업데이트를 위한 함수 타입(UpdateCustomerFunction) 정의
 // : CustomerInfo 타입의 객체와 업데이트할 정보를 담은 객체를 매개변수로 받고, 업데이트된 CustomerInfo 객체를 반환
 // : 업데이트할 정보는 Partial<CustomerInfo> 타입을 사용
+type UpdateCustomerFunction = (customer: CustomerInfo, updates: Partial<CustomerInfo>) => CustomerInfo;
 
 // 3. 고객 연락처 정보(ContactInfo)를 CustomerInfo에 추가하는 인터섹션 타입 정의
 // : ContactInfo는 phone(string)과 address(string) 속성
 // : 고객 정보와 연락처 정보를 모두 포함하는 새로운 타입을 생성
+type DetailCustomerInfo = CustomerInfo & ContactInfo;
+
+// 고객 정보를 업데이트하는 함수 구현
+const updateCustomer: UpdateCustomerFunction = (customer, updates) => {
+  return {...customer, ...updates};
+}
+
+// 초기 고객 정보 객체 생성
+let customer: CustomerInfo = {
+  name: '이승아',
+  email: 'qwe@naver.com',
+  status: 'active'
+}
+
+customer = updateCustomer(customer, {status: 'inactive'});
+
+// 연락처 정보를 포함하는 상세 고객 정보 생성
+let detail: DetailCustomerInfo = {
+  ...customer,
+  phone: '123-456',
+  address: '부산시 부산진구'
+}
 }
