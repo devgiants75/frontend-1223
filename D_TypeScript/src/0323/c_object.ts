@@ -138,5 +138,4 @@ let user1: UserRecord = {
 
 user1.email = 'qwerty@naver.com'; // 문자열 키와 속성값
 console.log(user1.email); // qwerty@naver.com
-
 }
