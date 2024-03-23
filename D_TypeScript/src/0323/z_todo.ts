@@ -23,6 +23,8 @@ function addTodo(todos: ITodoItem[], task: string): ITodoItem[] {
     // 기존의 Todo 항목들 중에서 가장 큰 id에 1을 더해 새로운 ID를 생성
     // 비어있으면 0에서 시작
     id: Math.max(0, ...todos.map(t => t.id)) + 1, // 새로운 ID 생성
+    // ['A', 'B', 'C']
+    // > [1, 2, 3]
     task: task,
     completed: false, // 새로운 Todo 항목은 기본적으로 미완료 상태
   };

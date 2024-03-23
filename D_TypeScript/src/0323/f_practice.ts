@@ -83,4 +83,34 @@ function updateEventDate(event: Event, newDate: string): Event {
 // 함수 사용
 const event1 = createEvent('TypeScript Workshop', 'Learn TypeScript basics', '2023-04-05');
 console.log(updateEventDate(event1, '2023-04-06'));
+
+//! 3. union, intersection, literal, functin type을 활용한 고급 타입 만들기
+
+// 요구 사항
+// 1. 고객 정보를 나타내는 타입(CustomInfo) - 인터페이스
+// : 고객의 name(string)과 email(string), status를 포함
+// : , status는 "active", "inactive", "prospective" 중 
+//     하나의 값을 가질 수 있는 리터럴 타입
+
+type CustomerStatus = "active" | "inactive" | "prospertive";
+
+interface CustomerInfo {
+  name: string;
+  email: string;
+  status: CustomerStatus;
+}
+
+// 연락처 정보를 나타내는 인터페이스 정의
+interface ContactInfo {
+  phone: string;
+  address: string;
+}
+
+// 2. 고객 정보 업데이트를 위한 함수 타입(UpdateCustomerFunction) 정의
+// : CustomerInfo 타입의 객체와 업데이트할 정보를 담은 객체를 매개변수로 받고, 업데이트된 CustomerInfo 객체를 반환
+// : 업데이트할 정보는 Partial<CustomerInfo> 타입을 사용
+
+// 3. 고객 연락처 정보(ContactInfo)를 CustomerInfo에 추가하는 인터섹션 타입 정의
+// : ContactInfo는 phone(string)과 address(string) 속성
+// : 고객 정보와 연락처 정보를 모두 포함하는 새로운 타입을 생성
 }
