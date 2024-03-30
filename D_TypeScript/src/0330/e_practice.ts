@@ -63,8 +63,42 @@ class Membership<T extends Member> {
       this.members.splice(index, 1);
     }
   }
+
+  //? 활성 상태인 회원들만 필터링해서 반환하는 메서드
+  // : active 속성이 true인 회원'들만' 새로운 배열로 만들어 반환
+  filterActiveMembers(): T[] {
+    // 주어진 함수(기능)의 값이 true 요소만 새로운 배열로 반환
+    return this.members.filter(member => member.active);
+  }
 }
 
+//! Membership 클래스의 사용 예시
+// 회원관리 로직이 하나 생성
+let membership = new Membership<Member>();
 
+//? 회원을 추가하는 예시
+let memberA = new Member('이승아', 28);
+membership.addMember(memberA);
+membership.addMember(new Member('이도경', 30, false));
+membership.addMember(new Member('정주연', 26));
+membership.addMember(new Member('윤동희', 22, false));
+
+//? '이도경' / '한동희' 을 검색 및 출력하는 예시
+console.log(membership.findMember('이도경'));
+// Member { name: '이도경', age: 30, active: false }
+console.log(membership.findMember('한동희'));
+// undefined
+
+//? 활성 회원 필터링 및 출력하는 예시
+let activeMembers = membership.filterActiveMembers();
+console.log(activeMembers); // 활성 회원 목록 출력
+// [
+//   Member { name: '이승아', age: 28, active: true },
+//   Member { name: '정주연', age: 26, active: true }
+// ]
+
+//? '이승아' 회원 제거 및 검증 예시
+membership.removeMember('이승아');
+console.log(membership.findMember('이승아')); // undefined
 
 }
