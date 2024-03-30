@@ -97,7 +97,4 @@
 
   console.log(myGenericNumber.add(5, 3)); // 8
   console.log(myGenericString.add('이', '승아')); // 이, 승아
-
-
-
 }
