@@ -1,0 +1,14 @@
+.container {
+  width: 300px;
+  margin: auto;
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin-top: 10px;
+}
