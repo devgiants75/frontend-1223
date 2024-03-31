@@ -13,7 +13,8 @@ var TaskManager = /** @class */ (function () {
         // 새 할 일을 tasks 배열에 추가
         // : id는 현재 nextId 값을 사용
         // : content는 매개변수의 값을 사용
-        this.tasks.push({ id: this.nextId, content: content });
+        //? : completed는 false(완료하지 않음)을 기본값으로 설정
+        this.tasks.push({ id: this.nextId, content: content, completed: false });
         // 다음 ID값을 미리 증가
         this.nextId++;
     };
@@ -37,6 +38,7 @@ var TaskManager = /** @class */ (function () {
         // 기존의 목록을 모두 비움
         container.innerHTML = '';
         // tasks 배열의 각 할 일에 대해 루프를 실행
+        //? 할 일 목록을 렌더링할 때 완료 체크박스와 완료 상태에 따른 스타일 변경 로직을 추가
         this.tasks.forEach(function (task) {
             // 새로운 목록 항목(li)을 생성
             var li = document.createElement('li');
@@ -50,10 +52,28 @@ var TaskManager = /** @class */ (function () {
                 // : forEach 반복으로 해당 삭제 버튼에 각 요소의 id가 담겨있음
                 _this.removeTask(task.id);
             };
+            //? 완료 체크박스 추가
+            var checkbox = document.createElement('input');
+            checkbox.type = 'checkbox';
+            // 체크박스의 상태를 task 할 일의 completed 속성값으로 지정
+            checkbox.checked = task.completed;
+            checkbox.onchange = function () {
+                // 체크박스 상태 변경 시 할 일의 완료 상태를 업데이트
+                task.completed = !task.completed;
+                // 할 일 목록을 다시 렌더링
+                _this.renderTasks(containerId);
+            };
+            if (task.completed) {
+                // 할 일 완료 시 스타일 변경
+                li.style.textDecoration = 'line-through';
+            }
             // JS로 생성된 DOM 요소를 HTML에 추가하기 위해서는
             // : 생성되어있는 HTML의 하위 요소로 전달(appendChild)
             // - 삭제 버튼을 목록 항목에 추가
             li.appendChild(deleteButton);
+            // - 체크박스 목록 항목의 맨 앞에 추가
+            // : li 태그 내에 text(내용), button(삭제버튼) 중에서 첫 번째 요소인 text 앞에 체크박스 삽입
+            li.insertBefore(checkbox, li.firstChild);
             // - 완성된 목록 항목을 컨테이너(HTML의 ul태그)에 추가
             container.appendChild(li);
         });
@@ -79,3 +99,5 @@ window.onload = function () {
         newTaskInput.value = '';
     };
 };
+// html파일에 ts코드를 연결하기 위해서는
+// : tsc(typescript compiler)를 사용하여 js 파일로 컴파일한 후 연결
