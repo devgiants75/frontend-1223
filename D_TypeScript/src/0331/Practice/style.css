@@ -1,0 +1,22 @@
+#photo-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  padding: 10px;
+}
+
+#prev-button, #next-button {
+  margin: 10px;
+  padding: 10px;
+}
+
+.photo-item {
+  border: 1px solid #ddd;
+  padding: 5px;
+  text-align: center;
+}
+
+.photo-item img {
+  max-width: 100%;
+  height: auto;
+}
