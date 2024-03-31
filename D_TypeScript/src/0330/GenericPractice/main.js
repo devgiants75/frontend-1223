@@ -17,6 +17,8 @@ var TaskManager = /** @class */ (function () {
         this.tasks.push({ id: this.nextId, content: content, completed: false });
         // 다음 ID값을 미리 증가
         this.nextId++;
+        //? 할 일 개수를 업데이트
+        this.updateTaskCount();
     };
     // - 할 일 제거 메서드
     // : 제거할 할 일의 ID를 매개변수로 받아 목록에서 제거
@@ -26,6 +28,8 @@ var TaskManager = /** @class */ (function () {
         this.tasks = this.tasks.filter(function (task) { return task.id !== id; });
         // 변경된 할 일 목록을 화면에 다시 렌더링
         this.renderTasks('task-list');
+        //? 할 일 개수를 업데이트
+        this.updateTaskCount();
     };
     // - 할 일 목록을 화면에 렌더링하는 메서드
     // : '렌더링할 컨테이너(ul 태그)'의 ID를 매개변수로 전달받음
@@ -77,6 +81,15 @@ var TaskManager = /** @class */ (function () {
             // - 완성된 목록 항목을 컨테이너(HTML의 ul태그)에 추가
             container.appendChild(li);
         });
+        //? 할 일 개수를 업데이트
+        this.updateTaskCount();
+    };
+    //? 할 일 목록이 변경될 때마다 할 일의 개수를 업데이트하는 로직
+    TaskManager.prototype.updateTaskCount = function () {
+        var countElement = document.getElementById('task-count');
+        if (countElement) {
+            countElement.textContent = "\uD560 \uC77C \uAC1C\uC218: ".concat(this.tasks.length);
+        }
     };
     return TaskManager;
 }());
@@ -91,12 +104,15 @@ window.onload = function () {
     var taskList = document.getElementById('task-list');
     // 할 일 추가 버튼 클릭 시 실행될 이벤트 리스너
     addButton.onclick = function () {
-        // 입력 필드의 값(value)을 할 일로 추가
-        taskManager.addTask(newTaskInput.value);
-        // 변경될 할 일 목록을 화면에 렌더링
-        taskManager.renderTasks('task-list');
-        // 할 일을 추가한 후, 입력 필드 초기화
-        newTaskInput.value = '';
+        //? 입력 값이 비어있지 않은 경우에만 input 입력 필드의 값을 할 일로 추가
+        if (newTaskInput.value.trim() !== '') {
+            // 입력 필드의 값(value)을 할 일로 추가
+            taskManager.addTask(newTaskInput.value);
+            // 변경될 할 일 목록을 화면에 렌더링
+            taskManager.renderTasks('task-list');
+            // 할 일을 추가한 후, 입력 필드 초기화
+            newTaskInput.value = '';
+        }
     };
 };
 // html파일에 ts코드를 연결하기 위해서는
