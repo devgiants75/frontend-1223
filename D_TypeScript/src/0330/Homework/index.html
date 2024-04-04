@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>장바구니 관리</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <h1>장바구니</h1>
+  <form id="product-form">
+    <input type="text" id="product-name" placeholder="상품 이름" required>
+    <input type="number" id="product-quantity" placeholder="수량" required min="1">
+    <button type="submit">추가</button>
+
+    <div class="search-container">
+      <input type="text" id="search-input" class="search-input" placeholder="상품 검색...">
+      <button type="submit">검색</button>
+    </div>
+    <p id="total-quantity">총 수량: 0</p>
+
+  </form>
+  <ul id="product-list"></ul>
+
+  <script src="main.js"></script>
+</body>
+
+</html>
