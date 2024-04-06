@@ -122,8 +122,57 @@ body {
   width: 0%;
 }
 
-/* 개별 할 일 스타일 지정 */
+.to-do-list.active {
+  width: 50%;
+  min-width: 500px;
+  margin: 0;
+  list-style: none;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* 가로(너비) 방향으로 텍스트가 넘칠 경우 생기는 스크롤바
+    : 숨김 설정 
+   */
+  overflow-x: hidden;
+  /*  
+    세로(높이) 방향으로 텍스트(내용)가 넘칠 경우 생기는 스크롤바: 필요한 경우에만 생성
+  */
+  overflow-y: auto;
+  background-color: #fffefe;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+}
 
+/* 개별 할 일 스타일 지정 */
+.task {
+  background-color: #f3e9f1;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  width: 70%;
+  padding: 20px;
+  font-size: 16px;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.task:hover {
+  background-color: #e4f2d7;
+}
+
+.task span {
+  margin: 0;
+  color: #5a5a5a;
+}
+
+.task i:hover {
+  color: #2a9d8f;
+}
+
+.task.completed {
+  background-color: #a5d6a7;
+}
 
 /* 완료 상태를 확인하는 막대 스타일 지정 */
 .progress {
