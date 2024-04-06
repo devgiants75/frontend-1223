@@ -90,3 +90,30 @@ append(progressBar, [progressDone]);
 
 // main 영역의 DOM 요소 전달
 append(main, [clockContainer, mainMsg, form, progressBar]);
+
+//! 실시간 시간 지정 기능 추가
+const $hour = document.getElementById('hr');
+const $minute = document.getElementById('min');
+const $second = document.getElementById('sec');
+
+// 매 초마다 renderTime 함수를 호출하여 시간을 갱신하는 타이머 설정
+const clock = setInterval(renderTime, 1000);
+
+// 현재 시간을 가져와서 해당 요소에 표시하는 함수
+function renderTime() {
+  // 시간(1~23):분(0~59):초(0~59) 
+  let date = new Date();
+  let hr = date.getHours();
+  let min = date.getMinutes();
+  let sec = date.getSeconds();
+
+  // 시, 분, 초가 10보다 작으면 앞에 '0' 문자열을 붙여 두 자리수로 표시
+  if (hr < 10) hr = '0' + hr;
+  if (min < 10) min = '0' + min;
+  if (sec < 10) sec = '0' + sec;
+
+  // 시, 분, 초를 각각의 요소에 표시
+  $hour.innerHTML = hr;
+  $minute.innerHTML = min;
+  $second.innerHTML = sec;
+}

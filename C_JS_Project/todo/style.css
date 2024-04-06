@@ -18,3 +18,131 @@ body {
   /* 세로 축을 기준으로 요소들을 위쪽에서 시작하도록 배치 */
   justify-content: flex-start;
 }
+
+/* section 태그 스타일 지정 */
+.main {
+  width: 80%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 30px;
+}
+
+@font-face {
+  font-family: 'TTLaundryGothicB';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2403-2@1.0/TTLaundryGothicB.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+.main-msg {
+  font-size: 24px;
+  font-family: 'TTLaundryGothicB';
+  font-weight: 400;
+  margin-top: 50px;
+  /* 글자 사이 간격 */
+  letter-spacing: 1px;
+  color: #3c6e71;
+}
+
+.new-input {
+  width: 100%;
+  max-width: 500px;
+  height: 35px;
+  /* 배경색을 투명하게 설정 */
+  background: transparent;
+  border: 2px solid #dbe7e4;
+  border-radius: 18px;
+  margin-top: 20px;
+  color: #3c6e71;
+  text-align: center;
+  font-size: 18px;
+}
+
+.new-input:hover,
+.new-input:focus {
+  outline: none;
+  border: 2px solid #a4c3b2;
+}
+
+.task-form {
+  height: 35px;
+  background-color: #f4a261;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 0 15px;
+  cursor: pointer;
+}
+
+.submit-icon {
+  font-size: 20px;
+  color: #2a9d8f;
+  cursor: pointer;
+}
+
+.submit-label {
+  display: none;
+}
+
+.time-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 80px;
+  font-weight: 700;
+  color: #264653;
+}
+
+.mm-dd-day {
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #2a9d8f;
+}
+
+.mm-dd-day div {
+  margin: 0 2px 0 2px;
+  color: rgba(188, 188, 188, 1);
+}
+
+#hr, #sec, #min {
+  width: 110px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 할 일 목록 스타일 지정 */
+.to-do-list {
+  display: none;
+  width: 0%;
+}
+
+/* 개별 할 일 스타일 지정 */
+
+
+/* 완료 상태를 확인하는 막대 스타일 지정 */
+.progress {
+  background-color: #e9c46a;
+  border-radius: 20px;
+  height: 20px;
+  width: 80%;
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+.progress-done {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(to right, #2a9d8f, #f4a261);
+  color: #fff;
+  height: 100%;
+  width: 100%;
+  border-radius: 20px;
+  transition: 1s ease;
+}
