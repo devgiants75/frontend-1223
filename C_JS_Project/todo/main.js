@@ -75,9 +75,9 @@ clockContainer.innerHTML =
   <div id="sec">00</div>
 </div>
 <div class="mm-dd-day">
-  <div id="mm">April</div>
-  <div id="dd">6</div>
-  <div id="day">Saturday</div>
+  <div id="mm">November</div>
+  <div id="dd">16</div>
+  <div id="day">Sunday</div>
 </div>
 `;
 
@@ -116,4 +116,37 @@ function renderTime() {
   $hour.innerHTML = hr;
   $minute.innerHTML = min;
   $second.innerHTML = sec;
+}
+
+//! 현재 날짜를 표시하는 함수
+function displayDate(mm, dd, day) {
+  // 현재 날짜와 시간을 나타내는 Date 객체 생성
+  let date = new Date();
+
+  // 월을 나타내는 문자열 배열
+  const months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+
+  // 요일을 나타내는 문자열 배열
+  const days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
 }
