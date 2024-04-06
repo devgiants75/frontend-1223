@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ToDO App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!--  
+    ! JS에서 DOM 요소를 생성하여 HTML로 첨부(append)
+  -->
+  <!-- 문서의 본문. 사용자에게 보여지는 콘텐츠(JS 생성)를 포함 -->
+  <div id="container">
+    <section class="main">
+      <!-- 시간/날짜 컨테이너 -->
+      <div class="clockcontainer">
+        <div class="time-container">
+          <div id="hr">00</div>
+          <div class="divider">:</div>
+          <div id="min">00</div>
+          <div class="divider">:</div>
+          <div id="sec">00</div>
+        </div>
+        <div class="mm-dd-day">
+          <div id="mm">April</div>
+          <div id="dd">6</div>
+          <div id="day">Saturday</div>
+        </div>
+      </div>
+
+      <!-- 메인 메시지 -->
+      <div class="main-msg">TODO리스트입니다.</div>
+      
+      <!-- form 요소 -->
+      <form class="task-form">
+        <label class="submit-label">
+          <input type="submit" class="task-submit" value="" />
+          <i class="bi bi-plus-square submit-icon"></i>
+        </label>
+      </form>
+
+      <!-- 할 일의 완료 여부를 확인하는 % 그래프 바 -->
+      <div class="progress">
+        <div class="progress-done"></div>
+      </div>
+
+    </section>
+
+    <ul class="to-do-list">
+      <!-- 동적으로 할 일 목록이 추가 -->
+    </ul>
+  </div>
+  
+  <script src="main.js"></script>
+</body>
+</html>

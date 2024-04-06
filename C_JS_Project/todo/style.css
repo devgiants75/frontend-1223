@@ -1,0 +1,20 @@
+body {
+  background-color: #f9f3ee;
+  color: #5a5a5a;
+  margin: 0;
+  border: none;
+  /* 요소의 너비와 높이 계산을 border와 padding을 포함하여 계산 */
+  box-sizing: border-box;
+}
+
+#container {
+  /* 뷰포트 너비/높이의 100%로 지정 */
+  width: 100vw; 
+  height: 100vh;
+  /* flexbox 레이아웃 설정 - 요소를 수직(열 방향)으로 배치 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* 세로 축을 기준으로 요소들을 위쪽에서 시작하도록 배치 */
+  justify-content: flex-start;
+}
