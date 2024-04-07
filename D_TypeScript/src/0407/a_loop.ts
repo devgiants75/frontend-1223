@@ -79,3 +79,5 @@ console.log('객체의 for in 루프');
 for(let key in student) {
   console.log(`${key}: ${student[key]}`);
 }
+
+let num = 0;
