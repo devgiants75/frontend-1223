@@ -367,11 +367,11 @@ toDoList.addEventListener('click', (e) => {
       if (list[i].task === e.target.innerText && list[i].status === 'false') {
         // 상태가 false인 값을 true로 변경
         // : 실제 데이터 값 변경
-        list[i].status === 'true'
+        list[i].status === 'true';
         localStorage.setItem('Tasks', JSON.stringify(list));
         break;
       } else if (list[i].task === e.target.innerText && list[i].status === 'true') {
-        list[i].status === 'false'
+        list[i].status === 'false';
         localStorage.setItem('Tasks', JSON.stringify(list));
         break;
       }
@@ -427,9 +427,11 @@ function updateProgress() {
 
     // 진행 상태를 나타내는 바의 너비를 계산된 백분율(newWidth)로 설정
     progressDone.style.width = newWidth;
+    console.log('계산된 너비');
   } else {
     // 할 일 목록이 비어있는 경우, 진행 상태 바의 너비를 0%로 설정
     progressDone.style.width = "0%";
+    console.log('0%');
   }
 }
 
