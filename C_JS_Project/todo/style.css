@@ -67,6 +67,14 @@ body {
 }
 
 .task-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 20px 0;
+}
+
+.task-submit {
   height: 35px;
   background-color: #f4a261;
   color: #fff;
@@ -192,6 +200,6 @@ body {
   color: #fff;
   height: 100%;
   width: 100%;
-  border-radius: 20px;
   transition: 1s ease;
+  border-radius: 20px;
 }
