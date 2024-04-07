@@ -367,11 +367,11 @@ toDoList.addEventListener('click', (e) => {
       if (list[i].task === e.target.innerText && list[i].status === 'false') {
         // 상태가 false인 값을 true로 변경
         // : 실제 데이터 값 변경
-        list[i].status === 'true';
+        list[i].status = 'true';
         localStorage.setItem('Tasks', JSON.stringify(list));
         break;
       } else if (list[i].task === e.target.innerText && list[i].status === 'true') {
-        list[i].status === 'false';
+        list[i].status = 'false';
         localStorage.setItem('Tasks', JSON.stringify(list));
         break;
       }
