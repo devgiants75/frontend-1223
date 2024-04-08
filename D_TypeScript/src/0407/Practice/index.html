@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!--  
+    JSONPlaceholder를 사용하여 사용자 데이터 및 게시글 가져오기
+
+    !1. models.ts (데이터 모델 정의)
+    - 사용자 정보를 나타내는 User 인터페이스
+      : id, name, email
+    - 게시물 정보를 나타내는 Post 인터페이스
+      : userId, id, title, body
+
+    >> 두 인터페이스는 모듈화 하여 내보내기
+
+    !2. apiUtils.ts (API 호출 유틸리티 모듈)
+    - 제네릭을 사용하여 
+      다양한 타입의 응답을 처리할 수 있는 fetchData 함수
+
+    - 주어진 URL로 부터 데이터를 비동기적으로 가져옴
+    
+    - 해당 응답이 이루어지지 않은 경우, 네트워크 응답 실패 
+      (!response.ok)
+      : 에러 발생
+
+    - 응답을 JSON으로 변환, 제네릭 타입으로 단언
+
+    !3. dataService.ts (데이터 서비스 모듈)
+    ? fetchData함수와 User, Post 인터페이스를 가져와 사용
+
+    - 주어진 userId에 해당하는 사용자 정보를 가져오는 함수(비동기)
+
+    - 주어진 userId에 해당하는 사용자의 게시물을 가져오는 함수(비동기)
+
+    !4. utils.ts (유틸리티 네임스페이스 정의)
+    ? User, Post 인터페이스를 가져와 사용
+
+    - Utils 네임스페이스 안에 함수들을 정의: 관련 유틸리티 함수들을 그룹화
+
+      : User 객체를 받아 콘솔에 사용자 정보를 출력하는 함수
+      : Post 배열을 받아 콘솔에 게시물 정보를 출력하는 함수
+
+    !5. app.ts (애플리케이션 실행 모듈)
+    ? 사용자 데이터와 게시물을 가져와 출력하는 로직을 포함
+    import { getUser, getPostsByUser } from './dataService';
+    import { Utils } from './utils';
+
+    - 주어진 userId를 사용하여 해당 사용자의 정보와 게시물을 가져와 출력하는 비동기 함수
+      : showUserData
+
+    - 함수 실행 예시(userId가 1에 해당하는 사용자의 데이터를 가져와 출력)
+      : showUserData(1);
+  -->
+</body>
+</html>
