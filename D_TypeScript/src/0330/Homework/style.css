@@ -1,34 +1,40 @@
 body {
-  max-width: 600px;
+  max-width: 800px;
   margin: 0 auto;
+  margin-top: 100px;
   padding: 20px;
-  background-color: #f9f9f9;
+  background-color: papayawhip;
+  border: 1px solid rgb(195, 195, 138);
 }
 
-h1 {
+#title {
   color: #333;
+  text-align: center;
 }
 
-form {
+#product-form {
   display: flex;
-  gap: 10px;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 20px;
 }
 
 input, button {
-  padding: 10px;
-  font-size: 16px;
+  padding: 5px;
+  font-size: 14px;
+  border: 1px solid #999;
+  border-radius: 5px;
 }
 
 button {
-  background-color: #007bff;
+  background-color: burlywood;
   color: white;
+  cursor: pointer;  
   border: none;
-  cursor: pointer;
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: darkorange;
 }
 
 ul {
@@ -44,15 +50,6 @@ li {
   padding: 10px;
   margin-bottom: 10px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.search-container {
-  margin-bottom: 20px;
-}
-
-.search-input {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-  font-size: 16px;
+  border: none;
+  border-radius: 5px;
 }
