@@ -82,3 +82,40 @@ html, body {
 #em {
   width: 20em;
 }
+
+/*! em, rem 단위 */
+html {
+  font-size: 16px;
+}
+
+.ems li {
+  font-size: 1.3em;
+}
+
+.rems li {
+  font-size: 1.3rem;
+}
+
+/*! percent 단위 */
+.wrapper {
+  width: 400px;
+  border: 5px solid rebeccapurple;
+}
+
+.px {
+  width: 200px;
+}
+
+.percent {
+  width: 40%;
+}
+
+/*  */
+li {
+  font-size: 80%;
+}
+
+/* 숫자값 투명도 */
+p {
+  opacity: 0.6;
+}
