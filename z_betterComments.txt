@@ -1,0 +1,92 @@
+  확장(플러그인) 
+  > Better Comments 설치
+  > 세부 정보의 tag정보를 복사
+
+  설정
+  > 확장
+  > Better Comments configuration
+  > Tags
+  > settings.json에서 편집
+  <!-- 
+    ! 빨간색
+    ? 파란색
+    todo 주황색
+    // 회색에 밑줄
+    * 검은색 바탕에 초록색
+    ^ 검은색 바탕에 노란색
+  -->
+
+  "better-comments.tags": [
+    {
+      "tag": "!",
+      "color": "#FF2D00",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "?",
+      "color": "#3498DB",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "//",
+      "color": "#474747",
+      "strikethrough": true,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "todo",
+      "color": "#FF8C00",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "*",
+      "color": "#FFFF00",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "#111111",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "#",
+      "color": "#FF00A2",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "#111111",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "%",
+      "color": "#A3FF00",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "#111111",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "&",
+      "color": "#ffffff",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "#111111",
+      "bold": false,
+      "italic": false
+    }
+  ]
