@@ -9,19 +9,30 @@
 </head>
 
 <body>
-  <h1>장바구니</h1>
+  <h1 id="title">장바구니</h1>
   <form id="product-form">
-    <input type="text" id="product-name" placeholder="상품 이름" required>
-    <input type="number" id="product-quantity" placeholder="수량" required min="1">
-    <button type="submit">추가</button>
 
+    <div class="add-container">
+      <input type="text" id="product-name" placeholder="상품 이름" required>
+      <input type="number" id="product-quantity" placeholder="수량" required min="1">
+      <button type="submit">추가</button>
+    </div>
+
+    
+
+    <div class="quantity-container">
+      <p id="total-quantity">총 수량: 0</p>
+    </div>
+
+  </form>
+
+  <form id="search-fomr">
     <div class="search-container">
       <input type="text" id="search-input" class="search-input" placeholder="상품 검색...">
       <button type="submit">검색</button>
     </div>
-    <p id="total-quantity">총 수량: 0</p>
-
   </form>
+  
   <ul id="product-list"></ul>
 
   <script src="main.js"></script>
