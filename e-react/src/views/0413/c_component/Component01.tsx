@@ -1,4 +1,5 @@
 import React from 'react'
+import puppy01 from '../../../assets/images/puppy01.jpg';
 
 /*
 ! 컴포넌트(Component)
@@ -36,7 +37,7 @@ export function Img() {
   // : 컴포넌트 함수 내에서 렌더링 할 HTML 코드는
   //   return 반환문 내에 ()소괄호 지정 후 작성
   return (
-    <img src="https://cdn.pixabay.com/photo/2017/09/25/13/12/puppy-2785074_1280.jpg" alt="강아지" width={300} />
+    <img src={puppy01} alt="강아지" width={300} />
   );
 }
 
