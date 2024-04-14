@@ -4,6 +4,7 @@ import JSX02 from './a_JSX/JSX02'
 import JSX03 from './a_JSX/JSX03'
 import Props01 from './b_Props/Props01'
 import Props02 from './b_Props/Props02'
+import Rendering01 from './c_Rendering/Rendering01'
 
 export default function index() {
   return (
@@ -25,6 +26,7 @@ export default function index() {
       <Props02 />
 
       <h2>3. 조건부 렌더링</h2>
+      <Rendering01 />
     </div>
   )
 }
