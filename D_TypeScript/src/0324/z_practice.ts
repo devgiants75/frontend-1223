@@ -41,9 +41,9 @@ class Library {
     // : 해당 인덱스를 splice로 삭제
   }
 
-  public findBooksByAuthor(author: string): BookType[] {
-    // filter() 메서드 사용
-  }
+  // public findBooksByAuthor(author: string): BookType[] {
+  //   // filter() 메서드 사용
+  // }
 
   public listBooks(): void {
     // forEach() 메서드 사용 - 전체 책 요소를 출력

@@ -6,6 +6,7 @@ import React from 'react'
 - 이 컴포넌트는 user 객체를 props로 받아야 하며, user 객체는 name, email, age 속성을 포함해야 합니다.
 - 이 컴포넌트는 사용자의 이름(h1), 이메일(p), 나이(p)를 보여주는 간단한 UI를 렌더링해야 합니다.
 
+
 ! 조건부 렌더링을 사용하여 할인 메시지 표시하기
 ? 요구 사항
 - DiscountMessage 컴포넌트 생성
@@ -27,10 +28,57 @@ const employees = [
 ];
 
 */
-export default function Practice0414() {
+
+function UserProfile({ user }) {
   return (
     <div>
-      
+      <h1>{user.name}</h1>
+      <p>Email: {user.email}</p>
+      <p>Age: {user.age}</p>
+    </div>
+  );
+}
+
+function DiscountMessage({ isDiscountActive }) {
+  return (
+    <div>
+      {isDiscountActive ? <strong>할인 중!</strong> : "현재 할인되지 않음."}
+    </div>
+  );
+}
+
+function FilteredEmployeeList() {
+  const employees = [
+    { id: 1, name: '이승아', role: 'developer', experience: 5 },
+    { id: 2, name: '정주연', role: 'designer', experience: 2 },
+    { id: 3, name: '전예찬', role: 'developer', experience: 3 },
+    { id: 4, name: '이도경', role: 'manager', experience: 7 },
+    { id: 5, name: '정혜윤', role: 'developer', experience: 1 }
+  ];
+
+  const filteredAndSorted = employees
+    .filter(employee => employee.role === 'developer' && employee.experience >= 3)
+    .sort((a, b) => b.experience - a.experience)
+    .map(employee => (
+      <li key={employee.id}>{employee.name} ({employee.experience} years)</li>
+    ));
+
+  return <ul>{filteredAndSorted}</ul>;
+}
+
+export default function Practice0414() {
+  const user = { name: "홍길동", email: "example@example.com", age: 25 };
+
+  return (
+    <div>
+      <UserProfile user={user} />
+
+      <hr />
+      <DiscountMessage isDiscountActive={true} />
+
+      <hr />
+      <FilteredEmployeeList />
+
     </div>
   )
 }
