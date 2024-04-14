@@ -13,6 +13,19 @@ import React from 'react'
 - 할인이 활성화되어 있으면 "할인 중!"이라는 메시지를 표시하고, 그렇지 않으면 "현재 할인되지 않음."이라는 메시지를 표시 
 >> 삼항 연산자를 사용
 
+! 다중 조건 필터링 및 정렬
+? employees 배열에는 여러 직원의 정보가 저장
+- role이 'developer'이고, experience가 3년 이상인 직원을 찾아 그들의 이름과 경력을 <li>로 표시하되, 경력에 따라 내림차순으로 정렬
+- 각 <li>에는 직원의 id를 키로 사용
+
+const employees = [
+  { id: 1, name: '이승아', role: 'developer', experience: 5 },
+  { id: 2, name: '정주연', role: 'designer', experience: 2 },
+  { id: 3, name: '전예찬', role: 'developer', experience: 3 },
+  { id: 4, name: '이도경', role: 'manager', experience: 7 },
+  { id: 5, name: '정혜윤', role: 'developer', experience: 1 }
+];
+
 */
 export default function Practice0414() {
   return (
