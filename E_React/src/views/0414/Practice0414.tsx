@@ -28,8 +28,21 @@ const employees = [
 ];
 
 */
+interface User {
+  name: string;
+  email: string;
+  age: number;
+}
 
-function UserProfile({ user }) {
+interface UserProfileProps {
+  user: User;
+}
+
+interface DiscountMessageProps {
+  isDiscountActive: boolean;
+}
+
+function UserProfile({ user }: UserProfileProps) {
   return (
     <div>
       <h1>{user.name}</h1>
@@ -39,7 +52,7 @@ function UserProfile({ user }) {
   );
 }
 
-function DiscountMessage({ isDiscountActive }) {
+function DiscountMessage({ isDiscountActive }: DiscountMessageProps) {
   return (
     <div>
       {isDiscountActive ? <strong>할인 중!</strong> : "현재 할인되지 않음."}
