@@ -7,6 +7,7 @@ import { Link, Route, Routes } from 'react-router-dom';
 // : 폴더 명 만으로 해당 파일 호출이 가능
 import Index0413 from './views/0413';
 import Index0414 from './views/0414';
+import Index0420 from './views/0420';
 
 function App() {
   return (
@@ -52,6 +53,7 @@ function App() {
         <Route path='/0413' element={<Index0413 />}/>
         {/* JSX 문서에서 HTML 내에 JS 코드 작성: 중괄호 내에 작성 */}
         <Route path='/0414' element={<Index0414 />}/>
+        <Route path='/0420' element={<Index0420 />}/>
       </Routes>
     </>
   );
