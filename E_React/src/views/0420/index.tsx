@@ -7,6 +7,7 @@ import Handler04 from './b_Handler/Handler04'
 import Handler05 from './b_Handler/Handler05'
 import PracticeHandler from './b_Handler/Practice'
 import State01 from './c_State/State01'
+import State02 from './c_State/State02'
 
 export default function Index() {
   return (
@@ -29,6 +30,7 @@ export default function Index() {
 
       <h2>3. State</h2>
       <State01 />
+      <State02 />
 
     </div>
   )
