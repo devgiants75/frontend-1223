@@ -2,6 +2,8 @@ import React from 'react'
 import State01 from './a_State/State01'
 import State02 from './a_State/State02'
 import State03 from './a_State/State03'
+import Practice01 from './b_Practice/Practice01'
+import Practice02 from './b_Practice/Practice02'
 
 export default function index() {
   return (
@@ -14,6 +16,10 @@ export default function index() {
       <State01 />
       <State02 />
       <State03 />
+
+      <h2>2. State 연습 문제</h2>
+      <Practice01 />
+      <Practice02 />
     </div>
   )
 }
