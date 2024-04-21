@@ -51,6 +51,17 @@ export default function State02() {
     //   , 그 여부를 boolean으로 반환
     // 만족할 경우 true, 만족하지 않을경우 false
     return /\S+@\S+\.\S+/.test(email);
+
+    /*
+    ? 정규 표현식(이메일: devgiants75@naver.com)
+      : \S+@\S+\.\S+
+      \S+ : 하나 이상의 공백이 아닌 문자에 일치(아이디) (devgiants75)
+      @ : 리터럴 문자인 @ 문자를 포함 (@)
+      \S+ : 하나 이상의 공백이 아닌 문자에 일치(도메인 이름의 시작)
+      \. : 리터럴 점(.)문자를 포함(도메인의 일부)
+      \S+ : 하나 이상의 공백이 아닌 문자에 일치
+            (도메인의 최상위 도메인: com, net, co.kr 등)
+    */ 
   }
 
   //! 폼 제출 이벤트를 처리하는 이벤트 핸들러 함수
@@ -107,7 +118,7 @@ export default function State02() {
   }
 
   return (
-    <>
+    <div style={{ margin: '20px', padding: '10px'}}>
       <h3>회원가입 구현</h3>
       <form onSubmit={handleSubmit}>
         <div>
@@ -133,7 +144,7 @@ export default function State02() {
         <div>
           <label>이메일 : </label>
           <input 
-            type="email" 
+            type="text" 
             name='email'
             value={email}
             onChange={handleInputChange}
@@ -142,6 +153,6 @@ export default function State02() {
         </div>
         <button type='submit'>회원가입</button>
       </form>
-    </>
+    </div>
   )
 }
