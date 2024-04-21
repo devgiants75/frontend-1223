@@ -1,6 +1,7 @@
 import React from 'react'
 import State01 from './a_State/State01'
 import State02 from './a_State/State02'
+import State03 from './a_State/State03'
 
 export default function index() {
   return (
@@ -12,6 +13,7 @@ export default function index() {
       <h2>1. State 기본 동작 원리</h2>
       <State01 />
       <State02 />
+      <State03 />
     </div>
   )
 }
