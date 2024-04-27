@@ -16,7 +16,23 @@ export default function UseRef02({ images }: ImageGalleryProps) {
   const imageRef = useRef<HTMLImageElement>(null);
 
   const handleNextClick = () => {
+    // 다음 이미지로 인덱스를 순환
+    // 0, 1, 2, 3, 4
+    // % images.length
+    // : 인덱스가 이미지 배열의 끝을 넘어가면 다시 0으로 돌아오도록 설정
+    // : 이미지 배열의 길이를 초과하지 않고 순환하는 이미지를 생성
+    const nextIndex = (currentImageIndex + 1) % images.length;
+    setcurrentImageIndex(nextIndex);
 
+    // 참조된(보여지는) 이미지 요소에 애니메이션 효과를 적용
+    if (imageRef.current) {
+      imageRef.current.style.opacity = '0';
+      setTimeout(() => {
+        if (imageRef.current) {
+          imageRef.current.style.opacity = '1';
+        }
+      }, 300);
+    }
   }
 
   return (
@@ -31,8 +47,8 @@ export default function UseRef02({ images }: ImageGalleryProps) {
         src={images[currentImageIndex]}
         alt={`Display number ${currentImageIndex + 1}`} 
         style={{
-          width: '400px',
-          height: '400px',
+          width: '300px',
+          height: '300px',
           transition: 'opacity 0.3s'
         }}
       />
