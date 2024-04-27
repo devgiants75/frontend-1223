@@ -17,8 +17,11 @@ const initialValue: UserType = {
 
 //? 부모 컴포넌트
 export default function StateProps02() {
+  //! 사용자의 정보를 저장하는 상태관리 파트
   const [userInfo, setUserInfo] = useState<UserType>(initialValue);
 
+  //! 위의 useState 상태 관리를 위한 이벤트와 정보는
+  // 자식 컴포넌트에서 전달받아서 사용
   const handleUpdate = (newInfo: UserType) => {
     setUserInfo(newInfo);
   }
