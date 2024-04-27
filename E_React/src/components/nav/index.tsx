@@ -49,6 +49,14 @@ export default function index() {
       }}>
         <Link to="/0421">0421</Link>
       </div>
+      <div style={{
+        margin: '10px',
+        padding: '10px 20px',
+        border: '1px solid black',
+        borderRadius: '5px'
+      }}>
+        <Link to="/0427">0427</Link>
+      </div>
     </>
   )
 }
