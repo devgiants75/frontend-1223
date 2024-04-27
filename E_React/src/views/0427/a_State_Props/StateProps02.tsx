@@ -25,6 +25,8 @@ export default function StateProps02() {
 
   return (
     <div>
+      <hr />
+      <h5>자식으로 부터 이벤트 전달받기</h5>
       <ChildProps02 
         userInfo={userInfo} 
         onUpdate={handleUpdate} 
