@@ -12,11 +12,43 @@ interface Item {
   amount: number;
 }
 
+interface ItemProps {
+  item: Item;
+  onRemove: (id: number) => void;
+  onEdit: (id: number, amount: number) => void;
+}
+
+// 각 아이템을 보여주는 컴포넌트
+// : 수정과 삭제 기능은 상위 컴포넌트에서 처리
+const ItemComponent = ({ item, onRemove, onEdit}: ItemProps) => {
+  <div>
+    <strong>{item.name}</strong>
+    <input 
+      type="number" 
+      value={item.amount} 
+      onChange={(e) => onEdit(item.id, parseInt(e.target.value))}
+    />
+    <button onClick={() => onRemove(item.id)}>삭제</button>
+  </div>
+}
+
 interface ItemListProps {
   items: Item[],
   onRemove: (id: number) => void;
   onEdit: (id: number, amount: number) => void;
 }
+
+const ItemList = ({ items, onRemove, onEdit }: ItemListProps) => (
+  <>
+    {items.map(item => (
+      <ItemComponent 
+        item={item}
+        onRemove={onRemove}
+        onEdit={onEdit}
+      />
+    ))}
+  </>
+);
 
 // 기존 장바구니 항목
 const initialItems = [
@@ -24,17 +56,6 @@ const initialItems = [
   { id: 2, name: '칸쵸', amount: 1 },
   { id: 3, name: '우유', amount: 3 }
 ]
-
-function Item ({ items }) {
-  return (
-    <div>
-      <p>
-        <b>{items.name}</b>
-        (amount: {items.amount})
-      </p>
-    </div>
-  )
-}
 
 export default function Arr02() {
   const [items, setItems] = useState<Item[]>(initialItems);
@@ -49,6 +70,17 @@ export default function Arr02() {
     setItems([...items, newItem]);
     nextId.current += 1;
   }
+
+  // id값으로 filter 처리
+  const handleRemove = (id: number) => {
+    setItems(items.filter(item => item.id !== id));
+  }
+
+  // id와 수량을 전달받아 처리
+  const handleEdit = (id: number, amount: number) => {
+    setItems(items.map(item => item.id === id ? { ...item, amount } : item));
+  }
+
   return (
     <div>
       <button 
@@ -56,6 +88,7 @@ export default function Arr02() {
       >
         새 물품 추가
       </button>
+      <ItemList items={items} onRemove={handleRemove} onEdit={handleEdit} />
     </div>
   )
 }
