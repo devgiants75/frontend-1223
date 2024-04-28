@@ -20,6 +20,9 @@ export default function Effects03() {
 
   const [error, setError] = useState<string | null>(null);
 
+  //? 검색 용어에 대한 상태 관리
+  const [searchTerm, setSearchTerm] = useState<string>('');
+
   //? 데이터를 불러오는 비동기 함수
   // : 부수 효과
   async function fetchPosts() {
@@ -35,10 +38,10 @@ export default function Effects03() {
       // 응답이 정상적으로 존재한다면 JSON 형태로 데이터 반환
       const data = await response.json();
 
-      const filteredPosts = data.filter((post: any) => post.userId === 1);
+      // const filteredPosts = data.filter((post: any) => post.userId === 1);
 
       // 데이터 상태 업데이트
-      setPosts(filteredPosts);
+      setPosts(data);
       // 로딩 상태 업데이트
       setLoading(false);
     } catch (error) {
@@ -54,6 +57,10 @@ export default function Effects03() {
     fetchPosts();
   }, []);
 
+  const filteredPosts = posts.filter(post =>
+    post.title.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   // 로딩 중 화면 표시
   if (loading) {
     return <div>게시물을 로딩중입니다.</div>
@@ -65,13 +72,21 @@ export default function Effects03() {
   return (
     <div>
       <h3>Posts 게시물</h3>
+
+      <input 
+        type="text" 
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+        placeholder='검색어를 입력해주세요.'
+      />
+
       <ul>
         {/* 
         순서가 없는 태그 내에 
           h4태그 - post 제목
           p태그 - body 내용 
         */}
-        {posts.map(post => (
+        {filteredPosts.map(post => (
           <li key={post.id}>
             <h4>{post.title}</h4>
             <p>{post.body}</p>
