@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef, useState } from "react";
 
 //! useRef: DOM 선택
 // : 컴포넌트 내에서 조회 및 수정할 수 있는 변수 관리
@@ -18,44 +18,42 @@ interface ItemProps {
   onEdit: (id: number, amount: number) => void;
 }
 
-// 각 아이템을 보여주는 컴포넌트
+// '각' 아이템을 보여주는 컴포넌트
 // : 수정과 삭제 기능은 상위 컴포넌트에서 처리
-const ItemComponent = ({ item, onRemove, onEdit}: ItemProps) => {
-  <div>
-    <strong>{item.name}</strong>
-    <input 
-      type="number" 
-      value={item.amount} 
-      onChange={(e) => onEdit(item.id, parseInt(e.target.value))}
-    />
-    <button onClick={() => onRemove(item.id)}>삭제</button>
-  </div>
-}
+const ItemComponent = ({ item, onRemove, onEdit }: ItemProps) => {
+  return (
+    <div>
+      <strong>{item.name}</strong>
+      <input
+        type="number"
+        value={item.amount}
+        onChange={(e) => onEdit(item.id, parseInt(e.target.value))}
+      />
+      <button onClick={() => onRemove(item.id)}>삭제</button>
+    </div>
+  );
+};
 
 interface ItemListProps {
-  items: Item[],
+  items: Item[];
   onRemove: (id: number) => void;
   onEdit: (id: number, amount: number) => void;
 }
 
 const ItemList = ({ items, onRemove, onEdit }: ItemListProps) => (
   <>
-    {items.map(item => (
-      <ItemComponent 
-        item={item}
-        onRemove={onRemove}
-        onEdit={onEdit}
-      />
+    {items.map((item) => (
+      <ItemComponent item={item} onRemove={onRemove} onEdit={onEdit} />
     ))}
   </>
 );
 
 // 기존 장바구니 항목
 const initialItems = [
-  { id: 1, name: '사과', amount: 2 },
-  { id: 2, name: '칸쵸', amount: 1 },
-  { id: 3, name: '우유', amount: 3 }
-]
+  { id: 1, name: "사과", amount: 2 },
+  { id: 2, name: "칸쵸", amount: 1 },
+  { id: 3, name: "우유", amount: 3 },
+];
 
 export default function Arr02() {
   const [items, setItems] = useState<Item[]>(initialItems);
@@ -66,29 +64,27 @@ export default function Arr02() {
 
   // 새로운 아이템을 생성하는 함수
   const onCreate = (name: string, amount: number) => {
-    const newItem = { id: nextId.current, name, amount};
+    const newItem = { id: nextId.current, name, amount };
     setItems([...items, newItem]);
     nextId.current += 1;
-  }
+  };
 
   // id값으로 filter 처리
   const handleRemove = (id: number) => {
-    setItems(items.filter(item => item.id !== id));
-  }
+    setItems(items.filter((item) => item.id !== id));
+  };
 
   // id와 수량을 전달받아 처리
   const handleEdit = (id: number, amount: number) => {
-    setItems(items.map(item => item.id === id ? { ...item, amount } : item));
-  }
+    setItems(
+      items.map((item) => (item.id === id ? { ...item, amount } : item))
+    );
+  };
 
   return (
     <div>
-      <button 
-        onClick={() => onCreate('새 항목', 1)}
-      >
-        새 물품 추가
-      </button>
+      <button onClick={() => onCreate("새 항목", 1)}>새 물품 추가</button>
       <ItemList items={items} onRemove={handleRemove} onEdit={handleEdit} />
     </div>
-  )
+  );
 }

@@ -12,6 +12,7 @@ import Index0414 from './views/0414';
 import Index0420 from './views/0420';
 import Index0421 from './views/0421';
 import Index0427 from './views/0427';
+import Index0428 from './views/0428';
 
 function App() {
   return (
@@ -49,6 +50,7 @@ function App() {
         <Route path='/0420' element={<Index0420 />}/>
         <Route path='/0421' element={<Index0421 />}/>
         <Route path='/0427' element={<Index0427 />}/>
+        <Route path='/0428' element={<Index0428 />}/>
       </Routes>
     </>
   );
