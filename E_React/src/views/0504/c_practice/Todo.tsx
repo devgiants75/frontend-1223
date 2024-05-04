@@ -1,4 +1,4 @@
-import React, { useCallback, useRef, useState } from 'react'
+import React, { useCallback, useMemo, useRef, useState } from 'react'
 // 스타일 시트 임포트 
 import './Todo.css';
 
@@ -48,7 +48,64 @@ export default function Todo() {
     setTodos(todos => todos.filter(todo => todo.id !== id));
   }, []);
 
+  //! 현재 설정된 필터에 따라 할 일 목록을 필터링
+  // : useMemo를 사용하여 필터링 결과를 메모화(캐싱)
+  const filteredTodos = useMemo(() => {
+    switch (filter) {
+      case 'all':
+        return todos;
+      case 'active':
+        // 완료되지 않은 항목을 필터링
+        return todos.filter(todo => !todo.completed);
+      case 'completed':
+        // 완료된 항목을 필터링
+        return todos.filter(todo => todo.completed);
+      default:
+        throw new Error('Unknown filter: ' + filter);
+    }
+  }, [todos, filter]);
+
+  //! 입력 필드에서 엔터키를 눌렀을 때
+  //  , 호출되는 이벤트 핸들러
+  const handleKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === 'Enter') {
+      const input = event.target as HTMLInputElement;
+      if (input.value.trim() !== '') {
+        addTodo(input.value.trim());
+        input.value = '';
+      }
+    }
+  }
+
   return (
-    <div>Todo</div>
+    <div className='app-container'>
+      <h1>My Todo List</h1>
+      <input 
+        type="text" 
+        placeholder='Add a new task'
+        onKeyPress={handleKeyPress}
+      />
+      <div className='buttons-container'>
+        <button onClick={() => setFilter('all')}>All</button>
+        <button onClick={() => setFilter('active')}>Active</button>
+        <button onClick={() => setFilter('completed')}>Completed</button>
+      </div>
+      <ul className='todo-list'>
+        {filteredTodos.map(todo => (
+          <li key={todo.id} className='todo-item'>
+            <span
+              className={`todo-text ${todo.completed ? 'completed' : ''}`}
+              onClick={() => toggleTodo(todo.id)}
+            >
+              {todo.text}
+            </span>
+            <button
+              className='delete-button'
+              onClick={() => deleteTodo(todo.id)}
+            >Delete</button>
+          </li>
+        ))}
+      </ul>
+    </div>
   )
 }
