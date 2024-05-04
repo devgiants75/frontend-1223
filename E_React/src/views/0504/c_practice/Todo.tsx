@@ -82,6 +82,7 @@ export default function Todo() {
       <h1>My Todo List</h1>
       <input 
         type="text" 
+        className='todo-input'
         placeholder='Add a new task'
         onKeyPress={handleKeyPress}
       />
