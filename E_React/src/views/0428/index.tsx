@@ -4,6 +4,7 @@ import Effects01 from './b_Effects/Effects01'
 import Effects02 from './b_Effects/Effects02'
 import Effects03 from './b_Effects/Effects03'
 import Practice01 from './c_Practice/Practice01'
+import Practice02 from './c_Practice/Practice02'
 
 export default function Index() {
   return (
@@ -30,6 +31,7 @@ export default function Index() {
       >> Practice01.tsx
       */}
       <Practice01 />
+      <Practice02 />
     </div>
   )
 }
