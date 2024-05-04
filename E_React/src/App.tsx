@@ -6,13 +6,15 @@ import { Route, Routes } from 'react-router-dom';
 //   - 해당 파일이 존재하는 디렉토리(폴더)의 기본(메인)이 되는 파일임을 파일명으로 명시
 // : 폴더 명 만으로 해당 파일 호출이 가능
 
-import Nav from './components/nav';
+import NavigationBar from './components/NavigationBar';
+
 import Index0413 from './views/0413';
 import Index0414 from './views/0414';
 import Index0420 from './views/0420';
 import Index0421 from './views/0421';
 import Index0427 from './views/0427';
 import Index0428 from './views/0428';
+
 
 function App() {
   return (
@@ -31,7 +33,8 @@ function App() {
           - to 속성을 사용하여 이동하고자 하는 경로를 지정
       */}
       <h1>React 수업 자료</h1>
-      <Nav />
+      <NavigationBar />
+
       <Routes>
         {/*  
           npm run start
