@@ -16,7 +16,6 @@ import Index0427 from './views/0427';
 import Index0428 from './views/0428';
 import Index0504 from './views/0504';
 
-
 function App() {
   return (
     <>
