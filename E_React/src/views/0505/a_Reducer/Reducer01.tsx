@@ -64,12 +64,23 @@ type CounterState = {
   count: number;
 }
 
-function reducer() {
-
+type CounterAction = {
+  type: 'increment' | 'decrement';
 }
 
 const initialValue: CounterState = {
   count: 0
+}
+
+function reducer(state: CounterState, action: CounterAction): CounterState {
+  switch (action.type) {
+    case 'increment':
+      return { count: state.count + 1 };
+    case 'decrement':
+      return { count: state.count - 1 };
+    default:
+      throw new Error('다룰 수 없는 액션입니다.');
+  }
 }
 
 export default function Reducer01() {
@@ -96,9 +107,9 @@ export default function Reducer01() {
 
       <hr />
       <h1>useReducer 상태 관리</h1>
-      <h2>현재 카운트의 값: </h2>
-      <button>증가</button>
-      <button>감소</button>
+      <h2>현재 카운트의 값: {state.count}</h2>
+      <button onClick={() => dispatch({ type: 'increment' })}>증가</button>
+      <button onClick={() => dispatch({ type: 'decrement' })}>감소</button>
     </div>
   )
 }
