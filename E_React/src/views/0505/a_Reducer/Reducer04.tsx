@@ -1,4 +1,5 @@
 import React, { useReducer, useState } from 'react'
+import './Reducer04.css';
 
 //! CartItem 타입 정의
 // : 쇼핑 카트에 들어갈 아이템 속성 정의
@@ -53,7 +54,6 @@ function cartReducer(state: CartState, action: CartAction): CartState {
     default:
       return state;
   }
-
 }
   
 export default function Reducer04() {
@@ -92,6 +92,7 @@ export default function Reducer04() {
 
   return (
     <div>
+      <h1>장바구니 구현</h1>
       <div className="cart-container">
         <div className="input-group">
           <input 
