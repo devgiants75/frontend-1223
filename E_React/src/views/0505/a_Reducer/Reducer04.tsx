@@ -65,28 +65,71 @@ export default function Reducer04() {
   const [inputPrice, setInputPrice] = useState('');
   const [inputQuantity, setInputQuantity] = useState('');
 
+  // 아이템 추가 함수
+  const addItemToCart = () => {
+    dispatch({
+      type: 'add',
+      item: {
+        id: Number(inputId),
+        name: inputName,
+        price: Number(inputPrice),
+        quantity: Number(inputQuantity)
+      }
+    });
+  }
+
+  const incrementQ = (id: number) => {
+    dispatch({ type: 'increment', id })
+  }
+  
+  const decrementQ = (id: number) => {
+    dispatch({ type: 'decrement', id })
+  }
+  
+  const removeItemFromCart = (id: number) => {
+    dispatch({ type: 'remove', id })
+  }
+
   return (
     <div>
       <div className="cart-container">
         <div className="input-group">
           <input 
             type="text" className="input-field" 
-            placeholder='상품 ID'
-            value={inputId}
+            placeholder='상품 ID' value={inputId}
+            onChange={e => setInputId(e.target.value)}
           />
           <input 
             type="text" className="input-field" 
-            placeholder='상품명'
+            placeholder='상품명' value={inputName}
+            onChange={e => setInputName(e.target.value)}
           />
           <input 
             type="text" className="input-field" 
-            placeholder='가격'
+            placeholder='가격' value={inputPrice}
+            onChange={e => setInputPrice(e.target.value)}
           />
           <input 
             type="text" className="input-field" 
-            placeholder='수량'
+            placeholder='수량' value={inputQuantity}
+            onChange={e => setInputQuantity(e.target.value)}
           />
+          <button onClick={addItemToCart}>상품 추가</button>
         </div>
+
+        {cart.map(item => (
+          <div className='cart-item' key={item.id}>
+            <h3 className="item-name">{item.name}</h3>
+            <p className="item-details">${item.price} X {item.quantity}</p>
+            <div className='button-group'>
+              <button className="quantity-button" onClick={() => incrementQ(item.id)}>+</button>
+              <button className="quantity-button" onClick={() => decrementQ(item.id)}>-</button>
+              <button className='remove-button' onClick={() => removeItemFromCart(item.id)}>
+                삭제
+              </button>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   )
