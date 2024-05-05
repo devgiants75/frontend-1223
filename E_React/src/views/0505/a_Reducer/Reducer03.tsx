@@ -10,10 +10,24 @@ type UserInfo = {
 }
 
 type Action = 
-  // payload
+  // payload - 액션 객체 내에 포함된 데이터를 지칭
+  // : 해당 데이터 업데이트 시 필요한 정보를 제공
   | { type: 'setName'; payload: string } 
   | { type: 'setAge'; payload: number } 
-  | { type: 'setEamil'; payload: string };
+  | { type: 'setEmail'; payload: string };
+
+function reducer(state: UserInfo, action: Action): UserInfo {
+  switch (action.type) {
+    case 'setName':
+      return { ...state, name: action.payload };
+    case 'setAge':
+      return { ...state, age: action.payload };
+    case 'setEmail':
+      return { ...state, email: action.payload };
+    default:
+      return state;
+  }
+}
 
 export default function Reducer03() {
 
@@ -48,9 +62,21 @@ export default function Reducer03() {
       <input type="email" value={email} onChange={handleEmailChange}/>
 
       <hr />
-      <input type="text" value={state.name} onChange={}/>
-      <input type="number" value={state.age} onChange={}/>
-      <input type="email" value={state.email} onChange={}/>
+      <input 
+        type="text" 
+        value={state.name} 
+        onChange={(e) => dispatch({ type: 'setName', payload: e.target.value })}
+      />
+      <input 
+        type="number" 
+        value={state.age} 
+        onChange={(e) => dispatch({ type: 'setAge', payload: Number(e.target.value) })}
+      />
+      <input 
+        type="email" 
+        value={state.email} 
+        onChange={(e) => dispatch({ type: 'setEmail', payload: e.target.value })}
+      />
     </div>
   )
 }
