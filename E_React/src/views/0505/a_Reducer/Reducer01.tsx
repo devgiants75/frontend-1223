@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useReducer, useState } from 'react'
 
 //! React 상태 관리
 // : 컴포넌트의 동작과 렌더링을 제어하는 중요한 부분
@@ -30,8 +30,75 @@ import React from 'react'
 // 상태 로직이 여러 이벤트에 걸쳐 있을 때: 같은 상태에 대한 여러 변경이 다양한 이벤트에 의해 발생하는 경우
 // 전역 상태의 로컬 관리: 컴포넌트의 로컬 상태로 전역 상태를 효과적으로 모방하고 싶을 때
 
+//! useState VS useReducer
+
+//? 1. useState
+// : React에서 가장 기본적인 상태 관리 Hook
+// : 간단한 상태 로직에서 사용하기 적합
+// - 상태와 해당 상태를 업데이트 하는 함수를 제공
+
+//* const [state, setState] = useState<T>(initialValue);
+
+//? 2. useReducer
+// : 복잡한 상태 로직을 관리하는 데 useState보다 적합
+// : 상태 업데이트 로직을 외부에서 선언 가능 - 테스트와 재사용성이 용이
+// - reducer 함수와 초기 상태를 기반으로 상태와 dispatch 함수를 제공
+
+//* const [state, dispatch] = useReducer(reducer, initialValue);
+
+// - reducer 함수
+// : 상태 변경 로직을 포함
+//   , 이전 상태와 액션 객체를 인자로 받아 새로운 상태를 반환
+
+// - initialValue
+// : 리듀서의 초기 상태를 정의
+
+// - dispatch 함수
+// : 액션을 발생시켜 상태를 업데이트하는 함수
+// : 해당 함수에 액션을 전달 >> 리듀서 함수가 호출되어 새로운 상태를 계산
+
+// - state
+// : 현재 상태 값, useReducer를 통해 관리되는 상태
+
+type CounterState = {
+  count: number;
+}
+
+function reducer() {
+
+}
+
+const initialValue: CounterState = {
+  count: 0
+}
+
 export default function Reducer01() {
+  //& useState를 사용한 카운터 상태 관리
+  const [count, setCount] = useState<number>(0);
+
+  //& useReducer를 사용한 카운터 상태 관리
+  const [state, dispatch] = useReducer(reducer, initialValue);
+
+  const handleIncrement = () => {
+    setCount(prevCount => prevCount + 1); // 카운트 증가 함수
+  }
+
+  const handleDecrement = () => {
+    setCount(prevCount => prevCount - 1); // 카운트 감소 함수
+  }
+
   return (
-    <div>Reducer01</div>
+    <div>
+      <h1>useState 상태 관리</h1>
+      <h2>현재 카운트 값: {count}</h2>
+      <button onClick={handleIncrement}>+</button>
+      <button onClick={handleDecrement}>-</button>
+
+      <hr />
+      <h1>useReducer 상태 관리</h1>
+      <h2>현재 카운트의 값: </h2>
+      <button>증가</button>
+      <button>감소</button>
+    </div>
   )
 }
