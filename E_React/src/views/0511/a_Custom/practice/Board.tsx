@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react'
+import useInput2 from '../hooks/useInput2';
 
 //& 게시판 프로젝트 구성
 // 1. 구현할 기능 목록
@@ -69,9 +70,16 @@ export default function Board() {
 
   const [selectedPost, setSelectedPost] = useState<PostType | null>(null);
 
+  // const [title, setTitle] = useState('');
+  // const [content, setContent] = useState('');
+  const titleInput = useInput2('');
+  const contentInput = useInput2('');
+
   const postIdRef = useRef(5);
   
-  const handleAddPost = () => {
+  const handleAddPost = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
     const newPost: PostType = {
       id: postIdRef.current++,
       author: '작성자',
@@ -79,10 +87,12 @@ export default function Board() {
       // toISOString(): 국제 표준 날짜 및 시간 표기법
       // >> 'YYYY-MM-DDTHH:mm:ss:sssZ'
       date: new Date().toISOString().slice(0, 10),
-      title: '새로운 게시물',
-      content: '새로운 게시물의 내용'
+      title: titleInput.value,
+      content: contentInput.value
     };
     addPost(newPost);
+    titleInput.reset(); // 제목 입력 필드 리셋
+    contentInput.reset(); // 내용 입력 필드 리셋
   }
 
   const handleUpdatePost = (post: PostType) => {
@@ -105,7 +115,22 @@ export default function Board() {
     <div>
       {loading && <p>로딩중입니다.</p>}
       {error && <p>에러 발생: {error}</p>}
-      <button onClick={handleAddPost}>게시물 추가</button>
+      <br />
+      <form onSubmit={handleAddPost}>
+        <input 
+          type="text" 
+          {...titleInput.bind}
+          placeholder='제목'
+          required
+        />
+        <textarea 
+          {...contentInput.bind}
+          placeholder='내용'
+          required
+        />
+        <button type='submit'>게시물 추가</button>
+      </form>
+      <hr />
 
       <ul>
         {posts.map(post => (
