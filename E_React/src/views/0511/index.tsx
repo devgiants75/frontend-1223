@@ -10,6 +10,7 @@ import Event04 from "./b_Event/Event04";
 import Practice01 from "./c_Practice/Practice01";
 import Practice02 from "./c_Practice/Practice02";
 import Practice03 from "./c_Practice/Practice03";
+import Board from "./a_Custom/practice/Board";
 
 export default function Index() {
   return (
@@ -27,6 +28,7 @@ export default function Index() {
         <Custom02 />
         <Custom03 />
         <Custom04 />
+        <Board />
 
       <h2>2. Event</h2>
       <Event01 />
