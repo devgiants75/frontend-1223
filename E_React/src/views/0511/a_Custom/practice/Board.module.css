@@ -1,0 +1,98 @@
+.formContainer {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.inputField {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.textareaField {
+  width: 100%;
+  height: 150px;
+  padding: 8px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: none; /* 사용자가 크기 조정 못하게 */
+}
+
+.submitButton {
+  padding: 10px 20px;
+  color: white;
+  background-color: #007BFF;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.submitButton:hover {
+  background-color: #0056b3;
+}
+
+.postList {
+  list-style-type: none;
+  padding: 0;
+}
+
+.postItem {
+  background-color: #f2f2f2;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+}
+
+.postDetails {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.postButton {
+  margin-right: 10px;
+  padding: 5px 15px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.postButton:hover {
+  background-color: #45a049;
+}
+
+.deleteButton {
+  background-color: #f44336;
+}
+
+.deleteButton:hover {
+  background-color: #da190b;
+}
+
+.selectedPost {
+  border-top: 2px solid #ccc;
+  margin-top: 20px;
+  padding-top: 20px;
+}
+
+.selectedTitle {
+  font-size: 22px;
+  color: #333;
+}
+
+.selectedContent {
+  font-size: 16px;
+  color: #666;
+  white-space: pre-wrap; /* Keep spaces and breaks as is */
+}

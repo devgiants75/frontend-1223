@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react'
+import styles from './Board.module.css';
 import useInput2 from '../hooks/useInput2';
 
 //& 게시판 프로젝트 구성
@@ -112,7 +113,7 @@ export default function Board() {
   };
 
   return (
-    <div>
+    <div className={styles.formContainer}>
       {loading && <p>로딩중입니다.</p>}
       {error && <p>에러 발생: {error}</p>}
       <br />
@@ -122,30 +123,37 @@ export default function Board() {
           {...titleInput.bind}
           placeholder='제목'
           required
+          className={styles.inputField}
         />
         <textarea 
           {...contentInput.bind}
           placeholder='내용'
           required
+          className={styles.textareaField}
         />
-        <button type='submit'>게시물 추가</button>
+        <button 
+          type='submit'
+          className={styles.submitButton}
+        >게시물 추가</button>
       </form>
       <hr />
 
-      <ul>
+      <ul className={styles.postList}>
         {posts.map(post => (
-          <li key={post.id}>
-            {post.title} by {post.author} on {post.date}
-            <button onClick={() => handleSelectPost(post)}>게시물 확인</button>
-            <button onClick={() => handleUpdatePost(post)}>수정</button>
-            <button onClick={() => handleDeletePost(post.id)}>삭제</button>
+          <li key={post.id} className={styles.postItem}>
+            <div className={styles.postDetails}>
+              {post.title} by {post.author} on {post.date}
+            </div>
+            <button className={styles.postButton} onClick={() => handleSelectPost(post)}>게시물 확인</button>
+            <button className={styles.postButton} onClick={() => handleUpdatePost(post)}>수정</button>
+            <button className={`${styles.postButton} ${styles.deleteButton}`} onClick={() => handleDeletePost(post.id)}>삭제</button>
           </li>
         ))}
       </ul>
       {selectedPost && (
-        <div>
-          <h4>{selectedPost.title}</h4>
-          <p>{selectedPost.content}</p>
+        <div className={styles.selectedPost}>
+          <h4 className={styles.selectedTitle}>{selectedPost.title}</h4>
+          <p className={styles.selectedContent}>{selectedPost.content}</p>
         </div>
       )}
     </div>
