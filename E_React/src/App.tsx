@@ -17,6 +17,7 @@ import Index0428 from './views/0428';
 import Index0504 from './views/0504';
 import Index0505 from './views/0505';
 import Index0511 from './views/0511';
+import Index0512 from './views/0512';
 
 function App() {
   return (
@@ -59,6 +60,7 @@ function App() {
         <Route path='/0504' element={<Index0504 />}/>
         <Route path='/0505' element={<Index0505 />}/>
         <Route path='/0511' element={<Index0511 />}/>
+        <Route path='/0512' element={<Index0512 />}/>
       </Routes>
     </>
   );
