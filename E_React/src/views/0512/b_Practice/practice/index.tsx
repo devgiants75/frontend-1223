@@ -31,6 +31,14 @@ export default function Index() {
   // 입력 값 상태 관리
   const [inputValue, setInputValue] = useState('');
 
+  //& 함수 반환 값 확인
+  const add = (a: number, b: number): number => {
+    console.log(a + b);
+    return a + b;
+  }
+
+  let result = add(3, 5);
+
   const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === 'Enter' && event.currentTarget.value) {
       addTodo(event.currentTarget.value);
