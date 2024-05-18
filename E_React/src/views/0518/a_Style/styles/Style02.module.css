@@ -1,0 +1,15 @@
+/* 
+  Style02.module.css 파일 
+  : 해당 css를 사용할 컴포넌트에서 import해서 사용
+  : 각각의 속성(클래스명, 아이디명)을 동적으로 할당할 때 사용
+*/
+
+.container {
+  color: #333;
+  background-color: #eee;
+}
+
+#uniqueElement {
+  color: blue;
+  background-color: yellow;
+}
