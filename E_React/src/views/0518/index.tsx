@@ -6,6 +6,9 @@ import { createGlobalStyle } from "styled-components";
 import Style04 from "./a_Style/Style04";
 import Router01 from "./b_Router/Router01";
 import Router02 from "./b_Router/Router02";
+import Router03 from "./b_Router/Router03";
+import Route from "../0413/b_Route/Route";
+import { Routes } from "react-router-dom";
 
 const GlobalStyle = createGlobalStyle`
   div {
@@ -36,6 +39,7 @@ export default function Index() {
       <h2>2. Router</h2>
       <Router01 />
       <Router02 />
+      <Router03 />
       
     </div>
   );

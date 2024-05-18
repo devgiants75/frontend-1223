@@ -53,10 +53,13 @@ const Button = styled.button<ButtonProps>`
   }
 `;
 
-const StateButton = styled.button`
+const StateButton = styled.button<{ themeMode: 'light' | 'dark' }>`
+  background-color: ${props => props.theme.colors.background};
+  color: ${props => props.theme.colors.text};
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
 `;
 
 export default function Style04() {
@@ -80,14 +83,13 @@ export default function Style04() {
         <Button color='secondary'>Secondary Button</Button>
       </ThemeProvider>
       <hr />
-
-      {/* 
+      
       <ThemeProvider theme={dynamicTheme}>
-        <StateButton onClick={() => setThemeMode(themeMode === 'light' ? 'dark' : 'light')}>
+        <StateButton themeMode={themeMode} onClick={() => setThemeMode(themeMode === 'light' ? 'dark' : 'light')}>
           상태 활용 버튼(테마 토글)
         </StateButton>
       </ThemeProvider> 
-      */}
+
     </>
   )
 }

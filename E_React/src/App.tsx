@@ -19,6 +19,7 @@ import Index0505 from './views/0505';
 import Index0511 from './views/0511';
 import Index0512 from './views/0512';
 import Index0518 from './views/0518';
+import Router03 from './views/0518/b_Router/Router03';
 
 function App() {
   return (
@@ -63,6 +64,9 @@ function App() {
         <Route path='/0511' element={<Index0511 />}/>
         <Route path='/0512' element={<Index0512 />}/>
         <Route path='/0518' element={<Index0518 />}/>
+
+        {/*===== 리액트 동적 라우팅 연습 컴포넌트 =====*/}
+        <Route path='/0518/:id' element={<Router03 />}/>
       </Routes>
     </>
   );
