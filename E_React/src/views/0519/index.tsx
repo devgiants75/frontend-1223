@@ -8,6 +8,8 @@ import Axios01 from "./c_Axios/Axios01";
 import Axios02 from "./c_Axios/Axios02";
 import Axios03 from "./c_Axios/Axios03";
 import Axios04 from "./c_Axios/Axios04";
+import ContextApi01 from "./d_ContextApi/ContextApi01";
+import ThemeProvider from "./d_ContextApi/ThemeProvider";
 
 export default function Index() {
   return (
@@ -39,6 +41,15 @@ export default function Index() {
       <Axios02 />
       <Axios03 />
       <Axios04 />
+
+      <h2>4. Context API - 전역 상태 관리</h2>
+      <ThemeProvider>
+      <ContextApi01 />
+        <div>
+          <h1>안녕하세요 테마 스위치 앱입니다.</h1>
+          <p>해당 내용들은 ThemeProvider의 컴포넌트들입니다.</p>
+        </div>
+      </ThemeProvider>
     </div>
   );
 }

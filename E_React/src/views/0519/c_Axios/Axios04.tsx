@@ -21,8 +21,18 @@ export default function Axios04() {
     }
   }
 
-  const deleteUser = () => {
+  const deleteUser = async () => {
+    try {
+      // delete 메서드
+      // : 지정된 URL의 데이터만 삭제
+      // >> 데이터 전송 없이, URL만을 사용하여 삭제 가능
+      const response = await axios.delete(`https://jsonplaceholder.typicode.com/users/${userId}`);
 
+      // 삭제 후 데이터 출력 >> 빈 값
+      console.log('user deleted', response.data);
+    } catch (error: any) {
+      console.log('Failed to delete user', error.message);
+    }
   }
 
   return (
