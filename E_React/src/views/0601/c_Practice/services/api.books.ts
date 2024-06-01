@@ -30,21 +30,22 @@ export async function fetchBookDetails(bookId: number) {
 }
 
 // 책에 리뷰 추가하기
-export async function addBookReview() {
-
+export async function addBookReview(bookId: number, review: any) {
+  await axios.post(`${BASE_URL}/books/${bookId}/reviews`, review);
 }
 
 // 책의 모든 리뷰 보기
-export async function fetchBookReviews() {
-  const response = await 
+export async function fetchBookReviews(bookId: number) {
+  const response = await axios.get(`${BASE_URL}/books/${bookId}/reviews`);
+  return response.data;
 }
 
 // 특정 리뷰 수정하기
-export async function updateBookReview() {
-
+export async function updateBookReview(bookId: number, reviewId: number, reviewUpdate: any) {
+  await axios.put(`${BASE_URL}/books/${bookId}/reviews/${reviewId}`, reviewUpdate);
 }
 
 // 특정 리뷰 삭제하기
-export async function deleteBookReview() {
-
+export async function deleteBookReview(bookId: number, reviewId: number) {
+  await axios.delete(`${BASE_URL}/books/${bookId}/reviews/${reviewId}`)
 }
