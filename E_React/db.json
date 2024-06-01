@@ -1,14 +1,55 @@
 {
   "books": [
     {
-      "id": "1",
-      "title": "리액트란 무엇인가",
-      "author": "이승아"
+      "id": 1,
+      "title": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "publicationYear": 1925,
+      "genre": "Literature"
     },
     {
-      "id": "2",
-      "title": "프론트엔드 정복하기",
-      "author": "이도경"
+      "id": 2,
+      "title": "1984",
+      "author": "George Orwell",
+      "publicationYear": 1949,
+      "genre": "Dystopian"
+    },
+    {
+      "id": 3,
+      "title": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "publicationYear": 1960,
+      "genre": "Fiction"
+    }
+  ],
+  "reviews": [
+    {
+      "id": 1,
+      "bookId": 1,
+      "reviewer": "John Doe",
+      "rating": 5,
+      "comment": "A timeless classic that captures the essence of the American Dream."
+    },
+    {
+      "id": 2,
+      "bookId": 1,
+      "reviewer": "Jane Smith",
+      "rating": 4,
+      "comment": "Engaging and poignant, though somewhat predictable."
+    },
+    {
+      "id": 3,
+      "bookId": 2,
+      "reviewer": "Alice Johnson",
+      "rating": 5,
+      "comment": "A terrifying look into what could be, beautifully written and hauntingly relevant."
+    },
+    {
+      "id": 4,
+      "bookId": 3,
+      "reviewer": "Bob Lee",
+      "rating": 5,
+      "comment": "A profound narrative on racism and justice in the Deep South."
     }
   ],
   "posts": [

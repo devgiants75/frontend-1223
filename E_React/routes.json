@@ -1,0 +1,3 @@
+{
+    "/books/:bookId/reviews": "/reviews?bookId=:bookId"
+}
