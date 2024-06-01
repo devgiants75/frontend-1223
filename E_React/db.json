@@ -1,0 +1,48 @@
+{
+  "books": [
+    {
+      "id": "1",
+      "title": "리액트란 무엇인가",
+      "author": "이승아"
+    },
+    {
+      "id": "2",
+      "title": "프론트엔드 정복하기",
+      "author": "이도경"
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "id": 2,
+      "title": "리액트란 무엇인가",
+      "author": "이승아"
+    },
+    {
+      "id": 3,
+      "title": "프론트엔드 정복하기",
+      "author": "이도경"
+    },
+    {
+      "id": 4,
+      "title": "qwe",
+      "author": "qwerty"
+    },
+    {
+      "id": 5,
+      "title": "qwe",
+      "author": "qwe"
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "body": "주석입니다.",
+      "postId": 1
+    }
+  ]
+}
