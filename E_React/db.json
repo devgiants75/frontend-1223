@@ -13,29 +13,19 @@
   ],
   "posts": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "title": "Updated Title",
+      "author": "Updated Author",
+      "id": "7"
     },
     {
-      "id": 2,
-      "title": "리액트란 무엇인가",
-      "author": "이승아"
+      "title": "Updated Title",
+      "author": "Updated Author",
+      "id": "8"
     },
     {
-      "id": 3,
-      "title": "프론트엔드 정복하기",
-      "author": "이도경"
-    },
-    {
-      "id": 4,
-      "title": "qwe",
-      "author": "qwerty"
-    },
-    {
-      "id": 5,
-      "title": "qwe",
-      "author": "qwe"
+      "id": "10",
+      "title": "ㄴㅇㄹ",
+      "author": "ㄴㅇㄹㅈㄷㄹ"
     }
   ],
   "comments": [

@@ -13,7 +13,7 @@ export default function MockServer02() {
     title: '',
     author: ''
   });
-  const postIdRef = useRef<number>(0);
+  const postIdRef = useRef(0);
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -30,7 +30,7 @@ export default function MockServer02() {
   }, []);
 
   const handleAddPost = async () => {
-    const id: number = postIdRef.current + 1;
+    const id = postIdRef.current + 1;
 
     const response = await api.post('/posts', {
       id,
@@ -44,11 +44,21 @@ export default function MockServer02() {
   };
 
   const handleUpdatePost = async (id: number) => {
-
+    const updatedPost = { title: 'Updated Title', author: 'Updated Author' };
+    await api.put(`/posts/${id}`, updatedPost);
+    const updatedPosts = posts.map(post => 
+      post.id === id ? {...post, ...updatedPost} : post
+    );
+    setPosts(updatedPosts);
   };
 
   const hanldeDeletePost = async (id: number) => {
+    // 데이터 베이스의 삭제
+    await api.delete(`/posts/${id}`);
 
+    // 보여지는 렌더링의 삭제
+    const filteredPosts = posts.filter(post => post.id !== id);
+    setPosts(filteredPosts);
   };
 
   return (
