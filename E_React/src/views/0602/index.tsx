@@ -1,5 +1,6 @@
 import React from 'react'
 import Zustand01 from './b_Zustand/Zustand01'
+import Zustand02 from './b_Zustand/Zustand02'
 
 export default function index() {
   return (
@@ -17,6 +18,7 @@ export default function index() {
 
       <h2>2. Zustand</h2>
       <Zustand01 />
+      <Zustand02 />
       
 
     </div>

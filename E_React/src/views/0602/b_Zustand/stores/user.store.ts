@@ -16,6 +16,8 @@ interface MemberState {
   deleteMember: (id: number) => void; // 특정 회원을 삭제
 }
 
+//# 회원에 대한 전역 상태 관리
+// 회원 데이터, 회원 추가/수정/삭제
 export const useMemberStore = create<MemberState>((set) => ({
   // 초기 상태 설정
   members: [],
@@ -32,4 +34,17 @@ export const useMemberStore = create<MemberState>((set) => ({
   deleteMember: (id) => set((state) => ({
     members: state.members.filter((member) => member.id !== id),
   }))
+}));
+
+//# 사용자 인증을 관리하는 스토어
+interface AuthState {
+  user: string | null; // 현재 로그인한 사용자
+  login: (user: string) => void;
+  logout: () => void;
+}
+
+export const useAuthStore = create<AuthState>((set) => ({
+  user: null,
+  login: (user) => set({ user }), // 로그인 상태 설정
+  logout: () => set({ user: null }), // 로그아웃 상태 설정
 }));
