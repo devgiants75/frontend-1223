@@ -37,6 +37,29 @@
       ]
     }
   ],
+  "reviews": [
+    {
+      "id": 1,
+      "bookId": 1,
+      "username": "user1",
+      "comment": "Great read, highly recommended!",
+      "rating": 5
+    },
+    {
+      "id": 2,
+      "bookId": 1,
+      "username": "user2",
+      "comment": "Interesting but a bit long.",
+      "rating": 3
+    },
+    {
+      "id": 3,
+      "bookId": 2,
+      "username": "user3",
+      "comment": "Very informative and well-written.",
+      "rating": 4
+    }
+  ],
   "movies": [
     {
       "id": 1,
