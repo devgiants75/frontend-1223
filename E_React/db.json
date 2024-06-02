@@ -2,78 +2,141 @@
   "books": [
     {
       "id": 1,
-      "title": "The Great Gatsby",
-      "author": "F. Scott Fitzgerald",
-      "publicationYear": 1925,
-      "genre": "Literature"
+      "title": "Example Book One",
+      "author": "Author One",
+      "publicationYear": 2021,
+      "genre": "Fiction",
+      "reviews": [
+        {
+          "id": 1,
+          "username": "user1",
+          "comment": "Great read, highly recommended!",
+          "rating": 5
+        },
+        {
+          "id": 2,
+          "username": "user2",
+          "comment": "Interesting but a bit long.",
+          "rating": 3
+        }
+      ]
     },
     {
       "id": 2,
-      "title": "1984",
-      "author": "George Orwell",
-      "publicationYear": 1949,
-      "genre": "Dystopian"
-    },
-    {
-      "id": 3,
-      "title": "To Kill a Mockingbird",
-      "author": "Harper Lee",
-      "publicationYear": 1960,
-      "genre": "Fiction"
+      "title": "Example Book Two",
+      "author": "Author Two",
+      "publicationYear": 2019,
+      "genre": "Non-Fiction",
+      "reviews": [
+        {
+          "id": 1,
+          "username": "user3",
+          "comment": "Very informative and well-written.",
+          "rating": 4
+        }
+      ]
     }
   ],
-  "reviews": [
+  "movies": [
     {
       "id": 1,
-      "bookId": 1,
-      "reviewer": "John Doe",
-      "rating": 5,
-      "comment": "A timeless classic that captures the essence of the American Dream."
+      "title": "Inception",
+      "director": "Christopher Nolan",
+      "releaseYear": 2010,
+      "genre": "Science Fiction",
+      "bookings": [
+        {
+          "id": 1,
+          "username": "user1",
+          "seats": 2,
+          "sessionTime": "2024-06-10T20:00:00Z"
+        },
+        {
+          "id": 2,
+          "username": "user2",
+          "seats": 3,
+          "sessionTime": "2024-06-10T23:00:00Z"
+        }
+      ]
     },
     {
       "id": 2,
-      "bookId": 1,
-      "reviewer": "Jane Smith",
-      "rating": 4,
-      "comment": "Engaging and poignant, though somewhat predictable."
-    },
-    {
-      "id": 3,
-      "bookId": 2,
-      "reviewer": "Alice Johnson",
-      "rating": 5,
-      "comment": "A terrifying look into what could be, beautifully written and hauntingly relevant."
-    },
-    {
-      "id": 4,
-      "bookId": 3,
-      "reviewer": "Bob Lee",
-      "rating": 5,
-      "comment": "A profound narrative on racism and justice in the Deep South."
+      "title": "The Matrix",
+      "director": "The Wachowskis",
+      "releaseYear": 1999,
+      "genre": "Action",
+      "bookings": [
+        {
+          "id": 1,
+          "username": "user3",
+          "seats": 1,
+          "sessionTime": "2024-06-12T20:00:00Z"
+        }
+      ]
     }
   ],
-  "posts": [
+  "restaurants": [
     {
-      "title": "Updated Title",
-      "author": "Updated Author",
-      "id": "7"
+      "id": 1,
+      "name": "Tasty Treats",
+      "menu": [
+        {
+          "id": 1,
+          "name": "Cheeseburger",
+          "price": 8.99
+        },
+        {
+          "id": 2,
+          "name": "Veggie Pizza",
+          "price": 12.50
+        }
+      ],
+      "orders": [
+        {
+          "id": 1,
+          "customer": "John Doe",
+          "items": [
+            {
+              "menuId": 1,
+              "quantity": 2
+            },
+            {
+              "menuId": 2,
+              "quantity": 1
+            }
+          ],
+          "status": "Delivered"
+        }
+      ]
     },
     {
-      "title": "Updated Title",
-      "author": "Updated Author",
-      "id": "8"
-    },
-    {
-      "id": "10",
-      "title": "ㄴㅇㄹ",
-      "author": "ㄴㅇㄹㅈㄷㄹ"
-    }
-  ],
-  "comments": [
-    {
-      "id": "1",
-      "body": "주석입니다.",
-      "postId": 1
+      "id": 2,
+      "name": "Healthy Eats",
+      "menu": [
+        {
+          "id": 1,
+          "name": "Kale Salad",
+          "price": 10.00
+        },
+        {
+          "id": 2,
+          "name": "Quinoa Bowl",
+          "price": 9.75
+        }
+      ],
+      "orders": [
+        {
+          "id": 1,
+          "customer": "Alice Johnson",
+          "items": [
+            {
+              "menuId": 2,
+              "quantity": 3
+            }
+          ],
+          "status": "Preparing"
+        }
+      ]
     }
   ]
 }

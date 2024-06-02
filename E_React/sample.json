@@ -1,0 +1,42 @@
+{
+    "books": [
+      {
+        "id": 1,
+        "title": "Example Book One",
+        "author": "Author One",
+        "publicationYear": 2021,
+        "genre": "Fiction"
+      },
+      {
+        "id": 2,
+        "title": "Example Book Two",
+        "author": "Author Two",
+        "publicationYear": 2019,
+        "genre": "Non-Fiction"
+      }
+    ],
+    "reviews": [
+      {
+        "id": 1,
+        "bookId": 1,
+        "username": "user1",
+        "comment": "Great read, highly recommended!",
+        "rating": 5
+      },
+      {
+        "id": 2,
+        "bookId": 1,
+        "username": "user2",
+        "comment": "Interesting but a bit long.",
+        "rating": 3
+      },
+      {
+        "id": 3,
+        "bookId": 2,
+        "username": "user3",
+        "comment": "Very informative and well-written.",
+        "rating": 4
+      }
+    ]
+  }
+  

@@ -21,6 +21,7 @@ import Index0512 from './views/0512';
 import Index0518 from './views/0518';
 import Index0519 from './views/0519';
 import Index0601 from './views/0601';
+import Index0602 from './views/0602';
 
 // 리액트 동적 라우팅 연습 컴포넌트
 import Router03 from './views/0518/b_Router/Router03';
@@ -70,6 +71,7 @@ function App() {
         <Route path='/0518' element={<Index0518 />}/>
         <Route path='/0519/*' element={<Index0519 />}/>
         <Route path='/0601' element={<Index0601 />}/>
+        <Route path='/0602' element={<Index0602 />}/>
 
         {/*===== 리액트 동적 라우팅 연습 컴포넌트 =====*/}
         <Route path='/0518/:id' element={<Router03 />}/>
