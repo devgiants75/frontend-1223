@@ -1,0 +1,150 @@
+/* CSS 변수 정의 */
+:root {
+  --orange: #e67e22; /* 주황색 */
+  --green: #2ecc71; /* 초록색 */
+  --blue: #3498db; /* 파란색 */
+  --grey: #bdc3c7; /* 회색 */
+  --white: #ecf0f1; /* 흰색 */
+  --base-color: var(--blue); /* 기본 색상으로 파란색 사용 */
+}
+
+body {
+  background: var(--base-color); /* 배경색을 기본 색상(파란색)으로 설정 */
+  color: var(--white); /* 텍스트 색상을 흰색으로 설정 */
+  height: 100%; /* 높이를 100%로 설정 */
+  text-align: center; /* 텍스트를 중앙 정렬 */
+  font-size: 18px; /* 글자 크기를 18px로 설정 */
+  box-sizing: border-box; /* 박스 크기를 테두리까지 포함하도록 설정 */
+}
+
+.wrapper {
+  width: 100%; /* 너비를 100%로 설정 */
+  margin: 0 auto; /* 수평 중앙 정렬을 위해 자동 여백 설정 */
+}
+
+.wrapper::after {
+  content: ""; /* 비어 있는 콘텐츠 설정 */
+  display: table; /* 테이블로 표시 */
+  clear: both; /* float 요소를 클리어 */
+}
+
+canvas {
+  color: var(--white); /* 캔버스의 기본 텍스트 색상을 흰색으로 설정 */
+  border: var(--white) dashed 2px; /* 캔버스 테두리를 흰색 점선 2px로 설정 */
+  padding: 15px; /* 패딩을 15px로 설정 */
+}
+
+h1, h2, h3 {
+  font-family: 'Roboto', sans-serif; /* 폰트를 'Roboto'로 설정 */
+  font-weight: 100; /* 폰트 두께를 100으로 설정 */
+  text-transform: uppercase; /* 텍스트를 대문자로 변환 */
+  margin: 5px 0; /* 위아래 여백을 5px로 설정 */
+}
+
+h1 {
+  font-size: 2.6em; /* h1 글자 크기를 2.6em로 설정 */
+}
+
+h2 {
+  font-size: 1.6em; /* h2 글자 크기를 1.6em로 설정 */
+}
+
+p {
+  font-size: 1.6em; /* p 글자 크기를 1.6em로 설정 */
+}
+
+#alphabet {
+  margin: 15px auto; /* 위아래 여백을 15px로 설정하고 중앙 정렬 */
+  padding: 0; /* 패딩을 0으로 설정 */
+  max-width: 900px; /* 최대 너비를 900px로 설정 */
+  display: block; /* 블록 요소로 표시 */
+}
+
+#alphabet::after {
+  content: ""; /* 비어 있는 콘텐츠 설정 */
+  display: table; /* 테이블로 표시 */
+  clear: both; /* float 요소를 클리어 */
+}
+
+#alphabet li {
+  float: left; /* 왼쪽으로 플로팅 */
+  margin: 0 10px 10px 0; /* 오른쪽과 아래쪽 여백을 10px로 설정 */
+  list-style: none; /* 리스트 스타일 없음 */
+  width: 35px; /* 너비를 35px로 설정 */
+  height: 30px; /* 높이를 30px로 설정 */
+  padding-top: 10px; /* 위쪽 패딩을 10px로 설정 */
+  background: var(--white); /* 배경색을 흰색으로 설정 */
+  color: var(--base-color); /* 텍스트 색상을 기본 색상(파란색)으로 설정 */
+  cursor: pointer; /* 커서를 포인터로 변경 */
+  border-radius: 5px; /* 테두리 반경을 5px로 설정 */
+  border: solid 1px var(--white); /* 테두리를 흰색 실선 1px로 설정 */
+  transition: all 0.3s ease-in-out; /* 모든 속성의 전환 효과를 0.3초 동안 설정 */
+}
+
+#alphabet li:hover {
+  background: var(--base-color); /* 배경색을 기본 색상(파란색)으로 설정 */
+  color: var(--white); /* 텍스트 색상을 흰색으로 설정 */
+}
+
+#my-word {
+  margin: 0; /* 여백을 0으로 설정 */
+  padding: 0; /* 패딩을 0으로 설정 */
+  display: block; /* 블록 요소로 표시 */
+}
+
+#my-word li {
+  list-style: none; /* 리스트 스타일 없음 */
+  margin: 0; /* 여백을 0으로 설정 */
+  display: inline-block; /* 인라인 블록 요소로 표시 */
+  padding: 0 10px; /* 좌우 패딩을 10px로 설정 */
+  font-size: 1.6em; /* 글자 크기를 1.6em로 설정 */
+}
+
+.active {
+  opacity: 0.4; /* 투명도를 0.4로 설정 */
+  cursor: default; /* 커서를 기본값으로 설정 */
+  transition: opacity 0.3s ease-in-out; /* 투명도의 전환 효과를 0.3초 동안 설정 */
+}
+
+.active:hover {
+  opacity: 0.4; /* 투명도를 0.4로 설정 */
+  transition: opacity 0.3s ease-in-out; /* 투명도의 전환 효과를 0.3초 동안 설정 */
+}
+
+#mylives {
+  font-size: 1.6em; /* 글자 크기를 1.6em로 설정 */
+  text-align: center; /* 텍스트를 중앙 정렬 */
+  display: block; /* 블록 요소로 표시 */
+}
+
+button {
+  border-radius: 5px; /* 테두리 반경을 5px로 설정 */
+  background: var(--base-color); /* 배경색을 기본 색상(파란색)으로 설정 */
+  color: var(--white); /* 텍스트 색상을 흰색으로 설정 */
+  border: solid 1px var(--white); /* 테두리를 흰색 실선 1px로 설정 */
+  text-decoration: none; /* 텍스트 장식 없음 */
+  cursor: pointer; /* 커서를 포인터로 변경 */
+  font-size: 1.2em; /* 글자 크기를 1.2em로 설정 */
+  padding: 18px 10px; /* 패딩을 위아래 18px, 좌우 10px로 설정 */
+  width: 180px; /* 너비를 180px로 설정 */
+  margin: 10px; /* 여백을 10px로 설정 */
+  outline: none; /* 아웃라인 없음 */
+  transition: all 0.5s ease-in-out; /* 모든 속성의 전환 효과를 0.5초 동안 설정 */
+}
+
+button:hover {
+  background: var(--white); /* 배경색을 흰색으로 설정 */
+  color: var(--base-color); /* 텍스트 색상을 기본 색상(파란색)으로 설정 */
+}
+
+@media (max-width: 767px) { /* 뷰포트 너비가 767px 이하일 때 */
+  #alphabet {
+    padding: 0 0 0 15px; /* 왼쪽 패딩을 15px로 설정 */
+  }
+}
+
+@media (max-width: 480px) { /* 뷰포트 너비가 480px 이하일 때 */
+  #alphabet {
+    padding: 0 0 0 25px; /* 왼쪽 패딩을 25px로 설정 */
+  }
+}

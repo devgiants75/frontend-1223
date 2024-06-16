@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Sidebar</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <div class="logo">Logo</div>
+    <!-- 사이드바 토글 버튼, 이벤트 리스너로 처리 -->
+    <button class="hamburger" id="hamburgerButton">☰</button> 
+  </header>
+
+  <div class="main">
+    <div class="image-slider">
+      <!-- 기본 활성 상태 -->
+      <img src="./images/cat01.jpg" class="slide active"> 
+      <img src="./images/dog01.jpg" class="slide"> 
+      <img src="./images/dog02.jpg" class="slide">
+    </div>
+
+    <div class="todo-list">
+      <h3>Todo List</h3>
+      <!-- 할 일 목록을 담을 리스트, 동적으로 항목 추가 예정 -->
+      <ul id="todoItems"></ul> 
+    </div>
+  </div>
+
+  <div id="sidebar" class="sidebar">
+    <!-- 할 일 추가 버튼, 이벤트 리스너로 처리 -->
+    <button class="todo-button" id="todoButton">Add Todo</button> 
+  </div>
+
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <!-- 모달 닫기 버튼, 이벤트 리스너로 처리 -->
+      <span class="close" id="closeModal">&times;</span> 
+      <h2>Add Todo Item</h2>
+      <input type="text" id="todoInput" placeholder="Add new todo">
+      <!-- 할 일 추가 버튼, 이벤트 리스너로 처리 -->
+      <button class="add-todo" id="addTodoButton">Add</button> 
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+
+</html>

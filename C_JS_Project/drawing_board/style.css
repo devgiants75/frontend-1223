@@ -1,0 +1,76 @@
+body {
+  margin: 0; /* 페이지의 기본 마진 제거 */
+  display: flex; /* Flexbox 레이아웃 사용 */
+  flex-direction: column; /* Flexbox 방향을 세로로 설정 */
+  align-items: center; /* 모든 자식을 수평 중앙 정렬 */
+  justify-content: center; /* 모든 자식을 수직 중앙 정렬 */
+  background-color: #F5F5F5; /* 배경 색상 설정 */
+  font-family: 'Arial', sans-serif; /* 폰트 설정 */
+}
+
+.toolbar {
+  margin: 20px; /* 외부 여백 설정 */
+  display: flex; /* Flexbox 레이아웃 사용 */
+  flex-wrap: wrap; /* 자식 요소들을 여러 줄로 배치 */
+  gap: 10px; /* 자식 요소 사이의 간격 설정 */
+  align-items: center; /* 자식 요소들을 수직 중앙 정렬 */
+  background-color: #E3F2FD; /* 배경 색상 설정 */
+  padding: 15px; /* 내부 여백 설정 */
+  border-radius: 10px; /* 모서리를 둥글게 설정 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 그림자 효과 설정 */
+}
+
+label {
+  font-size: 14px; /* 글꼴 크기 설정 */
+  font-weight: bold; /* 글꼴 두께 설정 */
+}
+
+select, input[type="range"], input[type="color"] {
+  margin: 0 10px; /* 좌우 여백 설정 */
+  padding: 5px; /* 내부 여백 설정 */
+  border-radius: 5px; /* 모서리를 둥글게 설정 */
+  border: 1px solid #B0BEC5; /* 테두리 설정 */
+  background-color: #FFFFFF; /* 배경 색상 설정 */
+}
+
+button.tool-button {
+  background-color: #FFAB91; /* 배경 색상 설정 */
+  border: none; /* 테두리 제거 */
+  padding: 10px 20px; /* 내부 여백 설정 */
+  border-radius: 5px; /* 모서리를 둥글게 설정 */
+  cursor: pointer; /* 커서 모양을 포인터로 변경 */
+  transition: background-color 0.3s ease; /* 배경 색상 변경 애니메이션 설정 */
+  color: white; /* 글자 색상 설정 */
+  font-size: 14px; /* 글꼴 크기 설정 */
+}
+
+button.tool-button:hover {
+  background-color: #FF8A65; /* 호버 시 배경 색상 변경 */
+}
+
+button.tool-button.active {
+  background-color: #FF7043; /* 활성화된 버튼의 배경 색상 설정 */
+}
+
+input[type="file"] {
+  display: none; /* 파일 입력 요소를 화면에 표시하지 않음 */
+}
+
+canvas {
+  border: 2px solid #000; /* 테두리 설정 */
+  background-color: #FFFFFF; /* 배경 색상 설정 */
+  cursor: crosshair; /* 커서 모양을 십자선으로 변경 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 그림자 효과 설정 */
+  width: 90vw;  /* 너비를 뷰포트 너비의 90%로 설정 */
+  height: 80vh; /* 높이를 뷰포트 높이의 80%로 설정 */
+}
+
+@media (max-width: 768px) {
+  .toolbar {
+      flex-direction: column; /* 작은 화면에서는 도구 모음을 세로로 배치 */
+  }
+
+  select, input[type="range"], input[type="color"], button.tool-button {
+      margin: 5px 0; /* 작은 화면에서는 상하 여백을 줄여서 설정 */
+  }
+}

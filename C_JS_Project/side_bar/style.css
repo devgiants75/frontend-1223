@@ -1,0 +1,141 @@
+/* Variables */
+:root {
+  --pastel-blue: #a7c7e7;
+  --pastel-purple: #c6a9d9;
+  --pastel-grey: #e3e4e6;
+  --white: #ffffff;
+  --black: #333333;
+  --base-color: var(--pastel-purple);
+}
+
+body, html {
+  margin: 0;  /* 여백 없음 */
+  padding: 0;  /* 패딩 없음 */
+  background-color: var(--white);  /* 배경색 흰색 */
+}
+
+header {
+  background: var(--base-color);  /* 헤더 배경색 기본 색상 */
+  color: var(--white);  /* 헤더 글자색 흰색 */
+  padding: 10px 20px;  /* 헤더 내부 패딩 */
+  display: flex;  /* 플렉스 박스 모델 사용 */
+  justify-content: space-between;  /* 주 축의 정렬 방식 */
+  align-items: center;  /* 교차 축의 정렬 방식 */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);  /* 상자 그림자 */
+}
+
+.logo {
+  font-size: 24px;  /* 로고 폰트 크기 */
+  font-weight: bold;  /* 로고 폰트 굵기 */
+}
+
+.hamburger {
+  font-size: 24px;  /* 햄버거 메뉴 아이콘 크기 */
+  background: none;  /* 배경 없음 */
+  border: none;  /* 테두리 없음 */
+  color: var(--white);  /* 글자색 흰색 */
+  cursor: pointer;  /* 커서 포인터 모양 */
+  padding: 5px 10px;  /* 패딩 */
+  border-radius: 5px;  /* 테두리 둥글게 */
+}
+
+.hamburger:hover {
+  background-color: var(--pastel-grey);  /* 햄버거 메뉴 아이콘 호버 시 배경색 연한 회색 */
+}
+
+.main {
+  padding: 20px;  /* 메인 내부 패딩 */
+  text-align: center;  /* 텍스트 중앙 정렬 */
+}
+
+.image-slider {
+  position: relative;  /* 위치 상대적 */
+  width: 80%;  /* 너비 80% */
+  margin: 0 auto;  /* 자동 마진으로 중앙 정렬 */
+  overflow: hidden;  /* 내용이 넘칠 때 숨김 */
+}
+
+.image-slider img {
+  width: 100%;  /* 이미지 너비 100% */
+  display: none;  /* 기본적으로 표시 안 함 */
+  transition: opacity 0.5s ease-in-out;  /* 투명도 변화 애니메이션 */
+}
+
+.image-slider .active {
+  display: block;  /* 활성 슬라이드 표시 */
+  opacity: 1;  /* 투명도 최대 */
+}
+
+.sidebar {
+  position: fixed;  /* 고정 위치 */
+  width: 250px;  /* 너비 250px */
+  height: 100%;  /* 높이 100% */
+  transform: translateX(-100%);  /* 왼쪽으로 완전히 이동 */
+  top: 0;  /* 상단에서 0px 위치 */
+  background: var(--pastel-grey);  /* 배경색 연한 회색 */
+  transition: transform 0.3s ease-in-out;  /* 위치 변화 애니메이션 */
+  padding: 20px;  /* 내부 패딩 */
+  box-shadow: 2px 0 8px rgba(0,0,0,0.3);  /* 오른쪽에 그림자 */
+  z-index: 1000;  /* 스택 순서 */
+}
+
+.modal {
+  display: none;  /* 기본적으로 표시 안 함 */
+  position: fixed;  /* 고정 위치 */
+  z-index: 1500;  /* 스택 순서 */
+  left: 0;  /* 왼쪽에서 0px 위치 */
+  top: 0;  /* 상단에서 0px 위치 */
+  width: 100%;  /* 너비 100% */
+  height: 100%;  /* 높이 100% */
+  overflow: auto;  /* 내용 넘칠 때 스크롤 */
+  background-color: rgba(0, 0, 0, 0.4);  /* 반투명 검은색 배경 */
+}
+
+.modal-content {
+  background-color: var(--white);  /* 배경색 흰색 */
+  margin: 10% auto;  /* 상단 마진 10%, 자동으로 중앙 정렬 */
+  padding: 20px;  /* 내부 패딩 */
+  border-radius: 8px;  /* 모서리 둥글게 */
+  border: none;  /* 테두리 없음 */
+  width: 50%;  /* 너비 50% */
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);  /* 상자 그림자 */
+  position: relative;  /* 위치 상대적 */
+}
+
+.close {
+  position: absolute;  /* 절대 위치 */
+  top: 10px;  /* 상단에서 10px 위치 */
+  right: 15px;  /* 오른쪽에서 15px 위치 */
+  font-size: 30px;  /* 글자 크기 */
+  color: var(--black);  /* 글자색 진한 회색 */
+  cursor: pointer;  /* 커서 포인터 모양 */
+}
+
+.todo-list h3 {
+  color: var(--base-color);  /* 제목 색상 기본 색상 */
+}
+
+#todoItems li {
+  background: var(--pastel-grey);  /* 배경색 연한 회색 */
+  padding: 10px;  /* 내부 패딩 */
+  margin-top: 5px;  /* 위쪽 마진 5px */
+  border-radius: 5px;  /* 모서리 둥글게 */
+  color: var(--black);  /* 글자색 진한 회색 */
+  list-style: none;  /* 목록 스타일 없음 */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);  /* 상자 그림자 */
+}
+
+button.todo-button, button.add-todo {
+  background-color: var(--base-color);  /* 버튼 배경색 기본 색상 */
+  color: var(--white);  /* 글자색 흰색 */
+  padding: 10px 15px;  /* 내부 패딩 */
+  border: none;  /* 테두리 없음 */
+  border-radius: 5px;  /* 모서리 둥글게 */
+  cursor: pointer;  /* 커서 포인터 모양 */
+  transition: background-color 0.3s;  /* 배경색 변화 애니메이션 */
+}
+
+button.todo-button:hover, button.add-todo:hover {
+  background-color: var(--pastel-blue);  /* 호버 시 배경색 연한 파란색 */
+  color: var(--white);  /* 호버 시 글자색 흰색 */
+}

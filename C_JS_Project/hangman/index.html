@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8"> <!-- 문서의 문자 인코딩을 UTF-8로 설정 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 뷰포트 설정으로 모바일 장치에서도 올바르게 표시되도록 함 -->
+  <title>Document</title> <!-- 문서 제목 설정 -->
+  <link rel="stylesheet" href="./style.css"> <!-- 외부 스타일 시트 연결 -->
+</head>
+
+<body>
+  <div class="wrapper"> <!-- 전체 게임 래퍼 -->
+    <h1>Hangman</h1> <!-- 게임 제목 -->
+    <h2>Vanilla JavaScript Hangman Game</h2> <!-- 게임 설명 -->
+    <p>Use the alphabet below to guess the word, or click hint to get a clue. </p> <!-- 게임 설명 텍스트 -->
+  </div>
+  <div class="wrapper"> <!-- 게임 구성 요소를 담는 두 번째 래퍼 -->
+    <div id="buttons"> <!-- 알파벳 버튼들이 표시될 영역 -->
+    </div>
+    <p id="categoryName"></p> <!-- 단어의 카테고리가 표시될 영역 -->
+    <div id="hold"> <!-- 추측된 단어가 표시될 영역 -->
+    </div>
+    <p id="mylives"></p> <!-- 남은 목숨 수가 표시될 영역 -->
+    <p id="clue">Clue -</p> <!-- 힌트가 표시될 영역 -->
+    <canvas id="stickman">This Text will show if the Browser does NOT support HTML5 Canvas tag</canvas> <!-- 행맨 그림이 그려질 캔버스. 지원되지 않을 경우 대체 텍스트 표시 -->
+    <div class="container"> <!-- 버튼을 담는 컨테이너 -->
+      <button id="hint">Hint</button> <!-- 힌트 버튼 -->
+      <button id="reset">Play again</button> <!-- 게임 재시작 버튼 -->
+    </div>
+  </div>
+
+  <script src="./main.js"></script> <!-- JavaScript 파일 연결 -->
+</body>
+
+</html>
