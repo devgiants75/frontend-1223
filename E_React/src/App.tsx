@@ -25,6 +25,9 @@ import Index0602 from './views/0602';
 
 // 리액트 동적 라우팅 연습 컴포넌트
 import Router03 from './views/0518/b_Router/Router03';
+import Home from './views/0622/Home';
+import MyPage from './views/0622/MyPage';
+import ReservationDetail from './views/0622/ReservationDetail';
 
 function App() {
   return (
@@ -75,6 +78,12 @@ function App() {
 
         {/*===== 리액트 동적 라우팅 연습 컴포넌트 =====*/}
         <Route path='/0518/:id' element={<Router03 />}/>
+
+        {/* useParams & useNavigate 연습 컴포넌트 */}
+        <Route path='/home' element={<Home />}/>
+        <Route path='/mypage' element={<MyPage />}/>
+        <Route path='/mypage/reservations/:reservationId' element={<ReservationDetail />}/>
+        
       </Routes>
     </>
   );
