@@ -31,6 +31,7 @@ import ReservationDetail from './views/0622/ReservationDetail';
 import SliderApp from './views/Slider/SliderApp';
 import ButtonSliderApp from './views/ButtonSlider/ButtonSliderApp';
 import ImageSliderApp from './views/ImagesSlider/ImageSliderApp';
+import Pagination from './views/Pagination/Pagination';
 
 function App() {
   return (
@@ -92,7 +93,9 @@ function App() {
         <Route path='/buttonSlider' element={<ButtonSliderApp />}/>
         <Route path='/imagesSlider' element={<ImageSliderApp />}/>
 
-        
+        {/* 페이지네이션 예제 */}
+        <Route path='/pagination' element={<Pagination />}/>
+
       </Routes>
     </>
   );
