@@ -28,11 +28,11 @@ import Router03 from './views/0518/b_Router/Router03';
 import Home from './views/0622/Home';
 import MyPage from './views/0622/MyPage';
 import ReservationDetail from './views/0622/ReservationDetail';
-import SliderApp from './views/Slider/SliderApp';
-import ButtonSliderApp from './views/ButtonSlider/ButtonSliderApp';
-import ImageSliderApp from './views/ImagesSlider/ImageSliderApp';
-import Pagination from './views/Pagination/Pagination';
-import ModalExample from './views/modal/ModalExample';
+import SliderApp from './components/basicSlider/SliderApp';
+import ButtonSliderApp from './components/buttonSlider/ButtonSliderApp';
+import ImageSliderApp from './components/imagesSlider/ImageSliderApp';
+import Pagination from './components/pagination/Pagination';
+import ModalExample from './components/modal/ModalExample';
 
 function App() {
   return (
