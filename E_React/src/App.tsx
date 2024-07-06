@@ -28,6 +28,9 @@ import Router03 from './views/0518/b_Router/Router03';
 import Home from './views/0622/Home';
 import MyPage from './views/0622/MyPage';
 import ReservationDetail from './views/0622/ReservationDetail';
+import SliderApp from './views/Slider/SliderApp';
+import ButtonSliderApp from './views/ButtonSlider/ButtonSliderApp';
+import ImageSliderApp from './views/ImagesSlider/ImageSliderApp';
 
 function App() {
   return (
@@ -83,6 +86,12 @@ function App() {
         <Route path='/home' element={<Home />}/>
         <Route path='/mypage' element={<MyPage />}/>
         <Route path='/mypage/reservations/:reservationId' element={<ReservationDetail />}/>
+
+        {/* 슬라이더, 버튼 슬라이더, 이미지 슬라이더 예제 */}
+        <Route path='/slider' element={<SliderApp />}/>
+        <Route path='/buttonSlider' element={<ButtonSliderApp />}/>
+        <Route path='/imagesSlider' element={<ImageSliderApp />}/>
+
         
       </Routes>
     </>
