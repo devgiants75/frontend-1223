@@ -2,11 +2,11 @@ import React from 'react'
 
 import ImageSlider from './ImageSlider';
 
-import cat01 from '../Slider/cat01.jpg';
-import cat02 from '../Slider/cat02.jpg';
-import dog01 from '../Slider/dog01.jpg';
-import dog02 from '../Slider/dog02.jpg';
-import dog03 from '../Slider/dog03.jpg';
+import cat01 from '../basicSlider/cat01.jpg';
+import cat02 from '../basicSlider/cat02.jpg';
+import dog01 from '../basicSlider/dog01.jpg';
+import dog02 from '../basicSlider/dog02.jpg';
+import dog03 from '../basicSlider/dog03.jpg';
 
 export default function ButtonSliderApp() {
   const images = [

@@ -1,7 +1,7 @@
 import React from 'react'
 
-import ImageSlider from './ImageSlider';import ImageSliderAuto from './ImageSliderAuto';
-;
+import ImageSlider from './ImageSlider';
+import ImageSliderAuto from './ImageSliderAuto';
 
 export default function ImageSliderApp() {
   const images = [
