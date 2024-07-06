@@ -1,5 +1,4 @@
 import React from 'react'
-
 import ImageSlider from './ImageSlider';
 
 import cat01 from '../basicSlider/cat01.jpg';
