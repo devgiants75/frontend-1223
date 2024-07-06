@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import './ImageSlider.css';
 
 interface ImageSliderProps {
@@ -6,73 +6,36 @@ interface ImageSliderProps {
 }
 
 const ImageSlider: React.FC<ImageSliderProps> = ({ images }) => {
-  const [currentIndex, setCurrentIndex] = useState(1);
-  const sliderRef = useRef<HTMLDivElement>(null);
-  const [isTransitioning, setIsTransitioning] = useState(false);
-
-  const handleTransitionEnd = () => {
-    setIsTransitioning(false);
-    if (currentIndex === images.length + 1) {
-      setCurrentIndex(1);
-      if (sliderRef.current) {
-        sliderRef.current.style.transition = 'none';
-        sliderRef.current.style.transform = `translateX(-100%)`;
-      }
-    } else if (currentIndex === 0) {
-      setCurrentIndex(images.length);
-      if (sliderRef.current) {
-        sliderRef.current.style.transition = 'none';
-        sliderRef.current.style.transform = `translateX(-${images.length * 100}%)`;
-      }
-    }
-  };
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      handleNextClick();
-    }, 3000); // 3초마다 슬라이드 변경
-
+      goToNext();
+    }, 4000);
     return () => clearInterval(interval);
-  }, [images.length]);
+  }, [currentIndex]);
 
-  const handlePrevClick = () => {
-    if (isTransitioning) return;
-    setIsTransitioning(true);
-    setCurrentIndex((prevIndex) => prevIndex - 1);
+  const goToPrevious = () => {
+    const isFirstSlide = currentIndex === 0;
+    const newIndex = isFirstSlide ? images.length - 1 : currentIndex - 1;
+    setCurrentIndex(newIndex);
   };
 
-  const handleNextClick = () => {
-    if (isTransitioning) return;
-    setIsTransitioning(true);
-    setCurrentIndex((prevIndex) => prevIndex + 1);
+  const goToNext = () => {
+    const isLastSlide = currentIndex === images.length - 1;
+    const newIndex = isLastSlide ? 0 : currentIndex + 1;
+    setCurrentIndex(newIndex);
   };
-
-  useEffect(() => {
-    if (sliderRef.current && isTransitioning) {
-      sliderRef.current.style.transition = 'transform 1s ease-in-out';
-      sliderRef.current.style.transform = `translateX(-${currentIndex * 100}%)`;
-    }
-  }, [currentIndex, isTransitioning]);
 
   return (
     <div className="slider">
-      <div className="slider-images" ref={sliderRef} onTransitionEnd={handleTransitionEnd}>
-        <div className="slide">
-          <img src={images[images.length - 1]} alt={`Slide ${images.length - 1}`} />
-        </div>
-        {images.map((image, index) => (
-          <div key={index} className="slide">
-            <img src={image} alt={`Slide ${index}`} />
-          </div>
-        ))}
-        <div className="slide">
-          <img src={images[0]} alt="Slide 0" />
-        </div>
-      </div>
-      <button className="prev" onClick={handlePrevClick}>
+      <button onClick={goToPrevious} className="left-arrow">
         &#10094;
       </button>
-      <button className="next" onClick={handleNextClick}>
+      <div className="slider-image-container">
+        <img src={images[currentIndex]} alt={`Slide ${currentIndex}`} className="slider-image" />
+      </div>
+      <button onClick={goToNext} className="right-arrow">
         &#10095;
       </button>
     </div>
