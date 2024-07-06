@@ -32,6 +32,7 @@ import SliderApp from './views/Slider/SliderApp';
 import ButtonSliderApp from './views/ButtonSlider/ButtonSliderApp';
 import ImageSliderApp from './views/ImagesSlider/ImageSliderApp';
 import Pagination from './views/Pagination/Pagination';
+import ModalExample from './views/modal/ModalExample';
 
 function App() {
   return (
@@ -95,6 +96,9 @@ function App() {
 
         {/* 페이지네이션 예제 */}
         <Route path='/pagination' element={<Pagination />}/>
+
+        {/* 모달 예제 */}
+        <Route path='/modal' element={<ModalExample />}/>
 
       </Routes>
     </>
